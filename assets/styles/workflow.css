@@ -1,0 +1,150 @@
+
+.workflow {
+  padding: var(--section-padding);
+}
+
+.workflow__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.workflow__title-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
+   color: var(--secondary-color);
+  background: var(--background-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+}
+
+.workflow__title {
+  background: var(--background-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 42px;
+  font-weight: 600;
+}
+
+.workflow__steps {
+  display: flex;
+  gap: 40px;
+}
+
+.workflow__step {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  min-height: 140px;
+  margin-bottom: 45px;
+  flex-direction: column;
+  max-width: 33%;
+}
+
+.workflow__step:last-child {
+  margin-bottom: 0;
+}
+
+.workflow__step-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 640px;
+}
+
+.workflow__step-title {
+  font-size: 22px;
+  line-height: 1.35;
+  font-weight: 600;
+  margin-bottom: 10px;
+   color: var(--secondary-color);
+  background: var(--background-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  width: 100%;
+  text-align: center;
+}
+
+.workflow__step-description {
+  font-size: 15px;
+  font-weight: 300;
+}
+.workflow__step-description span {
+  display: block;
+  font-weight: 400;
+}
+
+.workflow__step-image {
+  position: relative; 
+   margin: 0 auto;
+}
+
+.workflow__step-image img {
+  width: 94px;
+  height: 94px;
+  border-radius: 50%;
+  position: relative;
+  background: var(--background-gradient);
+  box-shadow: var(--shadow-gradient);
+}
+
+.workflow__step-image img {
+  object-fit: none;
+  width: 100%;
+}
+
+
+/* Tablet styles (downscale from desktop) */
+@media (max-width: 992px) {
+  .workflow__title-container {
+    margin-bottom: 65px;
+  }
+
+  .workflow__title {
+    font-size: 38px;
+  }
+
+  .workflow__step-content {
+    max-width: 500px;
+  }
+
+  .workflow__step-title {
+    font-size: 20px;
+  }
+
+  .workflow__step-description {
+    font-size: 14px;
+  }
+}
+
+/* Mobile styles (smallest screens) */
+@media (max-width: 768px) {
+  .workflow__title-container {
+    margin-bottom: 45px;
+  }
+
+  .workflow__steps {
+    flex-direction: column;
+    gap: 0;
+  }
+  .workflow__step {
+    gap: 15px;
+    min-height: 175px;
+    max-width: 100%;
+  }
+
+  .workflow__step-image::before {
+    height: 200px;
+  }
+
+  .workflow__step-image {
+    width: 100%;
+    max-width: 94px;
+  }
+}

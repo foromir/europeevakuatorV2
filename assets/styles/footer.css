@@ -1,0 +1,129 @@
+footer {
+  padding-top: 30px;
+  background-color: var(--bg-color);
+}
+
+.footer-container {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 60px;
+}
+
+
+
+.footer__logo {
+  background: var(--background-gradient);
+  width: 100%;
+  padding: 0 10px;
+  border-radius: 12px;
+  display: block;
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: 800;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow-gradient);
+  animation: pulse 2s infinite;
+}
+
+.footer__logo-icon {
+  height: 55px;
+  padding: 5px;
+}
+
+.footer__social-container {
+  display: flex;
+  gap: 40px;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: var(--background-gradient);
+  border-radius: 50%;
+}
+
+.social-link {
+  font-size: 24px;
+  color: white;
+}
+
+.footer__contact-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__contact-number {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.footer__contact-number {
+  color: var(--secondary-color);
+  background: var(--background-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (max-width: 992px) {
+  .footer__logo {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 80px;
+  }
+  .footer__logo-container {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 20px 0 20px;
+  }
+
+  .footer-container {
+    height: 100px;
+    justify-content: space-around;
+    padding: 0;
+  }
+
+  .footer__logo-container {
+    display: none;
+  }
+
+  .social-item {
+    width: 40px;
+    height: 40px;
+  }
+
+  .social-link {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column-reverse;
+}
+.footer__contact-container {
+  text-align: center;
+}
+.footer__social-container {
+  margin-top: 10px;
+  gap: 20px;
+}
+
+}

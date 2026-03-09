@@ -1,0 +1,77 @@
+
+нужно куда то Добавить - Погрузка авто с заблокированной осью, авто без колеса, после дтп.
+    
+    Deutsch
+    English
+    Українська
+    Русский
+    
+    // Header
+    header_logo: Europe-Evakuator
+    menu_home: Home
+    menu_rates: Rates
+    menu_services: Services
+    menu_gallery: Gallery
+    menu_faq: FAQ
+    
+    subtitle: 24 Hour car evacuation
+    contact_channels: To communicate, click on the corresponding icon
+    
+    feature_experienced: Experienced staff
+    feature_quick: Quick response
+    feature_contact: Always in touch
+    feature_fixed_price: Fixed cost
+    
+    
+    how_we_work_title: How do we work?
+    how_we_work_step1_title: You're calling
+    how_we_work_step1_text: If you require the assistance of a towing a car in Germany, it is advisable to stop the vehicle in a safe place if possible, then turn on the emergency alarm and place an emergency stop sign near the vehicle, if possible. Provide your location and the nature of the breakdown. Operators are on call 24/7.
+    how_we_work_step2_title: We are clarifying
+    how_we_work_step2_text: Next, you make an urgent call for a car towing service in Germany at any time of the day to our manager at the specified number on the site and describe your situation in detail (the cause and nature of the breakdown) and tell us where you are. During the conversation, the manager may ask a few additional questions to clarify some details about your situation.
+    how_we_work_step3_title: We are coming to you
+    how_we_work_step3_text: If you are within the city, our tow truck will arrive no later than 20 minutes, and if outside the city, no later than 40 minutes. When our specialists arrive, you need to provide them with your ID card and car documents. If everything is in order with the documents of the car, it is loaded on the tow truck and transported to the agreed place.
+    
+    price_title: Towing services price list:
+    price_subtitle: The cost of towing a car in Germany are indicated for reference, for more information, contact the operator
+      
+    price_service_1_name: towing emergency
+    price_service_1_amount: from €50
+    price_service_1_description: Moving a damaged or faulty vehicle to a specialized car tow truck
+    
+    price_service_2_name: gas delivery
+    price_service_2_amount: from €50
+    price_service_2_description: Delivery of a small amount of fuel for further movement to the nearest gas station
+    
+    price_service_3_name: fuel pumping out
+    price_service_3_amount: from €200
+    price_service_3_description: If the fuel system was contaminated due to defects in operation, our specialists will solve this problem
+    
+    price_service_4_name: dead battery jump
+    price_service_4_amount: from €60
+    price_service_4_description: Discharged battery jump
+    
+    price_note: * Fixed payment after discussion with the manager. No additional/hidden fees
+    
+    service_1_title: Tow car in Germany
+    service_1_description: Delivery of a tow truck from 20 minutes to any point in Germany at a low fixed price. After agreeing the price per km with the operator, it will not change (we do not have any additional or hidden fees). Experienced workers will carefully load and drive your car to the service. Calls are accepted around the clock.
+    service_1_description_2: Experienced workers will carefully load and drive your car to the service. Calls are accepted around the clock.
+    service_2_title: Full support
+    service_2_description: Our team will carefully consider your question and provide full escort of your car to your destination. We provide full escort of the car to its destination. Availability of specialized machinery and equipment for auto towing in Germany - we guarantee reliable transportation with the use of special fixators of the car on the evacuator.
+    service_2_description_2: Availability of specialized machinery and equipment for auto towing in Germany – we guarantee reliable transportation with the use of special fixators of the car on the evacuator
+    
+    gallery_title: Gallery
+    gallery_description: Almost every day on the roads you may need auto towing in Germany near me for one reason or another. In this case, you can turn to the services of a specialized car towing company, which can quickly solve your problem. text car towing service in Germany near me is at your service round the clock. Call us and we will always help you to solve your problem.
+    gallery_description_2: Here you will find photos illustrating the high level of our professionalism and individual approach to each client.
+    
+    faq_title: FAQ – Frequently Asked Questions
+    faq_description: We know the answers to frequently asked questions, if we haven\'t found the answer, just call us
+    faq_q1: What should I do in case of a car breakdown on the road?
+    faq_a1: Stop at a safe place, turn on the emergency alarm and put up an emergency stop sign, if possible. Call our manager, describe the problem and get help immediately
+    faq_q2: How quickly can you arrive at the scene of the accident?
+    faq_a2: We try to arrive as soon as possible. The time depends on the distance and the current workload of our tow trucks.
+    faq_q3: How much does it cost to towing a car?
+    faq_a3: The cost depends on various factors, including distance, type of car and type of service. To clarify the price, please call us.
+    faq_q4: What documents will I need to towing the car
+    faq_a4: Usually, you will need an identity card and registration documents for the car. The manager will inform you in detail when placing an order.
+    
+    locations_title: Vehicle recovery in Germany
