@@ -102,6 +102,15 @@
     0 0 60px rgba(255, 255, 255, 0.1);
 }
 
+:root {
+  /* Shared design tokens */
+  --description-bg: #181818;
+  --description-border-radius: 10px;
+  --description-padding: 10px;
+  --icon-size-mobile: 35px;
+  --icon-size-desktop: 41px;
+}
+
 body {
   font-family: TildaSans, "Arial", Arial, sans-serif;
   line-height: 1.5;

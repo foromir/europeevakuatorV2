@@ -13,7 +13,6 @@
   align-items: center;
 }
 
-.evacuation-block__mobile-baner,
 .evacuation-block__social {
   display: none;
 }
@@ -137,12 +136,10 @@
 }
 
 .evacuation-block__image {
-  animation: slideInLeft 0.8s ease-out forwards;
   width: 50%;
   position: relative;
   display: block;
-  animation: shake 3s ease-in-out infinite;
-
+  animation: slideInLeft 0.8s ease-out forwards, shake 3s ease-in-out infinite;
 }
 
 .evacuation-block__image-img {
@@ -167,20 +164,6 @@
 
   .evacuation-block__wrapper {
     flex-direction: column;
-  }
-
-  .evacuation-block__mobile-baner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background: var(--background-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-size: 22px;
-    font-weight: 600;
-    text-align: center;
   }
 
   .evacuation-block__social {

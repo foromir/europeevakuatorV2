@@ -51,7 +51,7 @@
 .service-item__description {
   font-size: 20px;
   line-height: 1.15;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .service-item__description-gap {
@@ -90,7 +90,7 @@
   .service-item__description-gap {
     padding-bottom: 20px;
   }
-  
+
   .service-item__image {
     width: 100%;
     max-width: 100%;
