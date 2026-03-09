@@ -39,6 +39,15 @@
 }
 
 .evacuation-block__info-title h2 {
+  color: var(--text-color);
+  font-size: 28px;
+  line-height: 1.4;
+  margin-top: 10px;
+  opacity: 0;
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.evacuation-block__info-title h1 {
   display: block;
   color: var(--secondary-color);
   background: var(--background-gradient);
@@ -47,16 +56,6 @@
   background-clip: text;
   font-size: 21px;
   font-weight: 600;
-  opacity: 0;
-  animation: slideInLeft 0.8s ease-out forwards;
-
-}
-
-.evacuation-block__info-title h1 {
-  color: var(--text-color);
-  font-size: 28px;
-  line-height: 1.4;
-  margin-top: 10px;
   opacity: 0;
   animation: slideInLeft 0.8s ease-out forwards;
 }
@@ -82,7 +81,6 @@
   box-shadow: var(--shadow-gradient);
   animation: pulse 2s infinite;
 }
-
 
 
 .evacuation-block__info-contact-phone i {
@@ -129,6 +127,7 @@
 }
 
 .evacuation-block__feature h3 {
+  word-break: break-all;
   width: 90px;
   color: var(--text-color);
   font-size: 13px;
@@ -231,11 +230,8 @@
     align-items: center;
   }
 
-  .evacuation-block__info-title h2 {
-    display: none;
-  }
 
-  .evacuation-block__info-title h1 {
+  .evacuation-block__info-title h2 {
     font-size: 28px;
   }
 
@@ -265,11 +261,11 @@
 }
 
 @media (max-width: 768px) {
-  .evacuation-block__info-title h2 {
+  .evacuation-block__info-title h1 {
     font-size: 20px;
   }
 
-  .evacuation-block__info-title h1 {
+  .evacuation-block__info-title h2 {
     font-size: 24px;
   }
 
