@@ -42,9 +42,6 @@ function cityHref(countryCode: string, label: string): RoutePath {
   }
 
   if (countryCode === "de") {
-    if (key.includes("berlin") || key.includes("берлін") || key.includes("берлин")) {
-      return ROUTE_PATH.GERMANY_BERLIN;
-    }
     return ROUTE_PATH.GERMANY;
   }
 

@@ -51,7 +51,7 @@ export default {
   countryGermany: "Germany",
   linkTowGraz: "Tow truck in Graz",
   linkTowVienna: "Tow truck in Vienna",
-  linkTowBerlin: "Tow truck in Berlin",
+  linkTowMunich: "Tow truck in Munich",
 
   skipToContentMain: "Skip to main content",
 

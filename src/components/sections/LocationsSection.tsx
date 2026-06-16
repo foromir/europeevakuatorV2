@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import { useI18n } from "../../i18n/I18nContext";
 import { citiesForRow, countryHrefFor, type LocationRowInput } from "./locationsLinks";
 
@@ -26,13 +25,14 @@ export function LocationsSection() {
                     {row.country}
                   </a>
                   <span className="locations-list__cities">
-                    {cities.map((city, index) => (
-                      <Fragment key={`${row.code}-${city.label}`}>
-                        {index > 0 ? ", " : null}
-                        <a href={localizedPath(city.href)} className="locations-list__city-link">
-                          {city.label}
-                        </a>
-                      </Fragment>
+                    {cities.map((city) => (
+                      <a
+                        key={`${row.code}-${city.label}`}
+                        href={localizedPath(city.href)}
+                        className="locations-list__city-link"
+                      >
+                        {city.label}
+                      </a>
                     ))}
                   </span>
                 </li>

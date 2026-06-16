@@ -54,7 +54,7 @@ export default {
   countryGermany: "Германия",
   linkTowGraz: "Эвакуатор в Граце",
   linkTowVienna: "Эвакуатор в Вене",
-  linkTowBerlin: "Эвакуатор в Берлине",
+  linkTowMunich: "Эвакуатор в Мюнхене",
 
   skipToContentMain: "Перейти к основному содержанию",
 

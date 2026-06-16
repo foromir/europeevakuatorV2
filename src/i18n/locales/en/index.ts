@@ -7,7 +7,6 @@ import austria from "./austria/austria";
 import graz from "./austria/graz";
 import grazJakomini from "./austria/graz-jakomini";
 import germany from "./germany/germany";
-import berlin from "./germany/berlin";
 import pageBlogAccidentInsurance from "./blog/accident-insurance";
 import pageBlogInternationalTransport from "./blog/international-transport";
 import pageBlogIndex from "./blog/index";
@@ -24,7 +23,6 @@ export const en = {
     [routeSlug(ROUTE_PATH.AUSTRIA_GRAZ)]: graz,
     [routeSlug(ROUTE_PATH.AUSTRIA_GRAZ_JAKOMINI)]: grazJakomini,
     [routeSlug(ROUTE_PATH.GERMANY)]: germany,
-    [routeSlug(ROUTE_PATH.GERMANY_BERLIN)]: berlin,
   } satisfies Record<string, RouteLocaleEntry>,
   pages: {
     home: pageHome,

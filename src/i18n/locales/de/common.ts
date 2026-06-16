@@ -51,7 +51,7 @@ export default {
   countryGermany: "Deutschland",
   linkTowGraz: "Abschleppdienst in Graz",
   linkTowVienna: "Abschleppdienst in Wien",
-  linkTowBerlin: "Abschleppdienst in Berlin",
+  linkTowMunich: "Abschleppdienst in München",
 
   skipToContentMain: "Zum Hauptinhalt springen",
 

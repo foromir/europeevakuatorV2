@@ -14,7 +14,6 @@ function areaNameFromRoute(routeKey: string): string | undefined {
     "austria/graz": "Graz",
     "austria/graz/jakomini": "Graz",
     germany: "Germany",
-    "germany/berlin": "Berlin",
   };
   return map[routeKey];
 }

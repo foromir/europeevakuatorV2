@@ -73,8 +73,8 @@ export function SiteHeader() {
                     <span className="header__dropdown-link">{common.countryGermany}</span>
                     <ul className="header__dropdown-sublist">
                       <li>
-                        <a href={localizedPath(ROUTE_PATH.GERMANY_BERLIN)} className="header__dropdown-sublink">
-                          {common.linkTowBerlin}
+                        <a href={localizedPath(ROUTE_PATH.GERMANY)} className="header__dropdown-sublink">
+                          {common.linkTowMunich}
                         </a>
                       </li>
                       <li>
