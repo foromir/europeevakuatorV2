@@ -15,6 +15,7 @@ const seo: PageSeoBundle = {
   twitterTitle: "Эвакуатор в Австрии — Europe-Evakuator",
   twitterDescription:
     "Эвакуация и перевозка авто в Австрии 24/7. Вена, Грац, Зальцбург и другие города.",
+  ogImagePath: "/assets/images/gallery/gallery-18.jpeg",
 };
 
 /** Тексты блока «Эвакуация» на странице страны (герой). */

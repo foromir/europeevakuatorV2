@@ -12,6 +12,39 @@ const seo: PageSeoBundle = {
   ogUrlPath: ROUTE_PATH.GERMANY,
   twitterTitle: "Эвакуатор в Германии 24/7",
   twitterDescription: "Эвакуация и перевозка авто в Германии. Помощь на дороге 24/7.",
+  ogImagePath: "/assets/images/gallery/gallery-13.jpeg",
 };
 
-export default { seo } as const;
+const landing = {
+  cities: {
+    title: "Эвакуатор в городах Германии",
+    lead: "Круглосуточный выезд эвакуатора в крупных городах и на автобанах:",
+    list: [
+      "Берлин (Berlin)",
+      "Мюнхен (München)",
+      "Гамбург (Hamburg)",
+      "Франкфурт (Frankfurt)",
+      "Кёльн (Köln)",
+      "Штутгарт (Stuttgart)",
+      "Дüsseldorf",
+      "Дрезден (Dresden)",
+      "Нюрнберг (Nürnberg)",
+    ],
+  },
+  directions: {
+    title: "Популярные направления перевозки в Германии",
+    lead: "Междугородняя эвакуация и перевозка авто по Германии и в страны ЕС:",
+    list: [
+      "Берлин — Мюнхен",
+      "Мюнхен — Вена",
+      "Берлин — Гамбург",
+      "Франкфурт — Кёльн",
+      "Берлин — Прага",
+      "Мюнхен — Зальцбург",
+      "Гамбург — Копенгаген",
+    ],
+    more: "и другие маршруты по Германии и Европе",
+  },
+} as const;
+
+export default { seo, landing } as const;

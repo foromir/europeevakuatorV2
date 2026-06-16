@@ -13,6 +13,34 @@ const seo: PageSeoBundle = {
   twitterTitle: "Эвакуатор в Якомини, Грац",
   twitterDescription:
     "Эвакуация и перевозка авто в районе Якомини (Грац). Выезд 24/7, цена по телефону.",
+  ogImagePath: "/assets/images/gallery/gallery-14.jpeg",
 };
 
-export default { seo } as const;
+const landing = {
+  cities: {
+    title: "Эвакуатор в районе Якомини и рядом",
+    lead: "Быстрый выезд в Якомини и соседние районы Граца:",
+    list: [
+      "Jakomini (Якомини)",
+      "Gries",
+      "St. Leonhard",
+      "Innere Stadt",
+      "Murvorstadt",
+      "Puntigam",
+    ],
+  },
+  directions: {
+    title: "Направления из Якомини",
+    lead: "Эвакуация из района Якомини по Грацу и за его пределы:",
+    list: [
+      "Якомини — центр Граца",
+      "Якомини — Вена",
+      "Якомини — аэропорт Graz",
+      "Якомини — Клагенфурт",
+      "Якомини — Любляна",
+    ],
+    more: "междугородние маршруты по Австрии и ЕС",
+  },
+} as const;
+
+export default { seo, landing } as const;

@@ -3,7 +3,7 @@ import { Layout } from "../../components/layout";
 import {
   EvacuationBlockSection,
   EvacuationStripBlock,
-  CitiesAustriaSection,
+  CitiesListSection,
   WorkflowSection,
   StatsSection,
   PricingSection,
@@ -27,12 +27,12 @@ export function CityStubPage() {
     <Layout seo={content?.seo}>
       <EvacuationBlockSection content={content?.evacuation} />
       <EvacuationStripBlock />
-      <CitiesAustriaSection />
+      <CitiesListSection block={content?.landing?.cities} />
       <WorkflowSection />
       <StatsSection />
       <PricingSection />
       <ServicesSection />
-      <PopularDirectionsSection />
+      <PopularDirectionsSection block={content?.landing?.directions} />
       <GallerySection />
       <ReviewsSection />
       <FaqSection />

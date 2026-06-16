@@ -12,6 +12,34 @@ const seo: PageSeoBundle = {
   ogUrlPath: ROUTE_PATH.AUSTRIA_GRAZ_JAKOMINI,
   twitterTitle: "Tow truck in Jakomini, Graz",
   twitterDescription: "Car recovery and transport in Jakomini, Graz. 24/7 dispatch.",
+  ogImagePath: "/assets/images/gallery/gallery-14.jpeg",
 };
 
-export default { seo } as const;
+const landing = {
+  cities: {
+    title: "Tow truck in Jakomini and nearby",
+    lead: "Fast dispatch in Jakomini and neighbouring Graz districts:",
+    list: [
+      "Jakomini",
+      "Gries",
+      "St. Leonhard",
+      "Innere Stadt",
+      "Murvorstadt",
+      "Puntigam",
+    ],
+  },
+  directions: {
+    title: "Routes from Jakomini",
+    lead: "Recovery from Jakomini across Graz and beyond:",
+    list: [
+      "Jakomini — Graz city centre",
+      "Jakomini — Vienna",
+      "Jakomini — Graz Airport",
+      "Jakomini — Klagenfurt",
+      "Jakomini — Ljubljana",
+    ],
+    more: "intercity routes across Austria and the EU",
+  },
+} as const;
+
+export default { seo, landing } as const;

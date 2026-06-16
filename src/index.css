@@ -8,8 +8,10 @@
 @import "../assets/styles/gallery.css";
 @import "../assets/styles/faq.css";
 @import "../assets/styles/blog.css";
+@import "../assets/styles/breadcrumbs.css";
 @import "../assets/styles/locations.css";
 @import "../assets/styles/footer.css";
+@import "../assets/styles/contact-widget.css";
 @import "../assets/styles/form.css";
 
 :root {

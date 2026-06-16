@@ -1,7 +1,7 @@
-import { ROUTE_PATH } from "../../../routeConfig";
-import type { BlogBreakdownAbroadPage } from "../../../types";
+import { ROUTE_PATH, BLOG_IMAGE } from "../../../routeConfig";
+import type { BlogArticlePage } from "../../../types";
 
-const page: BlogBreakdownAbroadPage = {
+const page: BlogArticlePage = {
   title: "Car breakdown abroad — what to do (Europe tow truck tips)",
   description:
     "Step-by-step guide if your car breaks down abroad: staying safe, calling a tow truck in Europe, dealing with insurance and paperwork.",
@@ -13,11 +13,13 @@ const page: BlogBreakdownAbroadPage = {
   twitterTitle: "Car breakdown abroad — what to do",
   twitterDescription:
     "Safety, tow truck in Europe, insurance and documents when you break down abroad.",
+  ogImagePath: BLOG_IMAGE.BREAKDOWN_ABROAD,
   skipLink: "Skip to article content",
-  backToBlog: "Back to blog",
-  dateIso: "2025-03-01",
-  dateDisplay: "March 1, 2025",
+  dateIso: "2026-06-10",
+  dateDisplay: "June 10, 2026",
   tag: "Driver tips",
+  imagePath: BLOG_IMAGE.BREAKDOWN_ABROAD,
+  imageAlt: "Tow truck loading a car after a breakdown on a European road",
   h1: "What to do if your car breaks down abroad",
   lead:
     "A breakdown in another country is stressful. If you follow clear steps, you can stay safe, get help quickly and avoid unnecessary costs.",

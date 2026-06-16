@@ -25,14 +25,18 @@ export default {
   backHome: "На главную",
 
   siteOrigin: SITE_ORIGIN,
-  ogImagePath: "/assets/images/og-image.jpg",
+  ogImagePath: "/assets/images/gallery/gallery-18.jpeg",
   brandName: "Europe-Evakuator",
   logoImgAlt: "Europe-Evakuator Logo",
 
   phoneTel: "+380939152233",
   phoneDisplay: "+380 (93) 915 22 33",
+  email: "info@europe-evakuator.com",
   telegramUrl: "https://t.me/+380939152233",
   whatsappUrl: "https://wa.me/380939152233",
+
+  contactWidgetAria: "Связаться с нами",
+  contactWidgetLabel: "Позвонить",
 
   ogLocale: "ru_RU",
   ogTypeWebsite: "website",
@@ -47,8 +51,10 @@ export default {
   navBlog: "Блог",
 
   countryAustria: "Австрия",
+  countryGermany: "Германия",
   linkTowGraz: "Эвакуатор в Граце",
   linkTowVienna: "Эвакуатор в Вене",
+  linkTowBerlin: "Эвакуатор в Берлине",
 
   skipToContentMain: "Перейти к основному содержанию",
 
@@ -71,9 +77,11 @@ export default {
   footerCopyright: "© 2025 Europe-Evakuator",
 
   ariaCall: "Позвонить",
+  ariaEmail: "Написать на email",
   ariaTelegram: "Telegram",
   ariaWhatsapp: "WhatsApp",
   titleCall: "Позвонить",
+  titleEmail: "Email",
   titleTelegram: "Telegram",
   titleWhatsapp: "WhatsApp",
 

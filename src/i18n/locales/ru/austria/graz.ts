@@ -14,6 +14,7 @@ const seo: PageSeoBundle = {
   twitterTitle: "Эвакуатор в Граце 24/7 – Помощь на дороге в Австрии",
   twitterDescription:
     "Круглосуточный эвакуатор в Граце и Штирии: эвакуация и перевозка авто по Австрии. Быстро, без скрытых доплат.",
+  ogImagePath: "/assets/images/gallery/gallery-19.jpeg",
 };
 
 const evacuation: LandingEvacuationCopy = {
@@ -30,4 +31,37 @@ const evacuation: LandingEvacuationCopy = {
   ],
 };
 
-export default { seo, evacuation } as const;
+const landing = {
+  cities: {
+    title: "Районы Граца и Штирии",
+    lead: "Выезжаем по Грацу и земле Штирия — в том числе в промышленные зоны и на автобаны A2 и A9:",
+    list: [
+      "Jakomini",
+      "Gries",
+      "Lend",
+      "Waltendorf",
+      "Mariatrost",
+      "Andritz",
+      "Eggenberg",
+      "Puntigam",
+      "Feldkirchen bei Graz",
+      "Deutschlandsberg",
+    ],
+  },
+  directions: {
+    title: "Популярные направления из Граца",
+    lead: "Эвакуатор из Граца — междугородняя перевозка по Австрии и в соседние страны:",
+    list: [
+      "Грац — Вена",
+      "Грац — Зальцбург",
+      "Грац — Клагенфурт",
+      "Грац — Линц",
+      "Грац — Любляна",
+      "Грац — Мюнхен",
+      "Грац — Будапешт",
+    ],
+    more: "и другие маршруты по запросу",
+  },
+} as const;
+
+export default { seo, evacuation, landing } as const;

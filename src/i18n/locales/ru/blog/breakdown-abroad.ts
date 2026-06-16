@@ -1,8 +1,8 @@
-import { ROUTE_PATH } from "../../../routeConfig";
-import type { BlogBreakdownAbroadPage } from "../../../types";
+import { ROUTE_PATH, BLOG_IMAGE } from "../../../routeConfig";
+import type { BlogArticlePage } from "../../../types";
 
 /** Мета + текст статьи блога */
-const page: BlogBreakdownAbroadPage = {
+const page: BlogArticlePage = {
   title: "Что делать при поломке авто за границей — советы от эвакуатора по Европе",
   description:
     "Пошаговая инструкция, что делать при поломке автомобиля за границей: как обеспечить безопасность, вызвать эвакуатор в Европе, общаться со страховой и оформить документы.",
@@ -14,11 +14,13 @@ const page: BlogBreakdownAbroadPage = {
   twitterTitle: "Что делать при поломке авто за границей",
   twitterDescription:
     "Инструкция: безопасность, эвакуатор в Европе, страховка и документы при поломке за границей.",
+  ogImagePath: BLOG_IMAGE.BREAKDOWN_ABROAD,
   skipLink: "Перейти к содержанию статьи",
-  backToBlog: "Вернуться к блогу",
-  dateIso: "2025-03-01",
-  dateDisplay: "1 марта 2025",
+  dateIso: "2026-06-10",
+  dateDisplay: "10 июня 2026",
   tag: "Советы водителям",
+  imagePath: BLOG_IMAGE.BREAKDOWN_ABROAD,
+  imageAlt: "Эвакуатор забирает автомобиль после поломки на европейской дороге",
   h1: "Что делать при поломке авто за границей",
   lead:
     "Поломка автомобиля в другой стране — стрессовая ситуация. Но если действовать по шагам, можно быстро обеспечить безопасность, вызвать помощь и избежать лишних расходов.",

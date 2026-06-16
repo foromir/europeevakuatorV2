@@ -13,6 +13,7 @@ const seo: PageSeoBundle = {
   ogUrlPath: ROUTE_PATH.AUSTRIA,
   twitterTitle: "Tow truck in Austria — Europe-Evakuator",
   twitterDescription: "24/7 car recovery and transport in Austria. Vienna, Graz, Salzburg and more.",
+  ogImagePath: "/assets/images/gallery/gallery-18.jpeg",
 };
 
 const evacuation: LandingEvacuationCopy = {

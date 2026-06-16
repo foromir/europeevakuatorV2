@@ -3,7 +3,7 @@ import { Layout } from "../../components/layout";
 import {
   EvacuationBlockSection,
   EvacuationStripBlock,
-  CitiesAustriaSection,
+  CitiesListSection,
   WorkflowSection,
   StatsSection,
   PricingSection,
@@ -21,18 +21,18 @@ export function CountryStubPage() {
   const { country } = useParams<{ country: string }>();
   const { routes } = useI18n();
 
-  const content = routes[country];
+  const content = routes[country ?? ""];
 
   return (
     <Layout seo={content?.seo}>
       <EvacuationBlockSection content={content?.evacuation} />
       <EvacuationStripBlock />
-      <CitiesAustriaSection />
+      <CitiesListSection block={content?.landing?.cities} />
       <WorkflowSection />
       <StatsSection />
       <PricingSection />
       <ServicesSection />
-      <PopularDirectionsSection />
+      <PopularDirectionsSection block={content?.landing?.directions} />
       <GallerySection />
       <ReviewsSection />
       <FaqSection />

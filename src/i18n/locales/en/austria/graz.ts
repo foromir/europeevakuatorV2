@@ -14,6 +14,7 @@ const seo: PageSeoBundle = {
   twitterTitle: "24/7 Tow truck in Graz — Roadside assistance in Austria",
   twitterDescription:
     "24/7 towing in Graz and Styria: recovery and transport across Austria. Fast service, no hidden fees.",
+  ogImagePath: "/assets/images/gallery/gallery-19.jpeg",
 };
 
 const evacuation: LandingEvacuationCopy = {
@@ -30,4 +31,37 @@ const evacuation: LandingEvacuationCopy = {
   ],
 };
 
-export default { seo, evacuation } as const;
+const landing = {
+  cities: {
+    title: "Graz districts and Styria",
+    lead: "We cover Graz and Styria — including industrial zones and motorways A2 and A9:",
+    list: [
+      "Jakomini",
+      "Gries",
+      "Lend",
+      "Waltendorf",
+      "Mariatrost",
+      "Andritz",
+      "Eggenberg",
+      "Puntigam",
+      "Feldkirchen bei Graz",
+      "Deutschlandsberg",
+    ],
+  },
+  directions: {
+    title: "Popular routes from Graz",
+    lead: "Tow truck from Graz — intercity transport across Austria and neighbouring countries:",
+    list: [
+      "Graz — Vienna",
+      "Graz — Salzburg",
+      "Graz — Klagenfurt",
+      "Graz — Linz",
+      "Graz — Ljubljana",
+      "Graz — Munich",
+      "Graz — Budapest",
+    ],
+    more: "and other routes on request",
+  },
+} as const;
+
+export default { seo, evacuation, landing } as const;

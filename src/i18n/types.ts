@@ -12,6 +12,22 @@ export type PageSeoBundle = {
   ogUrlPath: string;
   twitterTitle: string;
   twitterDescription: string;
+  /** путь к og:image (без домена); иначе — common.ogImagePath */
+  ogImagePath?: string;
+};
+
+export type CountryLandingBlock = {
+  cities?: {
+    title: string;
+    lead: string;
+    list: readonly string[];
+  };
+  directions?: {
+    title: string;
+    lead: string;
+    list: readonly string[];
+    more: string;
+  };
 };
 
 export type BlogArticleSection = {
@@ -19,17 +35,21 @@ export type BlogArticleSection = {
   body: string;
 };
 
-/** Уникальный контент статьи + мета (блог: поломка за границей) */
-export type BlogBreakdownAbroadPage = PageSeoBundle & {
+/** Контент статьи блога + мета */
+export type BlogArticlePage = PageSeoBundle & {
   skipLink: string;
-  backToBlog: string;
   dateIso: string;
   dateDisplay: string;
   tag: string;
+  imagePath: string;
+  imageAlt: string;
   h1: string;
   lead: string;
   sections: readonly BlogArticleSection[];
 };
+
+/** @deprecated используйте BlogArticlePage */
+export type BlogBreakdownAbroadPage = BlogArticlePage;
 
 /** Тексты блока эвакуации (как в `common.landing.evacuation`; строки — для городов/стран). */
 export type LandingEvacuationCopy = {
@@ -54,10 +74,14 @@ export type LandingEvacuationCopy = {
 export type RouteLocaleEntry = {
   seo: PageSeoBundle;
   evacuation?: LandingEvacuationCopy;
+  landing?: CountryLandingBlock;
 };
 
 /** Статические страницы вне `routes` (главная, статьи блога). SEO стран — в `routes`. */
 export type StaticPagesBundle = {
   home: PageSeoBundle;
-  blogBreakdownAbroad: BlogBreakdownAbroadPage;
+  blogIndex: PageSeoBundle;
+  blogBreakdownAbroad: BlogArticlePage;
+  blogAccidentInsurance: BlogArticlePage;
+  blogInternationalTransport: BlogArticlePage;
 };

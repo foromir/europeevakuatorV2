@@ -1,4 +1,4 @@
-import { ROUTE_PATH } from "../../routeConfig";
+import { ROUTE_PATH, BLOG_IMAGE } from "../../routeConfig";
 import { evacuationBlockShared } from "./common";
 
 /**
@@ -143,26 +143,10 @@ export default {
   },
   reviews: {
     title: "Отзывы клиентов",
-    cards: [
-      {
-        initials: "АК",
-        name: "Андрей К.",
-        city: "Грац, Австрия",
-        text: "Сломался на трассе под Грацем. Позвонил — через 25 минут эвакуатор был на месте. Цену назвали сразу, без доплат. Рекомендую.",
-      },
-      {
-        initials: "МС",
-        name: "Мария С.",
-        city: "Вена, Австрия",
-        text: "Перевозили авто из Вены в Украину. Всё чётко: документы, сроки, упаковка. Буду обращаться ещё.",
-      },
-      {
-        initials: "ДП",
-        name: "Дмитрий П.",
-        city: "Любляна, Словения",
-        text: "После ДТП нужен был срочный выезд. Оператор всё уточнил по телефону, приехали вовремя, машину довезли до СТО без царапин.",
-      },
-    ],
+    subtitle: "Реальные отзывы с Google Business Profile",
+    widgetTitle: "Отзывы Europe-Evakuator в Google",
+    widgetPlaceholder: "Добавьте VITE_GOOGLE_MAPS_EMBED_SRC в .env — код встраивания из Google Maps.",
+    viewOnGoogle: "Все отзывы в Google",
   },
   faq: {
     title: "Частые вопросы об эвакуаторе по Европе",
@@ -194,31 +178,37 @@ export default {
   blog: {
     title: "Блог",
     subtitle: "Полезные статьи об эвакуации, перевозке авто и помощи на дороге в Европе",
+    eyebrow: "Советы водителям",
+    articlesCount: "{count} материалов",
     readMore: "Читать",
+    viewAll: "Все статьи",
     posts: [
       {
         href: ROUTE_PATH.BLOG_POST_BREAKDOWN_ABROAD,
-        dateIso: "2025-03-01",
-        dateLabel: "1 марта 2025",
+        dateIso: "2026-06-10",
+        dateLabel: "10 июня 2026",
         title: "Что делать при поломке авто за границей",
         excerpt: "Пошаговая инструкция: как вызвать эвакуатор, оформить документы и доставить авто в сервис.",
+        imagePath: BLOG_IMAGE.BREAKDOWN_ABROAD,
         imageAlt: "Поломка авто за границей — эвакуатор по Европе",
       },
       {
-        href: "#",
-        dateIso: "2025-02-15",
-        dateLabel: "15 февраля 2025",
+        href: ROUTE_PATH.BLOG_POST_ACCIDENT_INSURANCE,
+        dateIso: "2026-05-22",
+        dateLabel: "22 мая 2026",
         title: "Эвакуация после ДТП: права и страховка",
         excerpt: "Как действовать после аварии в ЕС, какие документы нужны и как оплачивается эвакуация.",
-        imageAlt: "",
+        imagePath: BLOG_IMAGE.ACCIDENT_INSURANCE,
+        imageAlt: "Эвакуация после ДТП в Европе",
       },
       {
-        href: "#",
-        dateIso: "2025-02-01",
-        dateLabel: "1 февраля 2025",
+        href: ROUTE_PATH.BLOG_POST_INTERNATIONAL_TRANSPORT,
+        dateIso: "2026-04-18",
+        dateLabel: "18 апреля 2026",
         title: "Перевозка авто между странами Европы",
         excerpt: "Особенности международной перевозки: маршруты, сроки и стоимость из любой точки ЕС.",
-        imageAlt: "",
+        imagePath: BLOG_IMAGE.INTERNATIONAL_TRANSPORT,
+        imageAlt: "Перевозка авто между странами Европы",
       },
     ],
   },
@@ -230,13 +220,13 @@ export default {
         flagAlt: "Флаг Австрии",
         country: "Австрия",
         countryHref: ROUTE_PATH.AUSTRIA,
-        grazLabel: "Грац",
-        grazHref: ROUTE_PATH.AUSTRIA_GRAZ,
+        featuredCityLabel: "Грац",
+        featuredCityHref: ROUTE_PATH.AUSTRIA_GRAZ,
         citiesRest: "Вена, Линц, Зальцбург, Инсбрук, Клагенфурт",
       },
       { code: "hr", flagAlt: "Флаг Хорватии", country: "Хорватия", citiesLine: "Загреб, Дубровник, Сплит, Риека, Задар" },
       { code: "cz", flagAlt: "Флаг Чехии", country: "Чехия", citiesLine: "Прага, Брно, Острава, Пльзень, Либерец" },
-      { code: "de", flagAlt: "Флаг Германии", country: "Германия", citiesLine: "Мюнхен, Берлин, Франкфурт, Гамбург, Кёльн" },
+      { code: "de", flagAlt: "Флаг Германии", country: "Германия", countryHref: ROUTE_PATH.GERMANY, featuredCityLabel: "Берлин", featuredCityHref: ROUTE_PATH.GERMANY_BERLIN, citiesRest: "Мюнхен, Франкфурт, Гамбург, Кёльн" },
       { code: "hu", flagAlt: "Флаг Венгрии", country: "Венгрия", citiesLine: "Будапешт, Дебрецен, Печ, Сегед, Мишкольц" },
       { code: "it", flagAlt: "Флаг Италии", country: "Италия", citiesLine: "Рим, Милан, Неаполь, Венеция, Болонья" },
       { code: "sk", flagAlt: "Флаг Словакии", country: "Словакия", citiesLine: "Братислава, Кошице, Нитра, Жилина, Трнава" },

@@ -12,6 +12,39 @@ const seo: PageSeoBundle = {
   ogUrlPath: ROUTE_PATH.GERMANY,
   twitterTitle: "24/7 Tow truck in Germany",
   twitterDescription: "Car recovery and transport in Germany. Roadside help 24/7.",
+  ogImagePath: "/assets/images/gallery/gallery-13.jpeg",
 };
 
-export default { seo } as const;
+const landing = {
+  cities: {
+    title: "Tow truck in German cities",
+    lead: "24/7 dispatch in major cities and on motorways:",
+    list: [
+      "Berlin",
+      "Munich (München)",
+      "Hamburg",
+      "Frankfurt",
+      "Cologne (Köln)",
+      "Stuttgart",
+      "Düsseldorf",
+      "Dresden",
+      "Nuremberg (Nürnberg)",
+    ],
+  },
+  directions: {
+    title: "Popular transport routes in Germany",
+    lead: "Intercity recovery and car transport across Germany and the EU:",
+    list: [
+      "Berlin — Munich",
+      "Munich — Vienna",
+      "Berlin — Hamburg",
+      "Frankfurt — Cologne",
+      "Berlin — Prague",
+      "Munich — Salzburg",
+      "Hamburg — Copenhagen",
+    ],
+    more: "and other routes across Germany and Europe",
+  },
+} as const;
+
+export default { seo, landing } as const;

@@ -1,5 +1,5 @@
 export { BlogSection } from "./BlogSection";
-export { CitiesAustriaSection } from "./CitiesAustriaSection";
+export { CitiesAustriaSection, CitiesListSection } from "./CitiesAustriaSection";
 export { EvacuationBlockSection } from "./EvacuationBlockSection";
 export { EvacuationStripBlock } from "./EvacuationStripBlock";
 export { FaqSection } from "./FaqSection";

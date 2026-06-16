@@ -69,6 +69,21 @@ export function SiteHeader() {
                       </li>
                     </ul>
                   </li>
+                  <li className="header__dropdown-item header__dropdown-item--sub">
+                    <span className="header__dropdown-link">{common.countryGermany}</span>
+                    <ul className="header__dropdown-sublist">
+                      <li>
+                        <a href={localizedPath(ROUTE_PATH.GERMANY_BERLIN)} className="header__dropdown-sublink">
+                          {common.linkTowBerlin}
+                        </a>
+                      </li>
+                      <li>
+                        <a href={localizedPath(ROUTE_PATH.GERMANY)} className="header__dropdown-sublink">
+                          {common.countryGermany}
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
                 </ul>
               </div>
             </li>
@@ -78,7 +93,7 @@ export function SiteHeader() {
               </a>
             </li>
             <li className="header__nav-item">
-              <a href="#locations" className="header__nav-link">
+              <a href={localizedPath(ROUTE_PATH.HOME) + "#locations"} className="header__nav-link">
                 {common.navLocations}
               </a>
             </li>

@@ -22,14 +22,18 @@ export default {
   backHome: "Back to home",
 
   siteOrigin: SITE_ORIGIN,
-  ogImagePath: "/assets/images/og-image.jpg",
+  ogImagePath: "/assets/images/gallery/gallery-18.jpeg",
   brandName: "Europe-Evakuator",
   logoImgAlt: "Europe-Evakuator Logo",
 
   phoneTel: "+380939152233",
   phoneDisplay: "+380 (93) 915 22 33",
+  email: "info@europe-evakuator.com",
   telegramUrl: "https://t.me/+380939152233",
   whatsappUrl: "https://wa.me/380939152233",
+
+  contactWidgetAria: "Contact us",
+  contactWidgetLabel: "Call now",
 
   ogLocale: "en_GB",
   ogTypeWebsite: "website",
@@ -44,8 +48,10 @@ export default {
   navBlog: "Blog",
 
   countryAustria: "Austria",
+  countryGermany: "Germany",
   linkTowGraz: "Tow truck in Graz",
   linkTowVienna: "Tow truck in Vienna",
+  linkTowBerlin: "Tow truck in Berlin",
 
   skipToContentMain: "Skip to main content",
 
@@ -68,9 +74,11 @@ export default {
   footerCopyright: "© 2025 Europe-Evakuator",
 
   ariaCall: "Call",
+  ariaEmail: "Send email",
   ariaTelegram: "Telegram",
   ariaWhatsapp: "WhatsApp",
   titleCall: "Call",
+  titleEmail: "Email",
   titleTelegram: "Telegram",
   titleWhatsapp: "WhatsApp",
 

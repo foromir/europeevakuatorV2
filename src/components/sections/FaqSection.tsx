@@ -33,11 +33,14 @@ export function FaqSection() {
                   }}
                   role="button"
                   tabIndex={0}
+                  aria-expanded={activeIndex === index}
                 >
                   {item.title}
                 </div>
                 <div className="accordion-content">
-                  <p>{item.body}</p>
+                  <div className="accordion-content__inner">
+                    <p>{item.body}</p>
+                  </div>
                 </div>
               </div>
             ))}

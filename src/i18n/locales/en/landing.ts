@@ -1,4 +1,4 @@
-import { ROUTE_PATH } from "../../routeConfig";
+import { ROUTE_PATH, BLOG_IMAGE } from "../../routeConfig";
 import { evacuationBlockShared } from "./common";
 
 /** Section copy for home / Austria (shared blocks), EN */
@@ -141,26 +141,10 @@ export default {
   },
   reviews: {
     title: "Client reviews",
-    cards: [
-      {
-        initials: "AK",
-        name: "Andriy K.",
-        city: "Graz, Austria",
-        text: "Broke down near Graz. Called — tow truck arrived in 25 minutes. Price quoted upfront, no extras. Recommend.",
-      },
-      {
-        initials: "MS",
-        name: "Maria S.",
-        city: "Vienna, Austria",
-        text: "Transported a car from Vienna to Ukraine. Clear on paperwork, timing and securing. Will use again.",
-      },
-      {
-        initials: "DP",
-        name: "Dmytro P.",
-        city: "Ljubljana, Slovenia",
-        text: "Needed urgent pickup after an accident. Operator clarified everything, arrived on time, delivered to the workshop without new damage.",
-      },
-    ],
+    subtitle: "Real reviews from our Google Business Profile",
+    widgetTitle: "Europe-Evakuator reviews on Google",
+    widgetPlaceholder: "Add VITE_GOOGLE_MAPS_EMBED_SRC to .env — embed code from Google Maps.",
+    viewOnGoogle: "All reviews on Google",
   },
   faq: {
     title: "FAQ about tow trucks in Europe",
@@ -192,31 +176,37 @@ export default {
   blog: {
     title: "Blog",
     subtitle: "Articles on recovery, car transport and roadside help in Europe",
+    eyebrow: "Driver tips",
+    articlesCount: "{count} articles",
     readMore: "Read",
+    viewAll: "All articles",
     posts: [
       {
         href: ROUTE_PATH.BLOG_POST_BREAKDOWN_ABROAD,
-        dateIso: "2025-03-01",
-        dateLabel: "March 1, 2025",
+        dateIso: "2026-06-10",
+        dateLabel: "June 10, 2026",
         title: "What to do if your car breaks down abroad",
         excerpt: "Step by step: calling a tow truck, paperwork and getting the car to a workshop.",
+        imagePath: BLOG_IMAGE.BREAKDOWN_ABROAD,
         imageAlt: "Car breakdown abroad — tow truck in Europe",
       },
       {
-        href: "#",
-        dateIso: "2025-02-15",
-        dateLabel: "February 15, 2025",
+        href: ROUTE_PATH.BLOG_POST_ACCIDENT_INSURANCE,
+        dateIso: "2026-05-22",
+        dateLabel: "May 22, 2026",
         title: "Recovery after an accident: rights and insurance",
         excerpt: "What to do after a crash in the EU, which documents you need and how recovery is paid.",
-        imageAlt: "",
+        imagePath: BLOG_IMAGE.ACCIDENT_INSURANCE,
+        imageAlt: "Recovery after an accident in Europe",
       },
       {
-        href: "#",
-        dateIso: "2025-02-01",
-        dateLabel: "February 1, 2025",
+        href: ROUTE_PATH.BLOG_POST_INTERNATIONAL_TRANSPORT,
+        dateIso: "2026-04-18",
+        dateLabel: "April 18, 2026",
         title: "Car transport between European countries",
         excerpt: "International transport: routes, timing and cost from anywhere in the EU.",
-        imageAlt: "",
+        imagePath: BLOG_IMAGE.INTERNATIONAL_TRANSPORT,
+        imageAlt: "Car transport between European countries",
       },
     ],
   },
@@ -228,13 +218,13 @@ export default {
         flagAlt: "Austria flag",
         country: "Austria",
         countryHref: ROUTE_PATH.AUSTRIA,
-        grazLabel: "Graz",
-        grazHref: ROUTE_PATH.AUSTRIA_GRAZ,
+        featuredCityLabel: "Graz",
+        featuredCityHref: ROUTE_PATH.AUSTRIA_GRAZ,
         citiesRest: "Vienna, Linz, Salzburg, Innsbruck, Klagenfurt",
       },
       { code: "hr", flagAlt: "Croatia flag", country: "Croatia", citiesLine: "Zagreb, Dubrovnik, Split, Rijeka, Zadar" },
       { code: "cz", flagAlt: "Czechia flag", country: "Czechia", citiesLine: "Prague, Brno, Ostrava, Plzeň, Liberec" },
-      { code: "de", flagAlt: "Germany flag", country: "Germany", citiesLine: "Munich, Berlin, Frankfurt, Hamburg, Cologne" },
+      { code: "de", flagAlt: "Germany flag", country: "Germany", countryHref: ROUTE_PATH.GERMANY, featuredCityLabel: "Berlin", featuredCityHref: ROUTE_PATH.GERMANY_BERLIN, citiesRest: "Munich, Frankfurt, Hamburg, Cologne" },
       { code: "hu", flagAlt: "Hungary flag", country: "Hungary", citiesLine: "Budapest, Debrecen, Pécs, Szeged, Miskolc" },
       { code: "it", flagAlt: "Italy flag", country: "Italy", citiesLine: "Rome, Milan, Naples, Venice, Bologna" },
       { code: "sk", flagAlt: "Slovakia flag", country: "Slovakia", citiesLine: "Bratislava, Košice, Nitra, Žilina, Trnava" },

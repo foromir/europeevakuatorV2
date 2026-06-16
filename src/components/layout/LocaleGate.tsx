@@ -2,7 +2,7 @@ import { useCallback, useMemo } from "react";
 import { Helmet } from "react-helmet-async";
 import { Navigate, Outlet, useLocation, useNavigate, useParams } from "react-router";
 import { buildI18nValue, I18nProvider } from "../../i18n/I18nContext";
-import { isLocale, persistLocalePreference, swapLocaleInPathname, withLocale } from "../../i18n/routeConfig";
+import { DEFAULT_LOCALE, isLocale, persistLocalePreference, swapLocaleInPathname, withLocale } from "../../i18n/routeConfig";
 import type { Locale } from "../../i18n/types";
 
 /** Валидирует `:lang`, собирает `I18nValue` из URL и даёт `<Outlet />`. */
@@ -12,7 +12,7 @@ export function LocaleGate() {
   const navigate = useNavigate();
 
   if (!isLocale(lang ?? "")) {
-    return <Navigate to={`/ru${pathname}`} replace />;
+    return <Navigate to={`/${DEFAULT_LOCALE}${pathname}`} replace />;
   }
 
   const locale = lang as Locale;

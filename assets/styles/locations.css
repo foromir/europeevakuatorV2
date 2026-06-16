@@ -48,6 +48,11 @@
   gap: 8px;
   text-decoration: none;
   color: inherit;
+  transition: color 0.2s ease;
+}
+
+.locations-list__country:hover {
+  color: var(--secondary-color);
 }
 
 .locations-list__flag {
@@ -63,12 +68,16 @@
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-sm);
   color: var(--text-muted);
-  text-decoration: none;
 }
 
-.locations-list__cities a {
+.locations-list__city-link {
   color: inherit;
   text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.locations-list__city-link:hover {
+  color: var(--secondary-color);
 }
 
 .locations-items--cities {

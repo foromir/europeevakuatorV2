@@ -1,5 +1,6 @@
 import { ROUTE_PATH } from "../../../routeConfig";
-import type { PageSeoBundle } from "../../../types";
+import type { LandingEvacuationCopy, PageSeoBundle } from "../../../types";
+import { evacuationBlockShared } from "../common";
 
 const seo: PageSeoBundle = {
   title: "24/7 Tow truck in Berlin — Recovery and transport",
@@ -12,6 +13,38 @@ const seo: PageSeoBundle = {
   ogUrlPath: ROUTE_PATH.GERMANY_BERLIN,
   twitterTitle: "24/7 Tow truck in Berlin",
   twitterDescription: "Car recovery and transport in Berlin. Roadside assistance.",
+  ogImagePath: "/assets/images/gallery/gallery-20.jpeg",
 };
 
-export default { seo } as const;
+const evacuation: LandingEvacuationCopy = {
+  ...evacuationBlockShared,
+  badge: "Berlin & Brandenburg — 24/7",
+  titleRest: "Tow truck in Berlin",
+  subtitle: "Recovery, workshop delivery and intercity routes",
+  text:
+    "24/7 tow truck in Berlin and Brandenburg: motorway breakdown, accident recovery, delivery to a workshop or parking. Fast dispatch, transparent pricing.",
+  slideAlts: [
+    "Tow truck in Berlin — 24/7 dispatch",
+    "Car recovery in Berlin and Brandenburg",
+    "Loading a vehicle onto a tow truck in Berlin",
+  ],
+};
+
+const landing = {
+  directions: {
+    title: "Popular routes from Berlin",
+    lead: "Tow truck from Berlin — transport across Germany and neighbouring countries:",
+    list: [
+      "Berlin — Hamburg",
+      "Berlin — Munich",
+      "Berlin — Frankfurt",
+      "Berlin — Dresden",
+      "Berlin — Prague",
+      "Berlin — Warsaw",
+      "Berlin — Copenhagen",
+    ],
+    more: "and other routes on request",
+  },
+} as const;
+
+export default { seo, evacuation, landing } as const;

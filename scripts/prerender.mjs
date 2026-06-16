@@ -25,14 +25,17 @@ const paths = getPrerenderPaths();
 for (const url of paths) {
   const { html, head, htmlLang } = render(url);
   const pageHtml = template
-    .replace('<!--app-head-->', head)
-    .replace('<!--app-html-->', html)
-    .replace('<html lang="ru">', `<html lang="${htmlLang}">`);
+    .replace("<!--app-head-->", head)
+    .replace("<!--app-html-->", html)
+    .replace('<html lang="de">', `<html lang="${htmlLang}">`);
 
   const relative = url.replace(/^\//, "");
-  const outDir = path.join(dist, relative);
-  fs.mkdirSync(outDir, { recursive: true });
-  fs.writeFileSync(path.join(outDir, "index.html"), pageHtml);
+  const outFile = relative.endsWith(".html")
+    ? path.join(dist, relative)
+    : path.join(dist, relative, "index.html");
+
+  fs.mkdirSync(path.dirname(outFile), { recursive: true });
+  fs.writeFileSync(outFile, pageHtml);
   console.log(`  prerendered ${url}`);
 }
 

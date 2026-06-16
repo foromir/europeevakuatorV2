@@ -1,4 +1,5 @@
 import { useI18n } from "../../i18n/I18nContext";
+import { GOOGLE_MAPS_EMBED_SRC, GOOGLE_MAPS_PLACE_URL } from "../../i18n/routeConfig";
 
 export function ReviewsSection() {
   const { common } = useI18n();
@@ -7,23 +8,38 @@ export function ReviewsSection() {
   return (
     <section className="reviews" id="reviews">
       <div className="container">
-        <h2 className="reviews__title">{r.title}</h2>
-        <div className="reviews__grid">
-          {r.cards.map((card) => (
-            <article key={card.name} className="reviews__card">
-              <div className="reviews__card-header">
-                <div className="reviews__avatar" aria-hidden="true">
-                  {card.initials}
-                </div>
-                <div>
-                  <div className="reviews__name">{card.name}</div>
-                  <div className="reviews__city">{card.city}</div>
-                </div>
-              </div>
-              <p className="reviews__text">{card.text}</p>
-            </article>
-          ))}
-        </div>
+        <header className="reviews__header">
+          <h2 className="reviews__title">{r.title}</h2>
+          {r.subtitle ? <p className="reviews__subtitle">{r.subtitle}</p> : null}
+        </header>
+
+        {GOOGLE_MAPS_EMBED_SRC ? (
+          <div className="reviews__widget">
+            <iframe
+              title={r.widgetTitle}
+              src={GOOGLE_MAPS_EMBED_SRC}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
+        ) : (
+          <p className="reviews__placeholder">{ }</p>
+        )}
+
+        {GOOGLE_MAPS_PLACE_URL ? (
+          <div className="reviews__footer">
+            <a
+              href={GOOGLE_MAPS_PLACE_URL}
+              className="reviews__google-cta"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-google" aria-hidden="true" />
+              {r.viewOnGoogle}
+            </a>
+          </div>
+        ) : null}
       </div>
     </section>
   );
