@@ -3,7 +3,6 @@
   justify-content: space-evenly;
   align-items: center;
   padding: 40px 0 40px 0;
-  background- color: var(--secondary-color);
   background: var(--background-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -12,30 +11,29 @@
 
 .form__text {
   color: #000000;
-  font-size: 30px;
-  line-height: 1;
-  font-weight: 600;
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-xs);
+  font-weight: var(--font-weight-md);
 }
 
 .form__form-label {
   display: block;
   color: rgb(0, 0, 0);
   padding-bottom: 5px;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-md);
 }
 
 .form__form-input {
   color: rgb(0, 0, 0);
   border: 1px solid rgb(0, 0, 0);
-  background- color: var(--secondary-color);
   background: var(--background-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   border-radius: 5px;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-md);
   height: 50px;
   width: 283px;
 }
@@ -43,15 +41,15 @@
 .form__form-button {
   padding: 0px 15px;
   width: 140px;
-  font-weight: 600;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-md);
   height: 50px;
-   color: var(--secondary-color);
+  color: var(--secondary-color);
   background: var(--background-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   border-radius: 5px;
-  font-size: 17px;
   cursor: pointer;
   background-color: #000000;
 }

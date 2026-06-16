@@ -1,0 +1,140 @@
+/* Блок «Цифры» */
+.stats {
+  padding: var(--section-padding);
+}
+
+.stats__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(24px, 5vw, 48px);
+}
+
+.stats__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 140px;
+  transition: transform 0.25s ease;
+}
+
+.stats__item:hover {
+  transform: translateY(-4px);
+}
+
+.stats__number {
+  font-size: var(--font-size-2xlg);
+  font-weight: var(--font-weight-lg);
+  line-height: var(--line-height-xs);
+  background: var(--background-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: transform 0.3s ease;
+}
+
+.stats__item:hover .stats__number {
+  transform: scale(1.08);
+}
+
+.stats__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--text-body-weight);
+  color: var(--text-color);
+  margin-top: 4px;
+  opacity: 0.9;
+}
+
+@media (max-width: 576px) {
+  .stats__wrapper {
+    flex-direction: column;
+  }
+}
+
+/* Отзывы */
+.reviews {
+  padding: var(--section-padding);
+}
+
+.reviews__title {
+  font-size: var(--section-title-font-size);
+  font-weight: var(--font-weight-lg);
+  text-align: center;
+  margin: var(--section-title-margin-top) 0 var(--section-title-margin-bottom);
+  background: var(--background-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.reviews__card {
+  background: var(--bg-elevated);
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.reviews__card:hover {
+  border-color: var(--border-color-hover);
+  box-shadow: var(--shadow-hover);
+}
+
+.reviews__card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.reviews__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--background-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-lg);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.reviews__name {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-lg);
+  color: var(--text-color);
+}
+
+.reviews__city {
+  font-size: var(--font-size-xs);
+  font-weight: var(--text-body-weight);
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.reviews__text {
+  font-size: var(--font-size-xs);
+  font-weight: var(--text-body-weight);
+  line-height: var(--line-height-lg);
+  color: var(--text-muted-strong);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .reviews__title {
+    font-size: var(--section-title-font-size-sm);
+  }
+
+  .reviews__grid {
+    grid-template-columns: 1fr;
+  }
+}

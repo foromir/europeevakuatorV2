@@ -75,55 +75,177 @@
   box-sizing: border-box;
 }
 
+/* Плавный скролл по якорям */
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
-  /* Main colors */
-  --primary-color: #2c3e50;
-  /* main brand color */
-  --secondary-color: #FFA000;
-  /* accent color */
-  --text-color: #ffffff;
-  /*  main text */
-  --bg-color: #212121;
-  /* background */
-  --bg-color-main: #181818;
-  /* background */
-  --hover-color: #fe893c;
-  /* hover states */
+  /* Цветовая схема: два фона для чередования секций + один для карточек */
+  --bg-color-main: #1a1a1e;
+  --bg-color: #242428;
+  --bg-elevated: #2e2e32;
+  --text-color: #fafafa;
+  --text-muted: rgba(250, 250, 250, 0.62);
+  --text-muted-strong: rgba(250, 250, 250, 0.9);
+  --border-color: rgba(255, 255, 255, 0.09);
+  --border-color-hover: rgba(245, 158, 11, 0.35);
 
-  /* Effects */
-  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;
-  --header-gradient: linear-gradient(to right, #da560f 0%, #FFA000 50%, #da560f 100%);
-  --background-gradient: linear-gradient(to right, #FFA000, #da560f);
-  --section-padding: 80px 0;
+  --accent: #f59e0b;
+  --accent-strong: #ea580c;
+  --primary-color: #18181b;
+  --secondary-color: #f59e0b;
+  --hover-color: #fbbf24;
+  --hover-text-color: var(--secondary-color);
 
-  --shadow-gradient: 0 0 20px rgba(255, 255, 255, 0.3),
-    0 0 40px rgba(255, 255, 255, 0.2),
-    0 0 60px rgba(255, 255, 255, 0.1);
+  --header-gradient: linear-gradient(135deg, rgba(234, 88, 12, 0.92) 0%, rgba(245, 158, 11, 0.92) 50%, rgba(234, 88, 12, 0.92) 100%);
+  --background-gradient: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  --background-gradient-soft: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(234, 88, 12, 0.08) 100%);
+
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.35);
+  --shadow-glow: 0 0 24px rgba(245, 158, 11, 0.15);
+
+  /* Типографика: xs / sm / md / lg / xlg / 2xlg */
+  --font-size-xs: 14px;
+  --font-size-sm: 16px;
+  --font-size-md: 18px;
+  --font-size-lg: 24px;
+  --font-size-xlg: 32px;
+  --font-size-2xlg: 48px;
+  --font-weight-xs: 300;
+  --font-weight-sm: 400;
+  --font-weight-md: 600;
+  --font-weight-lg: 700;
+  --line-height-xs: 1.1;
+  --line-height-sm: 1.25;
+  --line-height-md: 1.5;
+  --line-height-lg: 1.6;
+  /* Семантика */
+  --text-body-size: var(--font-size-sm);
+  --text-body-weight: var(--font-weight-sm);
+  --text-lead-size: var(--font-size-md);
+  --text-lead-weight: var(--font-weight-xs);
+  --text-caption-size: var(--font-size-xs);
+  --text-caption-weight: var(--font-weight-sm);
+  --text-label-weight: var(--font-weight-md);
+  --heading-card-size: var(--font-size-lg);
+  --heading-card-weight: var(--font-weight-lg);
+  --heading-step-size: var(--font-size-md);
+  --heading-step-weight: var(--font-weight-md);
+
+  /* Отступы секций и заголовков */
+  --section-spacing: clamp(64px, 8vh, 100px);
+  --section-padding: var(--section-spacing) 0;
+  --section-title-margin-top: 0;
+  --section-title-margin-bottom: clamp(24px, 4vh, 48px);
+  --section-title-font-size: var(--font-size-xlg);
+  --section-title-font-size-sm: var(--font-size-lg);
+  --section-subtitle-margin-bottom: clamp(16px, 2.5vh, 32px);
+
+  --transition: all 0.25s ease;
+  --shadow-gradient: 0 0 20px rgba(245, 158, 11, 0.2),
+    0 0 40px rgba(245, 158, 11, 0.1);
+}
+
+/* Анимации появления и декора */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatBlob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(4%, -3%) scale(1.05); }
+  66% { transform: translate(-2%, 2%) scale(0.98); }
+}
+
+@keyframes shine {
+  0% { background-position: -120% 0; }
+  100% { background-position: 220% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @keyframes fadeInUp {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes floatBlob {
+    0%, 100% { transform: translate(0, 0); }
+  }
 }
 
 :root {
   /* Shared design tokens */
-  --description-bg: #181818;
-  --description-border-radius: 10px;
+  --description-bg: var(--bg-elevated);
+  --description-border-radius: 12px;
   --description-padding: 10px;
   --icon-size-mobile: 35px;
   --icon-size-desktop: 41px;
 }
 
 body {
-  font-family: TildaSans, "Arial", Arial, sans-serif;
-  line-height: 1.5;
-  font-size: 14px;
+  font-family: "Manrope", TildaSans, Arial, sans-serif;
+  line-height: var(--line-height-md);
+  font-size: var(--text-body-size);
+  font-weight: var(--text-body-weight);
   color: var(--text-color);
   background: var(--bg-color-main);
-  padding-top: 96px;
-  /* отступ под фиксированный header, как на сайте */
+  padding-top: 80px;
+  /* Лёгкий градиент/фон без перегруза */
+  background-image:
+    radial-gradient(ellipse 100% 80% at 50% 0%, rgba(245, 158, 11, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 60% at 100% 100%, rgba(234, 88, 12, 0.04) 0%, transparent 45%);
+  background-color: var(--bg-color-main);
 }
 
 main {
-  padding-top: 25px;
   padding-bottom: 40px;
+}
+
+/* Чередование фона секций: нечётные и чётные */
+main>section:nth-of-type(odd) {
+  background-color: var(--bg-color-main);
+}
+
+main>section:nth-of-type(even) {
+  background-color: var(--bg-color);
+}
+
+/* Декоративные элементы: тонкая градиентная линия сверху и снизу секции */
+main>section {
+  position: relative;
+}
+
+main>section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(245, 158, 11, 0.15) 30%, rgba(245, 158, 11, 0.4) 50%, rgba(245, 158, 11, 0.15) 70%, transparent 100%);
+}
+
+main>section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(245, 158, 11, 0.15) 30%, rgba(245, 158, 11, 0.4) 50%, rgba(245, 158, 11, 0.15) 70%, transparent 100%);
+}
+
+.evacuation-block::before,
+.evacuation-block::after {
+  display: none;
 }
 
 .container {
@@ -164,13 +286,45 @@ main {
   }
 }
 
+/* Ссылка «Перейти к содержанию» для скринридеров и клавиатуры */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 12px 16px;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-md);
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
+}
+
+/* Скрытый визуально, но доступный скринридерам */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .text-highlight {
   color: var(--secondary-color);
   background: var(--background-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-md);
   text-decoration: underline;
 }

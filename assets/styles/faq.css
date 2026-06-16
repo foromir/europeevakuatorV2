@@ -1,10 +1,9 @@
 /*  FAQ Component Variables  */
 .faq {
-  /* Typography */
-  --faq-title-size: 38px;
-  --faq-subtitle-size: 22px;
-  --faq-content-size: 14px;
-  --faq-header-size: 18px;
+  /* Typography — из дизайн-системы */
+  --faq-subtitle-size: var(--text-lead-size);
+  --faq-content-size: var(--font-size-xs);
+  --faq-header-size: var(--font-size-md);
 
   /* Spacing */
   --faq-padding-top: 40px;
@@ -21,11 +20,11 @@
   --accordion-icon-position: 26px;
 
   /* Colors */
-  --accordion-bg: #212121;
-  --accordion-border: 3px solid var(--bg-color-main);
-  --accordion-header-color: #fe893c;
+  --accordion-bg: var(--bg-color);
+  --accordion-border: 1px solid var(--border-color);
+  --accordion-header-color: var(--hover-color);
   --accordion-icon-color: var(--secondary-color);
-  --subtitle-color: #ffffff;
+  --subtitle-color: var(--text-color);
 }
 
 /*  Base Structure  */
@@ -37,10 +36,11 @@
 }
 
 .faq__header {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 
 /*  Typography  */
@@ -48,9 +48,10 @@
   text-align: center;
   display: flex;
   justify-content: center;
-  font-size: var(--faq-title-size);
-  font-weight: 600;
-  line-height: 1.2;
+  font-size: var(--section-title-font-size);
+  font-weight: var(--font-weight-lg);
+  line-height: var(--line-height-xs);
+  margin: var(--section-title-margin-top) 0 var(--section-title-margin-bottom);
   color: var(--secondary-color);
   background: var(--background-gradient);
   -webkit-background-clip: text;
@@ -59,12 +60,13 @@
 }
 
 .faq__subtitle {
-  font-size: var(--faq-subtitle-size);
-  line-height: 1.6;
-  font-weight: 300;
+  font-size: var(--text-lead-size);
+  line-height: var(--line-height-lg);
+  font-weight: var(--text-lead-weight);
   color: var(--subtitle-color);
   text-align: center;
   max-width: 800px;
+  margin-bottom: var(--section-subtitle-margin-bottom);
 }
 
 /*  Accordion Component  */
@@ -93,14 +95,14 @@
   max-height: var(--accordion-max-header-height);
   padding: var(--faq-content-padding);
   cursor: pointer;
-  font-weight: 600;
+  font-weight: var(--font-weight-md);
   font-size: var(--faq-header-size);
   position: relative;
   transition: background-color 0.2s ease;
 }
 
 .accordion-header:hover {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: var(--border-color);
 }
 
 /* Accordion Icon */
@@ -144,8 +146,8 @@
   max-height: 500px;
   padding: var(--faq-content-padding);
   font-size: var(--faq-content-size);
-  font-weight: 300;
-  line-height: 1.5;
+  font-weight: var(--font-weight-xs);
+  line-height: var(--line-height-md);
 }
 
 /*  Responsive Adjustments  */
@@ -158,9 +160,12 @@
 }
 
 @media (max-width: 768px) {
+  .faq__title {
+    font-size: var(--section-title-font-size-sm);
+  }
+
   .faq {
-    --faq-title-size: 32px;
-    --faq-subtitle-size: 18px;
+    --faq-subtitle-size: var(--font-size-md);
     --faq-content-size: 13px;
     --faq-header-size: 16px;
     --faq-padding-top: 24px;

@@ -1,0 +1,46 @@
+import { useParams } from "react-router";
+import { Layout } from "../../components/layout";
+import {
+  EvacuationBlockSection,
+  EvacuationStripBlock,
+  CitiesAustriaSection,
+  WorkflowSection,
+  StatsSection,
+  PricingSection,
+  ServicesSection,
+  PopularDirectionsSection,
+  GallerySection,
+  ReviewsSection,
+  FaqSection,
+  BlogSection,
+  LocationsSection,
+} from "../../components/sections";
+import { useI18n } from "@/i18n/I18nContext";
+
+export function CityStubPage() {
+  const { country, city } = useParams<{ country: string; city: string }>();
+  const { routes } = useI18n();
+
+  const content = routes[`${country}/${city}`];
+
+  console.log("routes", routes);
+  console.log("content", content);
+
+  return (
+    <Layout seo={content?.seo}>
+      <EvacuationBlockSection content={content?.evacuation} />
+      <EvacuationStripBlock />
+      <CitiesAustriaSection />
+      <WorkflowSection />
+      <StatsSection />
+      <PricingSection />
+      <ServicesSection />
+      <PopularDirectionsSection />
+      <GallerySection />
+      <ReviewsSection />
+      <FaqSection />
+      <BlogSection />
+      <LocationsSection />
+    </Layout>
+  );
+}

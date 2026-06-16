@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- cabin -->
+  <path d="M18 40h10v-6l5-6h6l5 6v6h8"/>
+  <path d="M18 40h-4l-4-6h5l2 3"/>
+  <path d="M52 40h4l4-6h-5l-2 3"/>
+  <!-- platform / trailer -->
+  <path d="M28 40h24v6H28z"/>
+  <path d="M28 40V36h2v4"/>
+  <!-- wheels -->
+  <circle cx="22" cy="48" r="5"/>
+  <circle cx="38" cy="48" r="5"/>
+  <circle cx="52" cy="48" r="5"/>
+</svg>

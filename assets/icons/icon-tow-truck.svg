@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- flatbed truck icon, stylistically close to strip icons -->
+  <!-- cabin and hook -->
+  <path d="M40 28h6v-4l4-6h4v10h-4" />
+  <!-- flatbed -->
+  <rect x="10" y="30" width="30" height="10" rx="2" />
+  <!-- car on flatbed -->
+  <path d="M16 26h18v4H16z" />
+  <path d="M18 26v-2c0-.8.5-1.5 1.2-1.5h13.6c.7 0 1.2.7 1.2 1.5v2" />
+  <!-- wheels -->
+  <circle cx="16" cy="42" r="4" />
+  <circle cx="30" cy="42" r="4" />
+  <circle cx="46" cy="42" r="4" />
+</svg>

@@ -1,150 +1,138 @@
+/* Блок «Как мы работаем» — шаги с номерами и карточками */
 
 .workflow {
   padding: var(--section-padding);
 }
 
-.workflow__wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.workflow__title-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 100px;
-   color: var(--secondary-color);
-  background: var(--background-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-align: center;
-}
-
 .workflow__title {
+  font-size: var(--section-title-font-size);
+  font-weight: var(--font-weight-lg);
+  text-align: center;
+  margin: var(--section-title-margin-top) 0 8px;
   background: var(--background-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-size: 42px;
-  font-weight: 600;
+}
+
+.workflow__subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  text-align: center;
+  margin: 0 0 clamp(32px, 5vh, 48px);
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .workflow__steps {
   display: flex;
-  gap: 40px;
+  align-items: stretch;
+  gap: clamp(24px, 4vw, 48px);
+  position: relative;
 }
 
 .workflow__step {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  min-height: 140px;
-  margin-bottom: 45px;
-  flex-direction: column;
-  max-width: 33%;
-}
-
-.workflow__step:last-child {
-  margin-bottom: 0;
-}
-
-.workflow__step-content {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  max-width: 640px;
+  align-items: center;
+  min-width: 0;
+  padding: 0 clamp(12px, 2vw, 20px);
+}
+
+/* Карточка шага */
+.workflow__step-card {
+  flex: 1;
+  width: 100%;
+  padding: clamp(20px, 3vw, 28px);
+  border-radius: 16px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.workflow__step-card:hover {
+  border-color: var(--border-color-hover);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-4px);
+}
+
+.workflow__step-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(245, 158, 11, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.workflow__step-icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 
 .workflow__step-title {
-  font-size: 22px;
-  line-height: 1.35;
-  font-weight: 600;
-  margin-bottom: 10px;
-   color: var(--secondary-color);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-lg);
+  line-height: var(--line-height-sm);
+  margin: 0 0 12px;
+  color: var(--text-color);
   background: var(--background-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  width: 100%;
-  text-align: center;
 }
 
 .workflow__step-description {
-  font-size: 15px;
-  font-weight: 300;
-}
-.workflow__step-description span {
-  display: block;
-  font-weight: 400;
-}
-
-.workflow__step-image {
-  position: relative; 
-   margin: 0 auto;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-xs);
+  line-height: var(--line-height-lg);
+  color: var(--text-muted-strong);
+  margin: 0;
 }
 
-.workflow__step-image img {
-  width: 94px;
-  height: 94px;
-  border-radius: 50%;
-  position: relative;
-  background: var(--background-gradient);
-  box-shadow: var(--shadow-gradient);
-}
-
-.workflow__step-image img {
-  object-fit: none;
-  width: 100%;
-}
-
-
-/* Tablet styles (downscale from desktop) */
+/* Планшет: шаги в колонку */
 @media (max-width: 992px) {
-  .workflow__title-container {
-    margin-bottom: 65px;
-  }
-
   .workflow__title {
-    font-size: 38px;
-  }
-
-  .workflow__step-content {
-    max-width: 500px;
-  }
-
-  .workflow__step-title {
-    font-size: 20px;
-  }
-
-  .workflow__step-description {
-    font-size: 14px;
-  }
-}
-
-/* Mobile styles (smallest screens) */
-@media (max-width: 768px) {
-  .workflow__title-container {
-    margin-bottom: 45px;
+    font-size: var(--section-title-font-size-sm);
   }
 
   .workflow__steps {
     flex-direction: column;
-    gap: 0;
+    gap: 32px;
+    max-width: 520px;
+    margin: 0 auto;
   }
+
   .workflow__step {
-    gap: 15px;
-    min-height: 175px;
-    max-width: 100%;
+    padding: 0 16px;
   }
 
-  .workflow__step-image::before {
-    height: 200px;
+  .workflow__step-icon {
+    margin-left: 0;
+  }
+}
+
+/* Мобильный */
+@media (max-width: 576px) {
+  .workflow__subtitle {
+    margin-bottom: 28px;
   }
 
-  .workflow__step-image {
-    width: 100%;
-    max-width: 94px;
+  .workflow__step-card {
+    padding: 20px 18px;
+  }
+
+  .workflow__step-title {
+    font-size: var(--font-size-sm);
   }
 }

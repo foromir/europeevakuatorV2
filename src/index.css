@@ -1,0 +1,136 @@
+@import "../assets/styles/styles.css";
+@import "../assets/styles/header.css";
+@import "../assets/styles/evacuation-block.css";
+@import "../assets/styles/workflow.css";
+@import "../assets/styles/stats-reviews.css";
+@import "../assets/styles/pricing.css";
+@import "../assets/styles/services.css";
+@import "../assets/styles/gallery.css";
+@import "../assets/styles/faq.css";
+@import "../assets/styles/blog.css";
+@import "../assets/styles/locations.css";
+@import "../assets/styles/footer.css";
+@import "../assets/styles/form.css";
+
+:root {
+  color-scheme: dark;
+  --bg: #020617;
+  --bg-soft: #0f172a;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #fbbf24;
+  --code-bg: #1e293b;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app-main {
+  min-height: 100vh;
+  padding: 4rem 1.5rem;
+}
+
+.app-inner {
+  max-width: 36rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.app-kicker {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.app-title {
+  margin: 0;
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+
+.app-copy {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+code.app-code {
+  font-size: 0.875em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 0.25rem;
+  background: var(--code-bg);
+  color: #fde68a;
+}
+
+.page-root {
+  min-height: 100vh;
+  padding: 5rem 1.5rem;
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  color: var(--text);
+}
+
+.page-inner {
+  max-width: 48rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.page-kicker {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.page-title {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.page-copy {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+/* 404 и похожие узкие блоки */
+.route-stub {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.route-stub__title {
+  margin: 0 0 1rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.route-stub__lead {
+  margin: 0 0 1rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
