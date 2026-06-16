@@ -1,13 +1,6 @@
+import type { ReactNode } from "react";
 import { HelmetProvider } from "react-helmet-async";
-import { BrowserRouter } from "react-router";
-import { AppRoutes } from "./routes/AppRoutes";
 
-export function App() {
-  return (
-    <HelmetProvider>
-      <BrowserRouter>
-        <AppRoutes />
-      </BrowserRouter>
-    </HelmetProvider>
-  );
+export function App({ children }: { children: ReactNode }) {
+  return <HelmetProvider>{children}</HelmetProvider>;
 }

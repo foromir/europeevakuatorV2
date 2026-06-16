@@ -23,9 +23,6 @@ export function CityStubPage() {
 
   const content = routes[`${country}/${city}`];
 
-  console.log("routes", routes);
-  console.log("content", content);
-
   return (
     <Layout seo={content?.seo}>
       <EvacuationBlockSection content={content?.evacuation} />
