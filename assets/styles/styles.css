@@ -75,9 +75,10 @@
   box-sizing: border-box;
 }
 
-/* Плавный скролл по якорям */
+/* Плавный скролл по якорям + отступ под фиксированный хедер */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
 }
 
 :root {
@@ -143,6 +144,8 @@ html {
   --section-title-font-size-sm: var(--font-size-lg);
   --section-subtitle-margin-bottom: clamp(16px, 2.5vh, 32px);
 
+  --header-height: 80px;
+
   --transition: all 0.25s ease;
   --shadow-gradient: 0 0 20px rgba(245, 158, 11, 0.2),
     0 0 40px rgba(245, 158, 11, 0.1);
@@ -197,7 +200,7 @@ body {
   font-weight: var(--text-body-weight);
   color: var(--text-color);
   background: var(--bg-color-main);
-  padding-top: 80px;
+  padding-top: var(--header-height);
   /* Лёгкий градиент/фон без перегруза */
   background-image:
     radial-gradient(ellipse 100% 80% at 50% 0%, rgba(245, 158, 11, 0.06) 0%, transparent 50%),
@@ -280,9 +283,16 @@ main>section::after {
   }
 }
 
+@media (max-width: 992px) {
+  :root {
+    --header-height: 70px;
+  }
+}
+
 @media (max-width: 768px) {
-  body {
-    padding-top: 82px;
+  :root {
+    /* Хедер с height: auto — логотип ~76px + padding */
+    --header-height: 96px;
   }
 }
 

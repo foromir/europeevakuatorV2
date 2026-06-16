@@ -33,19 +33,19 @@ const evacuation: LandingEvacuationCopy = {
 
 const landing = {
   cities: {
-    title: "Graz districts and Styria",
-    lead: "We cover Graz and Styria — including industrial zones and motorways A2 and A9:",
+    title: "Cities in Styria",
+    lead: "We cover Graz and all of Styria — including industrial zones and motorways A2 and A9:",
     list: [
-      "Jakomini",
-      "Gries",
-      "Lend",
-      "Waltendorf",
-      "Mariatrost",
-      "Andritz",
-      "Eggenberg",
-      "Puntigam",
-      "Feldkirchen bei Graz",
+      "Weiz",
+      "Leoben",
+      "Gleisdorf",
+      "Kapfenberg",
+      "Bruck an der Mur",
       "Deutschlandsberg",
+      "Feldkirchen bei Graz",
+      "Köflach",
+      "Hartberg",
+      "Mürzzuschlag",
     ],
   },
   directions: {

@@ -2,7 +2,11 @@ import { EvacuationBlockSlider } from "../EvacuationBlockSlider";
 import { useI18n } from "../../i18n/I18nContext";
 import type { LandingEvacuationCopy } from "../../i18n/types";
 
-const EVACUATION_SLIDE_SRC = "/assets/images/gallery/gallery-18.jpeg";
+const EVACUATION_SLIDE_SRCS = [
+  "/assets/images/gallery/gallery-18.jpeg",
+  "/assets/images/gallery/gallery-2.jpeg",
+  "/assets/images/gallery/gallery-1.jpeg",
+] as const;
 
 type EvacuationBlockSectionProps = {
   /** Если не задано — берётся из `common.landing.evacuation`. */
@@ -13,8 +17,8 @@ export function EvacuationBlockSection({ content }: EvacuationBlockSectionProps)
   const { common } = useI18n();
   const e = content ?? common.landing.evacuation;
 
-  const slides = e.slideAlts.map((alt) => ({
-    src: EVACUATION_SLIDE_SRC,
+  const slides = e.slideAlts.map((alt, i) => ({
+    src: EVACUATION_SLIDE_SRCS[i] ?? EVACUATION_SLIDE_SRCS[0],
     alt,
     width: 560,
     height: 400,

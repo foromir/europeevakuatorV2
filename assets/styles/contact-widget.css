@@ -17,7 +17,7 @@ body:has(.contact-widget) {
   display: flex;
   align-items: center;
   gap: 8px;
-  max-width: 460px;
+  width: fit-content;
   margin: 0 auto;
   padding: 5px 8px 5px 5px;
   border-radius: 999px;
@@ -64,7 +64,7 @@ body:has(.contact-widget) {
 .contact-widget__social {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   flex-shrink: 0;
 }
 
@@ -72,8 +72,8 @@ body:has(.contact-widget) {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   background: var(--bg-elevated);
   color: var(--text-muted-strong);
@@ -88,7 +88,7 @@ body:has(.contact-widget) {
 }
 
 .contact-widget__social-link i {
-  font-size: 13px;
+  font-size: 15px;
 }
 
 @media (max-width: 420px) {
@@ -103,11 +103,11 @@ body:has(.contact-widget) {
   }
 
   .contact-widget__social-link {
-    width: 30px;
-    height: 30px;
+    width: 34px;
+    height: 34px;
   }
 
   .contact-widget__social-link i {
-    font-size: 12px;
+    font-size: 14px;
   }
 }

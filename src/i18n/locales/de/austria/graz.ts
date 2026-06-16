@@ -33,19 +33,19 @@ const evacuation: LandingEvacuationCopy = {
 
 const landing = {
   cities: {
-    title: "Grazer Bezirke und Steiermark",
-    lead: "Wir sind in Graz und der Steiermark im Einsatz — einschließlich Industriegebiete und Autobahnen A2 und A9:",
+    title: "Städte in der Steiermark",
+    lead: "Wir sind in Graz und der gesamten Steiermark im Einsatz — einschließlich Industriegebiete und Autobahnen A2 und A9:",
     list: [
-      "Jakomini",
-      "Gries",
-      "Lend",
-      "Waltendorf",
-      "Mariatrost",
-      "Andritz",
-      "Eggenberg",
-      "Puntigam",
-      "Feldkirchen bei Graz",
+      "Weiz",
+      "Leoben",
+      "Gleisdorf",
+      "Kapfenberg",
+      "Bruck an der Mur",
       "Deutschlandsberg",
+      "Feldkirchen bei Graz",
+      "Köflach",
+      "Hartberg",
+      "Mürzzuschlag",
     ],
   },
   directions: {

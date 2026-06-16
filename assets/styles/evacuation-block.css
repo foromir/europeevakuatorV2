@@ -464,9 +464,19 @@
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+.evacuation-block__strip-icon--amber {
+  filter: brightness(0) saturate(100%) invert(72%) sepia(48%) saturate(1126%) hue-rotate(359deg)
+    brightness(99%) contrast(93%);
+}
+
 .evacuation-block__strip-item:hover .evacuation-block__strip-icon {
   transform: scale(1.1);
   filter: brightness(1.15);
+}
+
+.evacuation-block__strip-item:hover .evacuation-block__strip-icon--amber {
+  filter: brightness(0) saturate(100%) invert(78%) sepia(52%) saturate(1240%) hue-rotate(359deg)
+    brightness(108%) contrast(96%);
 }
 
 .evacuation-block__strip-title {

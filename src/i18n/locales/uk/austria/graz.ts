@@ -33,19 +33,19 @@ const evacuation: LandingEvacuationCopy = {
 
 const landing = {
   cities: {
-    title: "Райони Граца та Штирія",
-    lead: "Працюємо в Граці та Штирії — включно з промзонами та автомагістралями A2 і A9:",
+    title: "Міста Штирії",
+    lead: "Працюємо в Граці та всій Штирії — включно з промзонами та автомагістралями A2 і A9:",
     list: [
-      "Jakomini",
-      "Gries",
-      "Lend",
-      "Waltendorf",
-      "Mariatrost",
-      "Andritz",
-      "Eggenberg",
-      "Puntigam",
-      "Feldkirchen bei Graz",
+      "Weiz",
+      "Leoben",
+      "Gleisdorf",
+      "Kapfenberg",
+      "Bruck an der Mur",
       "Deutschlandsberg",
+      "Feldkirchen bei Graz",
+      "Köflach",
+      "Hartberg",
+      "Mürzzuschlag",
     ],
   },
   directions: {
