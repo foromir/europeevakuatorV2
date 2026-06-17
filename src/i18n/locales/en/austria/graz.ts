@@ -4,29 +4,29 @@ import { styriaCityListForGraz } from "../../../austria/styriaCityList";
 import { evacuationBlockShared } from "../common";
 
 const seo: PageSeoBundle = {
-  title: "24/7 Tow truck in Graz — Roadside assistance in Austria",
+  title: "24/7 Tow truck from Graz — Roadside assistance in Austria",
   description:
-    "24/7 tow truck in Graz and Styria: roadside help, recovery and vehicle transport across Austria and to Ukraine. Fast dispatch, transparent pricing, no hidden fees.",
+    "24/7 tow truck from Graz and in Graz, Styria: roadside help, recovery and vehicle transport across Austria and to Ukraine. Fast dispatch, transparent pricing, no hidden fees.",
   canonicalPath: ROUTE_PATH.AUSTRIA_GRAZ,
-  ogTitle: "24/7 Tow truck in Graz — Roadside assistance in Austria",
+  ogTitle: "24/7 Tow truck from Graz — Roadside assistance in Austria",
   ogDescription:
-    "24/7 tow truck in Graz and Styria: roadside help, recovery and vehicle transport across Austria and to Ukraine. Fast dispatch, transparent pricing, no hidden fees.",
+    "Tow truck from Graz and in Graz, Styria: roadside help, recovery and vehicle transport across Austria and to Ukraine. Fast dispatch, transparent pricing.",
   ogUrlPath: ROUTE_PATH.AUSTRIA_GRAZ,
-  twitterTitle: "24/7 Tow truck in Graz — Roadside assistance in Austria",
+  twitterTitle: "24/7 Tow truck from Graz — Roadside assistance in Austria",
   twitterDescription:
-    "24/7 towing in Graz and Styria: recovery and transport across Austria. Fast service, no hidden fees.",
+    "Tow truck from Graz and in Graz: recovery and transport across Austria. Fast service, no hidden fees.",
   ogImagePath: "/assets/images/gallery/gallery-19.jpeg",
 };
 
 const evacuation: LandingEvacuationCopy = {
   ...evacuationBlockShared,
   badge: "Graz & Styria — 24/7 dispatch",
-  titleRest: "Tow truck in Graz",
+  titleRest: "Tow truck from Graz",
   subtitle: "Roadside help, recovery and car transport",
   text:
     "24/7 tow truck in Graz and Styria: highway breakdown, accident recovery, workshop or Ukraine transport. Roadside assistance across Austria — fast dispatch, clear pricing, no hidden fees.",
   slideAlts: [
-    "Tow truck in Graz — 24/7 dispatch",
+    "Tow truck from Graz — 24/7 dispatch",
     "Recovery and car transport in Styria",
     "Loading a vehicle onto a tow truck in Graz",
   ],

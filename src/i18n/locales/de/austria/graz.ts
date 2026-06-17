@@ -4,29 +4,29 @@ import { styriaCityListForGraz } from "../../../austria/styriaCityList";
 import { evacuationBlockShared } from "../common";
 
 const seo: PageSeoBundle = {
-  title: "Abschleppdienst 24/7 in Graz — Pannenhilfe in Österreich",
+  title: "Abschleppdienst 24/7 aus Graz — Pannenhilfe in Österreich",
   description:
-    "Abschleppdienst rund um die Uhr in Graz und der Steiermark: Pannenhilfe, Bergung und Fahrzeugtransport in ganz Österreich und in die Ukraine. Schneller Einsatz, transparente Preise, keine versteckten Kosten.",
+    "Abschleppdienst rund um die Uhr aus Graz und in Graz, Steiermark: Pannenhilfe, Bergung und Fahrzeugtransport in ganz Österreich und in die Ukraine. Schneller Einsatz, transparente Preise, keine versteckten Kosten.",
   canonicalPath: ROUTE_PATH.AUSTRIA_GRAZ,
-  ogTitle: "Abschleppdienst 24/7 in Graz — Pannenhilfe in Österreich",
+  ogTitle: "Abschleppdienst 24/7 aus Graz — Pannenhilfe in Österreich",
   ogDescription:
-    "Abschleppdienst rund um die Uhr in Graz und der Steiermark: Pannenhilfe, Bergung und Fahrzeugtransport in ganz Österreich und in die Ukraine. Schneller Einsatz, transparente Preise, keine versteckten Kosten.",
+    "Abschleppdienst aus Graz und in Graz, Steiermark: Pannenhilfe, Bergung und Fahrzeugtransport in ganz Österreich und in die Ukraine. Schneller Einsatz, transparente Preise.",
   ogUrlPath: ROUTE_PATH.AUSTRIA_GRAZ,
-  twitterTitle: "Abschleppdienst 24/7 in Graz — Pannenhilfe in Österreich",
+  twitterTitle: "Abschleppdienst 24/7 aus Graz — Pannenhilfe in Österreich",
   twitterDescription:
-    "Abschleppdienst in Graz und der Steiermark rund um die Uhr: Bergung und Transport in ganz Österreich. Schneller Service, keine versteckten Kosten.",
+    "Abschleppdienst aus Graz und in Graz: Bergung und Transport in ganz Österreich. Schneller Service, keine versteckten Kosten.",
   ogImagePath: "/assets/images/gallery/gallery-19.jpeg",
 };
 
 const evacuation: LandingEvacuationCopy = {
   ...evacuationBlockShared,
   badge: "Graz & Steiermark — Einsatz 24/7",
-  titleRest: "Abschleppdienst in Graz",
+  titleRest: "Abschleppdienst aus Graz",
   subtitle: "Pannenhilfe, Bergung und Fahrzeugtransport",
   text:
     "Abschleppdienst 24/7 in Graz und der Steiermark: Autobahnpanne, Unfallbergung, Transport zur Werkstatt oder in die Ukraine. Pannenhilfe in ganz Österreich — schneller Einsatz, klare Preise, keine versteckten Kosten.",
   slideAlts: [
-    "Abschleppdienst in Graz — Einsatz rund um die Uhr",
+    "Abschleppdienst aus Graz — Einsatz rund um die Uhr",
     "Bergung und Fahrzeugtransport in der Steiermark",
     "Aufladen eines Fahrzeugs auf den Abschleppwagen in Graz",
   ],

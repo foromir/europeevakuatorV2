@@ -1,4 +1,5 @@
 import { messages } from "../locales";
+import { localizedCityName } from "../locales/transliterate/germanPlaceName";
 import { getLocationCityByRouteKey, getLocationCountryByRouteSlug } from "../locations/registry";
 import { ROUTE_PATH, SITE_ORIGIN, absUrl, withLocale } from "../routeConfig";
 import type { Locale } from "../types";
@@ -14,7 +15,7 @@ function areaNameFromRoute(routeKey: string, locale: Locale): string | undefined
   if (country && routeKey === country.routeSlug) return country.countryLabel[locale];
 
   const city = getLocationCityByRouteKey(routeKey);
-  if (city) return city.names[locale];
+  if (city) return localizedCityName(city.names, locale);
 
   if (routeKey === "austria/graz/jakomini") return "Jakomini";
 

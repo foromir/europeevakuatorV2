@@ -1,5 +1,8 @@
 import type { LocationCityDef } from "../locations/types";
+import { transliterateGermanPlaceName } from "../locales/transliterate/germanPlaceName";
 import { austriaSlugFromName } from "./slugFromName";
+import { styriaMetaToCityPageMeta } from "./styriaMetaLabels";
+import { STYRIA_MUNICIPALITY_META } from "./styriaMunicipalityMeta";
 import { STYRIA_MUNICIPALITY_NAMES } from "./styriaMunicipalities";
 
 type AustriaCityDef = LocationCityDef & { country: "at" };
@@ -74,15 +77,28 @@ export const STYRIA_CITY_OVERRIDES: Record<string, AustriaCityDef> = {
   },
 };
 
+function attachStyriaMeta(city: AustriaCityDef): AustriaCityDef {
+  const raw = STYRIA_MUNICIPALITY_META[city.slug];
+  if (!raw) return city;
+  return { ...city, meta: styriaMetaToCityPageMeta(raw) };
+}
+
 function defaultStyriaCity(deName: string, slug: string): AustriaCityDef {
-  return {
+  return attachStyriaMeta({
     country: "at",
     slug,
-    names: { de: deName, en: deName, ru: deName, uk: deName },
-  };
+    names: {
+      de: deName,
+      en: deName,
+      ru: transliterateGermanPlaceName(deName, "ru"),
+      uk: transliterateGermanPlaceName(deName, "uk"),
+    },
+  });
 }
 
 export const STYRIA_CITIES: readonly AustriaCityDef[] = STYRIA_MUNICIPALITY_NAMES.map((deName) => {
   const slug = austriaSlugFromName(deName);
-  return STYRIA_CITY_OVERRIDES[slug] ?? defaultStyriaCity(deName, slug);
+  const override = STYRIA_CITY_OVERRIDES[slug];
+  if (override) return attachStyriaMeta(override);
+  return defaultStyriaCity(deName, slug);
 });
