@@ -1,4 +1,5 @@
 export {
+  citiesForCountryFromRegistry,
   citiesForRow,
   countryHrefFor,
   type LocationCityLink,

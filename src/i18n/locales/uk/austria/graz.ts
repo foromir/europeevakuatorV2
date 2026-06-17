@@ -1,6 +1,6 @@
 import { ROUTE_PATH } from "../../../routeConfig";
 import type { LandingEvacuationCopy, PageSeoBundle } from "../../../types";
-import { styriaCityListForGraz } from "../../../austria/styriaCityList";
+import { styriaCitiesLandingBlock } from "../../../austria/styriaCityList";
 import { evacuationBlockShared } from "../common";
 
 const seo: PageSeoBundle = {
@@ -33,11 +33,7 @@ const evacuation: LandingEvacuationCopy = {
 };
 
 const landing = {
-  cities: {
-    title: "Міста Штирії",
-    lead: "Працюємо в Граці та всій Штирії — включно з промзонами та автомагістралями A2 і A9:",
-    list: styriaCityListForGraz("uk"),
-  },
+  cities: styriaCitiesLandingBlock("uk"),
   directions: {
     title: "Популярні маршрути з Граца",
     lead: "Евакуатор з Граца — міжміське перевезення по Австрії та сусідніх країнах:",

@@ -50,6 +50,9 @@ export default {
   navServices: "Послуги",
   navBlog: "Блог",
 
+  locationsShowAll: "Показати всі",
+  locationsShowLess: "Згорнути",
+
   skipToContentMain: "Перейти до основного вмісту",
 
   langGroupAria: "Вибір мови",

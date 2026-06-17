@@ -1,8 +1,11 @@
 import { useI18n } from "../../i18n/I18nContext";
-import { citiesForRow, countryHrefFor, type LocationRowInput } from "./locationsLinks";
+import { citiesForCountryFromRegistry, countryHrefFor } from "../../i18n/locations/landingLinks";
+import type { LocationCountryCode } from "../../i18n/locations/types";
+import { ExpandableCityList } from "./ExpandableCityList";
+import type { LocationRowInput } from "./locationsLinks";
 
 export function LocationsSection() {
-  const { common, localizedPath } = useI18n();
+  const { common, locale, localizedPath } = useI18n();
   const { title, rows } = common.landing.locations;
 
   return (
@@ -12,7 +15,7 @@ export function LocationsSection() {
           <h2 className="locations-title">{title}</h2>
           <ul className="locations-list">
             {(rows as readonly LocationRowInput[]).map((row) => {
-              const cities = citiesForRow(row);
+              const cities = citiesForCountryFromRegistry(locale, row.code as LocationCountryCode);
 
               return (
                 <li key={row.code} className="locations-list__item">
@@ -24,17 +27,14 @@ export function LocationsSection() {
                     />
                     {row.country}
                   </a>
-                  <span className="locations-list__cities">
-                    {cities.map((city) => (
-                      <a
-                        key={`${row.code}-${city.label}`}
-                        href={localizedPath(city.href)}
-                        className="locations-list__city-link"
-                      >
-                        {city.label}
-                      </a>
-                    ))}
-                  </span>
+                  <ExpandableCityList
+                    cities={cities}
+                    localizedPath={localizedPath}
+                    showAllLabel={common.locationsShowAll}
+                    showLessLabel={common.locationsShowLess}
+                    variant="tags"
+                    itemKey={(city) => `${row.code}-${city.label}`}
+                  />
                 </li>
               );
             })}

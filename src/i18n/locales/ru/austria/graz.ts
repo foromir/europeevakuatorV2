@@ -1,6 +1,6 @@
 import { ROUTE_PATH } from "../../../routeConfig";
 import type { LandingEvacuationCopy, PageSeoBundle } from "../../../types";
-import { styriaCityListForGraz } from "../../../austria/styriaCityList";
+import { styriaCitiesLandingBlock } from "../../../austria/styriaCityList";
 import { evacuationBlockShared } from "../common";
 
 const seo: PageSeoBundle = {
@@ -33,11 +33,7 @@ const evacuation: LandingEvacuationCopy = {
 };
 
 const landing = {
-  cities: {
-    title: "Города Штирии",
-    lead: "Выезжаем по Грацу и всей земле Штирия — в том числе в промышленные зоны и на автобаны A2 и A9:",
-    list: styriaCityListForGraz("ru"),
-  },
+  cities: styriaCitiesLandingBlock("ru"),
   directions: {
     title: "Популярные направления из Граца",
     lead: "Эвакуатор из Граца — междугородняя перевозка по Австрии и в соседние страны:",

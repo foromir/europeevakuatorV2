@@ -1,6 +1,6 @@
 import { ROUTE_PATH } from "../../../routeConfig";
 import type { LandingEvacuationCopy, PageSeoBundle } from "../../../types";
-import { styriaCityListForGraz } from "../../../austria/styriaCityList";
+import { styriaCitiesLandingBlock } from "../../../austria/styriaCityList";
 import { evacuationBlockShared } from "../common";
 
 const seo: PageSeoBundle = {
@@ -33,11 +33,7 @@ const evacuation: LandingEvacuationCopy = {
 };
 
 const landing = {
-  cities: {
-    title: "Städte in der Steiermark",
-    lead: "Wir sind in Graz und der gesamten Steiermark im Einsatz — einschließlich Industriegebiete und Autobahnen A2 und A9:",
-    list: styriaCityListForGraz("de"),
-  },
+  cities: styriaCitiesLandingBlock("de"),
   directions: {
     title: "Beliebte Routen ab Graz",
     lead: "Abschleppdienst ab Graz — Überlandtransport in ganz Österreich und in Nachbarländer:",

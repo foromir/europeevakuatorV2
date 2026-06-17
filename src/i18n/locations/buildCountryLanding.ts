@@ -1,6 +1,6 @@
 import type { CountryLandingBlock } from "../types";
 import type { Locale } from "../types";
-import { citiesForRow, cityLabelsForCountryFromLanding, getLocationRow } from "./landingLinks";
+import { citiesForCountryFromRegistry } from "./landingLinks";
 import { LOCATION_COUNTRIES } from "./countries";
 import type { LocationCountryCode, LocationCountryDef } from "./types";
 
@@ -53,17 +53,7 @@ const COPY: Record<
 };
 
 function buildDirectionList(locale: Locale, country: LocationCountryDef): string[] {
-  const cityNames = cityLabelsForCountryFromLanding(locale, country.code);
-  const hubs = cityNames.slice(0, Math.min(5, cityNames.length));
-
-  if (hubs.length === 1) {
-    const [city] = hubs;
-    return country.directionHubs[locale]
-      .filter((hub) => hub !== city)
-      .slice(0, 6)
-      .map((hub) => `${city} — ${hub}`);
-  }
-
+  const hubs = country.directionHubs[locale].slice(0, 5);
   const routes: string[] = [];
 
   for (let from = 0; from < hubs.length; from += 1) {
@@ -86,13 +76,12 @@ export function buildCountryLanding(
   const genitive = country.countryGenitive[locale];
   const inCountry = country.seoInCountry[locale];
   const label = country.countryLabel[locale];
-  const row = getLocationRow(locale, countryCode);
 
   return {
     cities: {
       title: copy.citiesTitle(genitive, label),
       lead: copy.citiesLead(inCountry),
-      list: row ? citiesForRow(row) : [],
+      list: citiesForCountryFromRegistry(locale, countryCode),
     },
     directions: {
       title: copy.directionsTitle(inCountry),

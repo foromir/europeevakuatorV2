@@ -1,10 +1,6 @@
 import type { LandingEvacuationCopy, Locale, RouteLocaleEntry } from "../types";
-import {
-  STYRIA_CITIES_BLOCK_COPY,
-  isStyriaCitySlug,
-  styriaCityPageLinks,
-} from "../austria/styriaCityPageLinks";
-import { STYRIA_CITIES } from "../austria/styriaCities";
+import { isStyriaCitySlug } from "../austria/styriaCityPageLinks";
+import { styriaCitiesLandingBlock } from "../austria/styriaCityList";
 import {
   localizedCityName,
   localizedCityNameFrom,
@@ -180,18 +176,8 @@ export function buildLocationCityPage(
     },
   };
 
-  if (country.code === "at" && isStyriaCitySlug(city.slug)) {
-    const links = styriaCityPageLinks(locale, city.slug);
-    if (links.length > 0) {
-      const graz = STYRIA_CITIES.find((entry) => entry.slug === "graz");
-      const grazLabel = graz ? localizedCityNameFrom(graz.names, locale) : cityFrom;
-      const blockCopy = STYRIA_CITIES_BLOCK_COPY[locale];
-      landing.cities = {
-        title: blockCopy.title,
-        lead: blockCopy.lead(grazLabel),
-        list: links,
-      };
-    }
+  if (country.code === "at" && isStyriaCitySlug(city.slug) && city.slug !== "graz") {
+    landing.cities = styriaCitiesLandingBlock(locale);
   }
 
   return {

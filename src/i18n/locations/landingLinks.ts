@@ -1,4 +1,5 @@
 import type { Locale } from "../types";
+import { cityListFromRegistry } from "./cityListLinks";
 import { locationCityPath } from "./buildCityPage";
 import { LOCATION_COUNTRIES, getLocationCountry } from "./countries";
 import {
@@ -42,6 +43,16 @@ export function countryHrefFor(row: LocationRowInput): string {
   return COUNTRY_HREF[row.code] ?? ROUTE_PATH.HOME;
 }
 
+export function citiesForCountryFromRegistry(
+  locale: Locale,
+  countryCode: LocationCountryCode,
+): LocationCityLink[] {
+  return cityListFromRegistry(locale, countryCode)
+    .filter((city): city is LocationCityLink => Boolean(city.href))
+    .map((city) => ({ label: city.label, href: city.href! }))
+    .sort((a, b) => a.label.localeCompare(b.label, locale));
+}
+
 export function citiesForRow(row: LocationRowInput): LocationCityLink[] {
   if (isLinkedLocationRow(row)) {
     const rest = row.citiesRest.split(",").map((part) => part.trim()).filter(Boolean);
@@ -67,7 +78,5 @@ export function getLocationRow(locale: Locale, countryCode: LocationCountryCode)
 }
 
 export function cityLabelsForCountryFromLanding(locale: Locale, countryCode: LocationCountryCode): string[] {
-  const row = getLocationRow(locale, countryCode);
-  if (!row) return [];
-  return citiesForRow(row).map((city) => city.label);
+  return citiesForCountryFromRegistry(locale, countryCode).map((city) => city.label);
 }

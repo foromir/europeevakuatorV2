@@ -1,6 +1,6 @@
 import { ROUTE_PATH } from "../../../routeConfig";
 import type { LandingEvacuationCopy, PageSeoBundle } from "../../../types";
-import { styriaCityListForGraz } from "../../../austria/styriaCityList";
+import { styriaCitiesLandingBlock } from "../../../austria/styriaCityList";
 import { evacuationBlockShared } from "../common";
 
 const seo: PageSeoBundle = {
@@ -33,11 +33,7 @@ const evacuation: LandingEvacuationCopy = {
 };
 
 const landing = {
-  cities: {
-    title: "Cities in Styria",
-    lead: "We cover Graz and all of Styria — including industrial zones and motorways A2 and A9:",
-    list: styriaCityListForGraz("en"),
-  },
+  cities: styriaCitiesLandingBlock("en"),
   directions: {
     title: "Popular routes from Graz",
     lead: "Tow truck from Graz — intercity transport across Austria and neighbouring countries:",
