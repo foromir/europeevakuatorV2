@@ -16,11 +16,16 @@ export type PageSeoBundle = {
   ogImagePath?: string;
 };
 
+export type CountryCityListItem = {
+  label: string;
+  href?: string;
+};
+
 export type CountryLandingBlock = {
   cities?: {
     title: string;
     lead: string;
-    list: readonly string[];
+    list: readonly CountryCityListItem[];
   };
   directions?: {
     title: string;

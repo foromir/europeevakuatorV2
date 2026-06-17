@@ -1,4 +1,5 @@
 import { messages } from "../locales";
+import { getLocationCityByRouteKey, getLocationCountryByRouteSlug } from "../locations/registry";
 import { getBlogPostPage, isBlogPostPath } from "../blogPosts";
 import { ROUTE_PATH, withLocale } from "../routeConfig";
 import type { Locale } from "../types";
@@ -7,6 +8,43 @@ export type BreadcrumbItem = {
   label: string;
   path?: string;
 };
+
+function locationBreadcrumbs(
+  locale: Locale,
+  parts: string[],
+  routes: (typeof messages)["ru"]["routes"],
+): BreadcrumbItem[] | null {
+  const country = getLocationCountryByRouteSlug(parts[0]);
+  if (!country) return null;
+
+  const home: BreadcrumbItem = { label: messages[locale].common.crumbHome, path: ROUTE_PATH.HOME };
+  const items: BreadcrumbItem[] = [
+    home,
+    { label: country.countryLabel[locale], path: country.countryPath },
+  ];
+
+  if (parts.length === 1) return items;
+
+  const cityRouteKey = parts.slice(0, 2).join("/");
+  const entry = routes[cityRouteKey];
+  const city = getLocationCityByRouteKey(cityRouteKey);
+  const label =
+    entry?.evacuation?.titleRest ??
+    (city ? city.names[locale] : undefined) ??
+    entry?.seo.title.split("|")[0]?.trim() ??
+    parts[1];
+  items.push({ label, path: `/${cityRouteKey}` });
+
+  if (parts.length >= 3) {
+    const areaKey = parts.slice(0, 3).join("/");
+    const areaEntry = routes[areaKey];
+    const areaLabel =
+      areaEntry?.evacuation?.titleRest ?? areaEntry?.seo.title.split("|")[0]?.trim() ?? parts[2];
+    items.push({ label: areaLabel });
+  }
+
+  return items;
+}
 
 export function getBreadcrumbs(locale: Locale, contentPath: string): BreadcrumbItem[] {
   const { common, pages, routes } = messages[locale];
@@ -26,26 +64,8 @@ export function getBreadcrumbs(locale: Locale, contentPath: string): BreadcrumbI
 
   const routeKey = contentPath.replace(/^\//, "");
   const parts = routeKey.split("/");
-
-  if (parts[0] === "austria") {
-    const items: BreadcrumbItem[] = [home, { label: common.countryAustria, path: ROUTE_PATH.AUSTRIA }];
-    if (parts.length === 1) return items;
-
-    const entry = routes[routeKey];
-    const label = entry?.evacuation?.titleRest ?? entry?.seo.title.split("|")[0]?.trim() ?? routeKey;
-    items.push({ label, path: contentPath });
-    return items;
-  }
-
-  if (parts[0] === "germany") {
-    const items: BreadcrumbItem[] = [home, { label: common.countryGermany, path: ROUTE_PATH.GERMANY }];
-    if (parts.length === 1) return items;
-
-    const entry = routes[routeKey];
-    const label = entry?.evacuation?.titleRest ?? entry?.seo.title.split("|")[0]?.trim() ?? routeKey;
-    items.push({ label, path: contentPath });
-    return items;
-  }
+  const locationItems = locationBreadcrumbs(locale, parts, routes);
+  if (locationItems) return locationItems;
 
   return [home];
 }

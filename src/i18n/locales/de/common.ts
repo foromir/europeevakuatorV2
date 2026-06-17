@@ -23,12 +23,12 @@ export default {
 
   siteOrigin: SITE_ORIGIN,
   ogImagePath: "/assets/images/gallery/gallery-18.jpeg",
-  brandName: "Europe-Evakuator",
-  logoImgAlt: "Europe-Evakuator Logo",
+  brandName: "Abschleppdienst24",
+  logoImgAlt: "Abschleppdienst24 Logo",
 
   phoneTel: "+380939152233",
   phoneDisplay: "+380 (93) 915 22 33",
-  email: "info@europe-evakuator.com",
+  email: "info@abschleppdienst24.org",
   telegramUrl: "https://t.me/+380939152233",
   whatsappUrl: "https://wa.me/380939152233",
 
@@ -38,20 +38,17 @@ export default {
   ogLocale: "de_DE",
   ogTypeWebsite: "website",
   twitterCard: "summary_large_image",
-  ogSiteName: "Europe-Evakuator",
+  ogSiteName: "Abschleppdienst24",
 
   navMainAria: "Hauptnavigation",
-  navTow: "Abschleppdienst",
+  navTow: "Abschleppdienst aus",
+  navMobileMenuOpen: "Städte- und Ländermenü öffnen",
+  navMobileMenuClose: "Menü schließen",
+  navMobileMenuAria: "Abschleppdienst nach Städten und Ländern",
   navRates: "Tarife",
   navLocations: "Einsatzgebiet",
   navServices: "Leistungen",
   navBlog: "Blog",
-
-  countryAustria: "Österreich",
-  countryGermany: "Deutschland",
-  linkTowGraz: "Abschleppdienst in Graz",
-  linkTowVienna: "Abschleppdienst in Wien",
-  linkTowMunich: "Abschleppdienst in München",
 
   skipToContentMain: "Zum Hauptinhalt springen",
 
@@ -71,7 +68,7 @@ export default {
   footerLinkGallery: "Galerie",
   footerLinkReviews: "Bewertungen",
   footerLinkHelp: "Hilfe",
-  footerCopyright: "© 2025 Europe-Evakuator",
+  footerCopyright: "© 2026 Abschleppdienst24",
 
   ariaCall: "Anrufen",
   ariaEmail: "E-Mail senden",

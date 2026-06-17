@@ -1,5 +1,6 @@
 import { ROUTE_PATH } from "../../../routeConfig";
 import type { PageSeoBundle } from "../../../types";
+import { cityListFromLabels } from "../../../locations/cityListLinks";
 
 const seo: PageSeoBundle = {
   title: "Эвакуатор в Якомини, Грац — помощь на дороге 24/7",
@@ -20,14 +21,14 @@ const landing = {
   cities: {
     title: "Эвакуатор в районе Якомини и рядом",
     lead: "Быстрый выезд в Якомини и соседние районы Граца:",
-    list: [
+    list: cityListFromLabels("at", [
       "Jakomini (Якомини)",
       "Gries",
       "St. Leonhard",
       "Innere Stadt",
       "Murvorstadt",
       "Puntigam",
-    ],
+    ]),
   },
   directions: {
     title: "Направления из Якомини",

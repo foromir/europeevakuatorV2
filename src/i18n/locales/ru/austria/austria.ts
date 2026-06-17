@@ -1,10 +1,11 @@
 import { ROUTE_PATH } from "../../../routeConfig";
 import type { LandingEvacuationCopy, PageSeoBundle } from "../../../types";
+import { buildCountryLanding } from "../../../locations/buildCountryLanding";
 import { evacuationBlockShared } from "../common";
 
 /** Мета `<title>`, description, Open Graph — короче и под поиск, не дублирует герой. */
 const seo: PageSeoBundle = {
-  title: "Эвакуатор в Австрии — Вена, Грац, Зальцбург, круглосуточно | Europe-Evakuator",
+  title: "Эвакуатор в Австрии — Вена, Грац, Зальцбург, круглосуточно | Abschleppdienst24",
   description:
     "Вызов эвакуатора в Австрии: эвакуация, перевозка на СТО, помощь на дороге по всей стране. Цену озвучим до выезда, без скрытых доплат.",
   canonicalPath: ROUTE_PATH.AUSTRIA,
@@ -12,7 +13,7 @@ const seo: PageSeoBundle = {
   ogDescription:
     "Круглосуточный эвакуатор в Австрии: эвакуация и перевозка авто, помощь на дороге. Быстрый выезд, прозрачные цены.",
   ogUrlPath: ROUTE_PATH.AUSTRIA,
-  twitterTitle: "Эвакуатор в Австрии — Europe-Evakuator",
+  twitterTitle: "Эвакуатор в Австрии — Abschleppdienst24",
   twitterDescription:
     "Эвакуация и перевозка авто в Австрии 24/7. Вена, Грац, Зальцбург и другие города.",
   ogImagePath: "/assets/images/gallery/gallery-18.jpeg",
@@ -34,45 +35,7 @@ const evacuation: LandingEvacuationCopy = {
 };
 
 /** Секции лендинга «только Австрия»: города + направления */
-const landing = {
-  cities: {
-    title: "Эвакуатор в городах Австрии",
-    lead: "Заказать эвакуатор для перевозки автомобилей в Австрии можно из городов, перечисленных ниже:",
-    list: [
-      "Вена (Wien)",
-      "Грац (Graz)",
-      "Линц (Linz)",
-      "Зальцбург (Salzburg)",
-      "Инсбрук (Innsbruck)",
-      "Клагенфурт-ам-Вёртерзе (Klagenfurt am Wörthersee)",
-      "Филлах (Villach)",
-      "Вельс (Wels)",
-      "Санкт-Пёльтен (Sankt Pölten)",
-    ],
-  },
-  directions: {
-    title: "Популярные направления перевозки автомобилей в Австрии",
-    lead: "Закажите эвакуатор для перевозки авто между городами Австрии и ЕС — выезжаем по указанным направлениям.",
-    list: [
-      "Вена — Грац",
-      "Грац — Вена",
-      "Вена — Зальцбург",
-      "Зальцбург — Инсбрук",
-      "Вена — Линц",
-      "Грац — Клагенфурт",
-      "Инсбрук — Зальцбург",
-      "Линц — Вена",
-      "Вена — Инсбрук",
-      "Грац — Зальцбург",
-      "Зальцбург — Вена",
-      "Линц — Грац",
-      "Клагенфурт — Вена",
-      "Филлах — Грац",
-      "Санкт-Пёльтен — Вена",
-    ],
-    more: "и другие направления по Австрии и ЕС",
-  },
-} as const;
+const landing = buildCountryLanding("ru", "at");
 
 export default {
   seo,

@@ -1,4 +1,5 @@
 import { ROUTE_PATH } from "../../../routeConfig";
+import { buildCountryLanding } from "../../../locations/buildCountryLanding";
 import type { PageSeoBundle } from "../../../types";
 
 const seo: PageSeoBundle = {
@@ -15,26 +16,6 @@ const seo: PageSeoBundle = {
   ogImagePath: "/assets/images/gallery/gallery-13.jpeg",
 };
 
-const landing = {
-  cities: {
-    title: "Tow truck in Munich",
-    lead: "24/7 dispatch in Munich, Bavaria and on motorways A8, A9 and A95:",
-    list: ["Munich (München)"],
-  },
-  directions: {
-    title: "Popular routes from Munich",
-    lead: "Intercity recovery and car transport from Munich to Austria and other EU countries:",
-    list: [
-      "Munich — Vienna",
-      "Munich — Salzburg",
-      "Munich — Graz",
-      "Munich — Innsbruck",
-      "Munich — Nuremberg",
-      "Munich — Stuttgart",
-      "Munich — Prague",
-    ],
-    more: "and other routes across Germany and Europe",
-  },
-} as const;
+const landing = buildCountryLanding("en", "de");
 
 export default { seo, landing } as const;

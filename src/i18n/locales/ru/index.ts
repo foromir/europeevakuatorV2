@@ -1,5 +1,6 @@
 import type { RouteLocaleEntry, StaticPagesBundle } from "../../types";
 import { ROUTE_PATH, routeSlug } from "../../routeConfig";
+import { buildLocationCityRoutes } from "../../locations/routes";
 import commonPartial from "./common";
 import landing from "./landing";
 import pageHome from "./home";
@@ -19,6 +20,7 @@ export const ru = {
     austriaLanding: austria.landing,
   },
   routes: {
+    ...buildLocationCityRoutes("ru"),
     [routeSlug(ROUTE_PATH.AUSTRIA)]: austria,
     [routeSlug(ROUTE_PATH.AUSTRIA_GRAZ)]: graz,
     [routeSlug(ROUTE_PATH.AUSTRIA_GRAZ_JAKOMINI)]: grazJakomini,

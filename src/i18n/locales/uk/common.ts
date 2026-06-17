@@ -23,12 +23,12 @@ export default {
 
   siteOrigin: SITE_ORIGIN,
   ogImagePath: "/assets/images/gallery/gallery-18.jpeg",
-  brandName: "Europe-Evakuator",
-  logoImgAlt: "Europe-Evakuator Logo",
+  brandName: "Abschleppdienst24",
+  logoImgAlt: "Логотип Abschleppdienst24",
 
   phoneTel: "+380939152233",
   phoneDisplay: "+380 (93) 915 22 33",
-  email: "info@europe-evakuator.com",
+  email: "info@abschleppdienst24.org",
   telegramUrl: "https://t.me/+380939152233",
   whatsappUrl: "https://wa.me/380939152233",
 
@@ -38,20 +38,17 @@ export default {
   ogLocale: "uk_UA",
   ogTypeWebsite: "website",
   twitterCard: "summary_large_image",
-  ogSiteName: "Europe-Evakuator",
+  ogSiteName: "Abschleppdienst24",
 
   navMainAria: "Основна навігація",
-  navTow: "Евакуатор",
+  navTow: "Евакуатор з",
+  navMobileMenuOpen: "Відкрити меню міст і країн",
+  navMobileMenuClose: "Закрити меню",
+  navMobileMenuAria: "Евакуатор по містах і країнах",
   navRates: "Тарифи",
   navLocations: "Де ми працюємо",
   navServices: "Послуги",
   navBlog: "Блог",
-
-  countryAustria: "Австрія",
-  countryGermany: "Німеччина",
-  linkTowGraz: "Евакуатор у Граці",
-  linkTowVienna: "Евакуатор у Відні",
-  linkTowMunich: "Евакуатор у Мюнхені",
 
   skipToContentMain: "Перейти до основного вмісту",
 
@@ -71,7 +68,7 @@ export default {
   footerLinkGallery: "Галерея",
   footerLinkReviews: "Відгуки",
   footerLinkHelp: "Допомога",
-  footerCopyright: "© 2025 Europe-Evakuator",
+  footerCopyright: "© 2026 Abschleppdienst24",
 
   ariaCall: "Зателефонувати",
   ariaEmail: "Написати на email",

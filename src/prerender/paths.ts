@@ -1,13 +1,26 @@
 import { ROUTE_PATH, SITE_ORIGIN, withLocale, BLOG_POST_PATHS } from "../i18n/routeConfig";
+import { AUTO_LOCATION_CITY_SLUGS } from "../i18n/locations/registry";
 import { SEO_LOCALES } from "../i18n/seo/config";
 import { buildHreflangLinks } from "../i18n/seo/hreflang";
+
+const LOCATION_COUNTRY_PATHS = [
+  ROUTE_PATH.CROATIA,
+  ROUTE_PATH.HUNGARY,
+  ROUTE_PATH.ITALY,
+  ROUTE_PATH.SLOVAKIA,
+  ROUTE_PATH.SLOVENIA,
+] as const;
+
+const LOCATION_CITY_ROUTE_PATHS = AUTO_LOCATION_CITY_SLUGS.map((routeKey) => `/${routeKey}`);
 
 const PRERENDER_ROUTE_PATHS = [
   ROUTE_PATH.HOME,
   ROUTE_PATH.AUSTRIA,
   ROUTE_PATH.AUSTRIA_GRAZ,
   ROUTE_PATH.AUSTRIA_GRAZ_JAKOMINI,
+  ...LOCATION_CITY_ROUTE_PATHS,
   ROUTE_PATH.GERMANY,
+  ...LOCATION_COUNTRY_PATHS,
   ROUTE_PATH.BLOG,
   ...BLOG_POST_PATHS,
 ] as const;

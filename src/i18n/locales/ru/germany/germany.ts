@@ -1,4 +1,5 @@
 import { ROUTE_PATH } from "../../../routeConfig";
+import { buildCountryLanding } from "../../../locations/buildCountryLanding";
 import type { PageSeoBundle } from "../../../types";
 
 const seo: PageSeoBundle = {
@@ -15,26 +16,6 @@ const seo: PageSeoBundle = {
   ogImagePath: "/assets/images/gallery/gallery-13.jpeg",
 };
 
-const landing = {
-  cities: {
-    title: "Эвакуатор в Мюнхене",
-    lead: "Круглосуточный выезд в Мюнхене, Баварии и на автобанах A8, A9, A95:",
-    list: ["Мюнхен (München)"],
-  },
-  directions: {
-    title: "Популярные направления из Мюнхена",
-    lead: "Междугородняя эвакуация и перевозка авто из Мюнхена в Австрию и другие страны ЕС:",
-    list: [
-      "Мюнхен — Вена",
-      "Мюнхен — Зальцбург",
-      "Мюнхен — Грац",
-      "Мюнхен — Инсбрук",
-      "Мюнхен — Нюрнберг",
-      "Мюнхен — Штутгарт",
-      "Мюнхен — Прага",
-    ],
-    more: "и другие маршруты по Германии и Европе",
-  },
-} as const;
+const landing = buildCountryLanding("ru", "de");
 
 export default { seo, landing } as const;

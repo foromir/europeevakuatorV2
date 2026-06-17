@@ -1,5 +1,6 @@
 import { ROUTE_PATH } from "../../../routeConfig";
 import type { LandingEvacuationCopy, PageSeoBundle } from "../../../types";
+import { styriaCityListForGraz } from "../../../austria/styriaCityList";
 import { evacuationBlockShared } from "../common";
 
 const seo: PageSeoBundle = {
@@ -35,18 +36,7 @@ const landing = {
   cities: {
     title: "Города Штирии",
     lead: "Выезжаем по Грацу и всей земле Штирия — в том числе в промышленные зоны и на автобаны A2 и A9:",
-    list: [
-      "Weiz",
-      "Leoben",
-      "Gleisdorf",
-      "Kapfenberg",
-      "Bruck an der Mur",
-      "Deutschlandsberg",
-      "Feldkirchen bei Graz",
-      "Köflach",
-      "Hartberg",
-      "Mürzzuschlag",
-    ],
+    list: styriaCityListForGraz("ru"),
   },
   directions: {
     title: "Популярные направления из Граца",

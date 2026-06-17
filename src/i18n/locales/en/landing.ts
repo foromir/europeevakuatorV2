@@ -1,5 +1,6 @@
 import { ROUTE_PATH, BLOG_IMAGE } from "../../routeConfig";
 import { evacuationBlockShared } from "./common";
+import { enLocationRows } from "../../locations/rows/en";
 
 /** Section copy for home / Austria (shared blocks), EN */
 export default {
@@ -136,13 +137,13 @@ export default {
     items: [
       { number: "10+", label: "years in business" },
       { number: "5000+", label: "call-outs" },
-      { number: "12", label: "countries" },
+      { number: "7+", label: "countries" },
     ],
   },
   reviews: {
     title: "Client reviews",
     subtitle: "Real reviews from our Google Business Profile",
-    widgetTitle: "Europe-Evakuator reviews on Google",
+    widgetTitle: "Abschleppdienst24 reviews on Google",
     widgetPlaceholder: "Add VITE_GOOGLE_MAPS_EMBED_SRC to .env — embed code from Google Maps.",
     viewOnGoogle: "All reviews on Google",
   },
@@ -212,22 +213,6 @@ export default {
   },
   locations: {
     title: "Where we operate",
-    rows: [
-      {
-        code: "at",
-        flagAlt: "Austria flag",
-        country: "Austria",
-        countryHref: ROUTE_PATH.AUSTRIA,
-        featuredCityLabel: "Graz",
-        featuredCityHref: ROUTE_PATH.AUSTRIA_GRAZ,
-        citiesRest: "Vienna, Linz, Salzburg, Klagenfurt, Suben, Braunau am Inn, Arnoldstein, Villach, Spielberg, Heiligenkreuz, Weiz, Gleisdorf, Kapfenberg, Deutschlandsberg, Feldkirchen bei Graz, Wolfsberg, Spittal an der Drau, Hermagor, Bad Radkersburg, Fürstenfeld, Jennersdorf, Eisenstadt, Rust, Oberwart, Güssing, Schärding, Ried im Innkreis, Gmunden, Steyr, Wels",
-      },
-      { code: "hr", flagAlt: "Croatia flag", country: "Croatia", citiesLine: "Zagreb, Rijeka, Krapina, Zabok, Karlovac, Ogulin, Opatija, Koper, Pula, Umag, Poreč" },
-      { code: "hu", flagAlt: "Hungary flag", country: "Hungary", citiesLine: "Szombathely, Győr, Körmend, Sopron, Csorna, Kapuvár, Keszthely, Letenye" },
-      { code: "de", flagAlt: "Germany flag", country: "Germany", countryHref: ROUTE_PATH.GERMANY, featuredCityLabel: "Munich", featuredCityHref: ROUTE_PATH.GERMANY, citiesRest: "Rosenheim, Passau, Regensburg, Mühldorf am Inn, Traunstein, Deggendorf" },
-      { code: "it", flagAlt: "Italy flag", country: "Italy", citiesLine: "Udine, Trieste, Monfalcone, Palmanova, Tarvisio" },
-      { code: "sk", flagAlt: "Slovakia flag", country: "Slovakia", citiesLine: "Bratislava" },
-      { code: "si", flagAlt: "Slovenia flag", country: "Slovenia", citiesLine: "Ljubljana, Maribor, Celje, Kranj, Koper, Novo Mesto, Velenje, Ptuj, Trbovlje, Kamnik, Jesenice, Domžale, Škofja Loka, Murska Sobota, Nova Gorica, Vrhnika, Krško, Ajdovščina, Brežice, Slovenj Gradec, Ravne na Koroškem, Postojna, Sežana, Ilirska Bistrica, Piran, Izola, Portorož, Lendava, Metlika, Kočevje, Slovenska Bistrica, Dravograd, Lenart, Ormož, Žalec, Grosuplje, Litija, Trebnje, Logatec, Idrija, Tolmin, Bled, Medvode, Črnomelj" },
-    ],
+    rows: enLocationRows,
   },
 } as const;

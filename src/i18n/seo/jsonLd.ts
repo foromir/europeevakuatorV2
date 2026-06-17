@@ -1,4 +1,5 @@
 import { messages } from "../locales";
+import { getLocationCityByRouteKey, getLocationCountryByRouteSlug } from "../locations/registry";
 import { ROUTE_PATH, SITE_ORIGIN, absUrl, withLocale } from "../routeConfig";
 import type { Locale } from "../types";
 import { getBreadcrumbs } from "./breadcrumbs";
@@ -8,14 +9,16 @@ function schemaId(path: string): string {
   return `${SITE_ORIGIN}${path}#schema`;
 }
 
-function areaNameFromRoute(routeKey: string): string | undefined {
-  const map: Record<string, string> = {
-    austria: "Austria",
-    "austria/graz": "Graz",
-    "austria/graz/jakomini": "Graz",
-    germany: "Germany",
-  };
-  return map[routeKey];
+function areaNameFromRoute(routeKey: string, locale: Locale): string | undefined {
+  const country = getLocationCountryByRouteSlug(routeKey);
+  if (country && routeKey === country.routeSlug) return country.countryLabel[locale];
+
+  const city = getLocationCityByRouteKey(routeKey);
+  if (city) return city.names[locale];
+
+  if (routeKey === "austria/graz/jakomini") return "Jakomini";
+
+  return undefined;
 }
 
 function buildOrganization(locale: Locale) {
@@ -77,7 +80,7 @@ function buildFaqPage(locale: Locale, pageUrl: string) {
 
 function buildTowingService(locale: Locale, page: Extract<ResolvedPage, { kind: "route" }>, pageUrl: string) {
   const common = messages[locale].common;
-  const area = areaNameFromRoute(page.routeKey);
+  const area = areaNameFromRoute(page.routeKey, locale);
   const ogImage = absUrl(page.seo.ogImagePath ?? common.ogImagePath);
 
   return {

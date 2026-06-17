@@ -1,5 +1,6 @@
 import { ROUTE_PATH } from "../../../routeConfig";
 import type { LandingEvacuationCopy, PageSeoBundle } from "../../../types";
+import { styriaCityListForGraz } from "../../../austria/styriaCityList";
 import { evacuationBlockShared } from "../common";
 
 const seo: PageSeoBundle = {
@@ -35,18 +36,7 @@ const landing = {
   cities: {
     title: "Städte in der Steiermark",
     lead: "Wir sind in Graz und der gesamten Steiermark im Einsatz — einschließlich Industriegebiete und Autobahnen A2 und A9:",
-    list: [
-      "Weiz",
-      "Leoben",
-      "Gleisdorf",
-      "Kapfenberg",
-      "Bruck an der Mur",
-      "Deutschlandsberg",
-      "Feldkirchen bei Graz",
-      "Köflach",
-      "Hartberg",
-      "Mürzzuschlag",
-    ],
+    list: styriaCityListForGraz("de"),
   },
   directions: {
     title: "Beliebte Routen ab Graz",

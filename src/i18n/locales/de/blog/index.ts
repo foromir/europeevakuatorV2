@@ -10,7 +10,7 @@ const page: PageSeoBundle = {
   ogDescription:
     "Nützliche Artikel über Bergung, Fahrzeugtransport und Pannenhilfe in ganz Europa.",
   ogUrlPath: ROUTE_PATH.BLOG,
-  twitterTitle: "Blog — Europe-Evakuator",
+  twitterTitle: "Blog — Abschleppdienst24",
   twitterDescription:
     "Artikel über Bergung, Fahrzeugtransport und Pannenhilfe in Europa.",
   ogImagePath: BLOG_IMAGE.BREAKDOWN_ABROAD,

@@ -1,4 +1,5 @@
 import { ROUTE_PATH } from "../../../routeConfig";
+import { buildCountryLanding } from "../../../locations/buildCountryLanding";
 import type { PageSeoBundle } from "../../../types";
 
 const seo: PageSeoBundle = {
@@ -15,26 +16,6 @@ const seo: PageSeoBundle = {
   ogImagePath: "/assets/images/gallery/gallery-13.jpeg",
 };
 
-const landing = {
-  cities: {
-    title: "Abschleppdienst in München",
-    lead: "Einsatz rund um die Uhr in München, Bayern und auf den Autobahnen A8, A9 und A95:",
-    list: ["München"],
-  },
-  directions: {
-    title: "Beliebte Routen ab München",
-    lead: "Überland-Bergung und Fahrzeugtransport ab München nach Österreich und in andere EU-Länder:",
-    list: [
-      "München — Wien",
-      "München — Salzburg",
-      "München — Graz",
-      "München — Innsbruck",
-      "München — Nürnberg",
-      "München — Stuttgart",
-      "München — Prag",
-    ],
-    more: "und weitere Routen in Deutschland und Europa",
-  },
-} as const;
+const landing = buildCountryLanding("de", "de");
 
 export default { seo, landing } as const;

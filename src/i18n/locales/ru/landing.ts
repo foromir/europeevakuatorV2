@@ -1,5 +1,6 @@
 import { ROUTE_PATH, BLOG_IMAGE } from "../../routeConfig";
 import { evacuationBlockShared } from "./common";
+import { ruLocationRows } from "../../locations/rows/ru";
 
 /**
  * Тексты секций главной / Австрии (общие блоки), вынесены из React-компонентов.
@@ -138,13 +139,13 @@ export default {
     items: [
       { number: "10+", label: "лет на рынке" },
       { number: "5000+", label: "выездов" },
-      { number: "12", label: "стран" },
+      { number: "7+", label: "стран" },
     ],
   },
   reviews: {
     title: "Отзывы клиентов",
     subtitle: "Реальные отзывы с Google Business Profile",
-    widgetTitle: "Отзывы Europe-Evakuator в Google",
+    widgetTitle: "Отзывы Abschleppdienst24 в Google",
     widgetPlaceholder: "Добавьте VITE_GOOGLE_MAPS_EMBED_SRC в .env — код встраивания из Google Maps.",
     viewOnGoogle: "Все отзывы в Google",
   },
@@ -214,22 +215,6 @@ export default {
   },
   locations: {
     title: "Где мы работаем",
-    rows: [
-      {
-        code: "at",
-        flagAlt: "Флаг Австрии",
-        country: "Австрия",
-        countryHref: ROUTE_PATH.AUSTRIA,
-        featuredCityLabel: "Грац",
-        featuredCityHref: ROUTE_PATH.AUSTRIA_GRAZ,
-        citiesRest: "Вена, Линц, Зальцбург, Клагенфурт, Субен, Браунау-ам-Инн, Арнольдштайн, Филлах, Шпильберг, Хайлигенкройц, Вайц, Глайсдорф, Капфенберг, Дойчландсберг, Фельдкирхен-бай-Грац, Вольфсберг, Шпиттал-ан-дер-Драу, Хермагор, Бад-Радкерсбург, Фюрстенфельд, Йеннерсдорф, Айзенштадт, Руст, Оберварт, Гисинг, Шардинг, Рид-им-Иннкрайс, Гмунден, Штайр, Вельс",
-      },
-      { code: "hr", flagAlt: "Флаг Хорватии", country: "Хорватия", citiesLine: "Загреб, Риека, Крапина, Забок, Карловац, Огулин, Опатия, Копер, Пула, Умаг, Пореч" },
-      { code: "hu", flagAlt: "Флаг Венгрии", country: "Венгрия", citiesLine: "Сомбатхей, Дьор, Кёрменд, Шопорн, Чорна, Капувар, Кестхей, Летенье" },
-      { code: "de", flagAlt: "Флаг Германии", country: "Германия", countryHref: ROUTE_PATH.GERMANY, featuredCityLabel: "Мюнхен", featuredCityHref: ROUTE_PATH.GERMANY, citiesRest: "Rosenheim, Passau, Regensburg, Mühldorf am Inn, Traunstein, Deggendorf" },
-      { code: "it", flagAlt: "Флаг Италии", country: "Италия", citiesLine: "Удине, Триест, Монфальконе, Пальманова, Tarvisio" },
-      { code: "sk", flagAlt: "Флаг Словакии", country: "Словакия", citiesLine: "Братислава" },
-      { code: "si", flagAlt: "Флаг Словении", country: "Словения", citiesLine: "Любляна, Марибор, Целе, Крань, Копер, Ново-Место, Веленье, Птуй, Трбовле, Камник, Есенице, Домжале, Шкофья-Лока, Мурска-Собота, Нова-Горица, Врхника, Кршко, Айдовщина, Брежице, Словень-Градец, Равне-на-Корошкем, Постойна, Сежана, Илирска-Бистрица, Пиран, Изола, Порторож, Лендава, Метлика, Кочевье, Словенска-Бистрица, Дравоград, Ленарт, Ормож, Жалец, Гросупле, Лития, Требнье, Логатец, Идрия, Толмин, Блед, Медводе, Чрномель" },
-    ],
+    rows: ruLocationRows,
   },
 } as const;

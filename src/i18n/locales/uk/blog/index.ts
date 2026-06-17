@@ -10,7 +10,7 @@ const page: PageSeoBundle = {
   ogDescription:
     "Корисні статті про витягування, перевезення авто та допомогу на дорозі по всій Європі.",
   ogUrlPath: ROUTE_PATH.BLOG,
-  twitterTitle: "Блог — Europe-Evakuator",
+  twitterTitle: "Блог — Abschleppdienst24",
   twitterDescription:
     "Статті про витягування, перевезення авто та допомогу на дорозі в Європі.",
   ogImagePath: BLOG_IMAGE.BREAKDOWN_ABROAD,

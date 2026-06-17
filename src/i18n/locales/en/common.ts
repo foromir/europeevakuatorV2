@@ -23,12 +23,12 @@ export default {
 
   siteOrigin: SITE_ORIGIN,
   ogImagePath: "/assets/images/gallery/gallery-18.jpeg",
-  brandName: "Europe-Evakuator",
-  logoImgAlt: "Europe-Evakuator Logo",
+  brandName: "Abschleppdienst24",
+  logoImgAlt: "Abschleppdienst24 Logo",
 
   phoneTel: "+380939152233",
   phoneDisplay: "+380 (93) 915 22 33",
-  email: "info@europe-evakuator.com",
+  email: "info@abschleppdienst24.org",
   telegramUrl: "https://t.me/+380939152233",
   whatsappUrl: "https://wa.me/380939152233",
 
@@ -38,20 +38,17 @@ export default {
   ogLocale: "en_GB",
   ogTypeWebsite: "website",
   twitterCard: "summary_large_image",
-  ogSiteName: "Europe-Evakuator",
+  ogSiteName: "Abschleppdienst24",
 
   navMainAria: "Main navigation",
-  navTow: "Tow truck",
+  navTow: "Tow truck from",
+  navMobileMenuOpen: "Open cities and countries menu",
+  navMobileMenuClose: "Close menu",
+  navMobileMenuAria: "Tow truck by city and country",
   navRates: "Rates",
   navLocations: "Where we operate",
   navServices: "Services",
   navBlog: "Blog",
-
-  countryAustria: "Austria",
-  countryGermany: "Germany",
-  linkTowGraz: "Tow truck in Graz",
-  linkTowVienna: "Tow truck in Vienna",
-  linkTowMunich: "Tow truck in Munich",
 
   skipToContentMain: "Skip to main content",
 
@@ -71,7 +68,7 @@ export default {
   footerLinkGallery: "Gallery",
   footerLinkReviews: "Reviews",
   footerLinkHelp: "Help",
-  footerCopyright: "© 2025 Europe-Evakuator",
+  footerCopyright: "© 2026 Abschleppdienst24",
 
   ariaCall: "Call",
   ariaEmail: "Send email",

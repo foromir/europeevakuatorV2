@@ -6,7 +6,7 @@ import type { Locale } from "./types";
 
 export const SITE_ORIGIN =
   (import.meta.env.VITE_SITE_ORIGIN as string | undefined)?.replace(/\/$/, "") ||
-  "https://europe-evakuator.com";
+  "https://abschleppdienst24.org";
 
 export const LOCALE_STORAGE_KEY = "locale";
 
@@ -54,6 +54,12 @@ export const ROUTE_PATH = {
   AUSTRIA: "/austria",
   AUSTRIA_GRAZ: "/austria/graz",
   GERMANY: "/germany",
+  GERMANY_MUENCHEN: "/germany/muenchen",
+  CROATIA: "/croatia",
+  HUNGARY: "/hungary",
+  ITALY: "/italy",
+  SLOVAKIA: "/slovakia",
+  SLOVENIA: "/slovenia",
   GERMANY_BERLIN: "/germany/berlin",
   AUSTRIA_GRAZ_JAKOMINI: "/austria/graz/jakomini",
   BLOG: "/blog",

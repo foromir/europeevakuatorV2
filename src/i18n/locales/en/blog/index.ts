@@ -10,7 +10,7 @@ const page: PageSeoBundle = {
   ogDescription:
     "Useful articles on recovery, car transport and roadside help across the EU.",
   ogUrlPath: ROUTE_PATH.BLOG,
-  twitterTitle: "Blog — Europe-Evakuator",
+  twitterTitle: "Blog — Abschleppdienst24",
   twitterDescription:
     "Articles on recovery, car transport and roadside help in Europe.",
   ogImagePath: BLOG_IMAGE.BREAKDOWN_ABROAD,

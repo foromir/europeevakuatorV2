@@ -1,5 +1,6 @@
 import { ROUTE_PATH } from "../../../routeConfig";
 import type { PageSeoBundle } from "../../../types";
+import { cityListFromLabels } from "../../../locations/cityListLinks";
 
 const seo: PageSeoBundle = {
   title: "Abschleppdienst 24/7 in Jakomini, Graz — Pannenhilfe",
@@ -19,14 +20,14 @@ const landing = {
   cities: {
     title: "Abschleppdienst in Jakomini und Umgebung",
     lead: "Schneller Einsatz in Jakomini und benachbarten Grazer Bezirken:",
-    list: [
+    list: cityListFromLabels("at", [
       "Jakomini",
       "Gries",
       "St. Leonhard",
       "Innere Stadt",
       "Murvorstadt",
       "Puntigam",
-    ],
+    ]),
   },
   directions: {
     title: "Routen ab Jakomini",

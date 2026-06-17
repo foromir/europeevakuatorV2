@@ -1,9 +1,10 @@
 import { ROUTE_PATH } from "../../../routeConfig";
 import type { LandingEvacuationCopy, PageSeoBundle } from "../../../types";
+import { buildCountryLanding } from "../../../locations/buildCountryLanding";
 import { evacuationBlockShared } from "../common";
 
 const seo: PageSeoBundle = {
-  title: "Евакуатор Австрія — Відень, Грац, Зальцбург 24/7 | Europe-Evakuator",
+  title: "Евакуатор Австрія — Відень, Грац, Зальцбург 24/7 | Abschleppdienst24",
   description:
     "Замовте евакуатор в Австрії: витягування, перевезення до СТО, допомога на дорозі по всій країні. Ціна відома заздалегідь, без прихованих доплат.",
   canonicalPath: ROUTE_PATH.AUSTRIA,
@@ -11,7 +12,7 @@ const seo: PageSeoBundle = {
   ogDescription:
     "Евакуація в Австрії 24/7: витягування та перевезення авто, допомога на дорозі. Швидкий виїзд, прозорі тарифи.",
   ogUrlPath: ROUTE_PATH.AUSTRIA,
-  twitterTitle: "Евакуатор в Австрії — Europe-Evakuator",
+  twitterTitle: "Евакуатор в Австрії — Abschleppdienst24",
   twitterDescription: "Витягування та перевезення авто в Австрії 24/7. Відень, Грац, Зальцбург та інші міста.",
   ogImagePath: "/assets/images/gallery/gallery-18.jpeg",
 };
@@ -30,45 +31,7 @@ const evacuation: LandingEvacuationCopy = {
   ],
 };
 
-const landing = {
-  cities: {
-    title: "Евакуатор в австрійських містах",
-    lead: "Ви можете замовити евакуатор для перевезення авто в Австрії з міст, зазначених нижче:",
-    list: [
-      "Vienna (Wien)",
-      "Graz",
-      "Linz",
-      "Salzburg",
-      "Innsbruck",
-      "Klagenfurt am Wörthersee",
-      "Villach",
-      "Wels",
-      "Sankt Pölten",
-    ],
-  },
-  directions: {
-    title: "Популярні маршрути перевезення авто в Австрії",
-    lead: "Замовте евакуатор між австрійськими та європейськими містами — обслуговуємо маршрути нижче.",
-    list: [
-      "Vienna — Graz",
-      "Graz — Vienna",
-      "Vienna — Salzburg",
-      "Salzburg — Innsbruck",
-      "Vienna — Linz",
-      "Graz — Klagenfurt",
-      "Innsbruck — Salzburg",
-      "Linz — Vienna",
-      "Vienna — Innsbruck",
-      "Graz — Salzburg",
-      "Salzburg — Vienna",
-      "Linz — Graz",
-      "Klagenfurt — Vienna",
-      "Villach — Graz",
-      "Sankt Pölten — Vienna",
-    ],
-    more: "та інші маршрути по Австрії та ЄС",
-  },
-} as const;
+const landing = buildCountryLanding("uk", "at");
 
 export default {
   seo,

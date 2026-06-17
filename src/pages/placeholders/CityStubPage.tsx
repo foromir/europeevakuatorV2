@@ -16,6 +16,7 @@ import {
   LocationsSection,
 } from "../../components/sections";
 import { useI18n } from "@/i18n/I18nContext";
+import { NotFoundPage } from "./NotFoundPage";
 
 export function CityStubPage() {
   const { country, city } = useParams<{ country: string; city: string }>();
@@ -23,9 +24,11 @@ export function CityStubPage() {
 
   const content = routes[`${country}/${city}`];
 
+  if (!content) return <NotFoundPage />;
+
   return (
     <Layout seo={content?.seo}>
-      <EvacuationBlockSection content={content?.evacuation} />
+      <EvacuationBlockSection content={"evacuation" in content ? content.evacuation : undefined} />
       <EvacuationStripBlock />
       <CitiesListSection block={content?.landing?.cities} />
       <WorkflowSection />

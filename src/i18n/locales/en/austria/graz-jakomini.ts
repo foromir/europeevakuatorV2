@@ -1,5 +1,6 @@
 import { ROUTE_PATH } from "../../../routeConfig";
 import type { PageSeoBundle } from "../../../types";
+import { cityListFromLabels } from "../../../locations/cityListLinks";
 
 const seo: PageSeoBundle = {
   title: "24/7 Tow truck in Jakomini, Graz — Roadside assistance",
@@ -19,14 +20,14 @@ const landing = {
   cities: {
     title: "Tow truck in Jakomini and nearby",
     lead: "Fast dispatch in Jakomini and neighbouring Graz districts:",
-    list: [
+    list: cityListFromLabels("at", [
       "Jakomini",
       "Gries",
       "St. Leonhard",
       "Innere Stadt",
       "Murvorstadt",
       "Puntigam",
-    ],
+    ]),
   },
   directions: {
     title: "Routes from Jakomini",

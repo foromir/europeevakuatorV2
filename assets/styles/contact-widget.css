@@ -1,5 +1,5 @@
 body:has(.contact-widget) {
-  padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+  padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
 }
 
 .contact-widget {
@@ -16,10 +16,10 @@ body:has(.contact-widget) {
   pointer-events: auto;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   width: fit-content;
   margin: 0 auto;
-  padding: 5px 8px 5px 5px;
+  padding: 8px 12px 8px 8px;
   border-radius: 999px;
   background: rgba(15, 23, 42, 0.96);
   border: 1px solid var(--border-color);
@@ -32,8 +32,8 @@ body:has(.contact-widget) {
   min-width: 0;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
+  gap: 12px;
+  padding: 10px 16px;
   border-radius: 999px;
   background: var(--background-gradient);
   color: var(--text-color);
@@ -48,12 +48,12 @@ body:has(.contact-widget) {
 }
 
 .contact-widget__call i {
-  font-size: var(--font-size-xs);
+  font-size: 16px;
   flex-shrink: 0;
 }
 
 .contact-widget__call-number {
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-lg);
   white-space: nowrap;
   overflow: hidden;
@@ -64,7 +64,7 @@ body:has(.contact-widget) {
 .contact-widget__social {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   flex-shrink: 0;
 }
 
@@ -72,8 +72,8 @@ body:has(.contact-widget) {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: var(--bg-elevated);
   color: var(--text-muted-strong);
@@ -88,26 +88,30 @@ body:has(.contact-widget) {
 }
 
 .contact-widget__social-link i {
-  font-size: 15px;
+  font-size: 17px;
 }
 
 @media (max-width: 420px) {
   .contact-widget__inner {
-    gap: 6px;
-    padding: 4px 6px 4px 4px;
+    gap: 10px;
+    padding: 6px 10px 6px 6px;
   }
 
   .contact-widget__call {
-    padding: 7px 10px;
-    gap: 6px;
+    padding: 9px 12px;
+    gap: 10px;
+  }
+
+  .contact-widget__social {
+    gap: 8px;
   }
 
   .contact-widget__social-link {
-    width: 34px;
-    height: 34px;
+    width: 38px;
+    height: 38px;
   }
 
   .contact-widget__social-link i {
-    font-size: 14px;
+    font-size: 15px;
   }
 }
