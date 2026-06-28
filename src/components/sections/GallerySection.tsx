@@ -1,6 +1,11 @@
 import { useEffect } from "react";
 import { useI18n } from "../../i18n/I18nContext";
-import { GALLERY_IMAGE_SIZES, GALLERY_IMAGE_WIDTHS, ResponsiveImage } from "../ui/ResponsiveImage";
+import {
+  GALLERY_IMAGE_SIZES,
+  GALLERY_IMAGE_WIDTHS,
+  ResponsiveImage,
+  resolveGalleryFullSrc,
+} from "../ui/ResponsiveImage";
 
 const GRID_IMAGES = [
   "/assets/images/gallery/gallery-19.jpeg",
@@ -30,24 +35,30 @@ export function GallerySection() {
     const backdrop = lightbox.querySelector(".lightbox__backdrop") as HTMLElement;
 
     function openLightbox(src: string, alt: string) {
-      lightboxImg.src = src;
+      lightbox.classList.add("lightbox--open", "lightbox--loading");
       lightboxImg.alt = alt || "";
-      lightbox.classList.add("lightbox--open");
+      lightboxImg.onload = () => lightbox.classList.remove("lightbox--loading");
+      lightboxImg.onerror = () => lightbox.classList.remove("lightbox--loading");
+      lightboxImg.src = src;
       document.body.style.overflow = "hidden";
     }
 
     function closeLightbox() {
-      lightbox.classList.remove("lightbox--open");
+      lightbox.classList.remove("lightbox--open", "lightbox--loading");
       document.body.style.overflow = "";
+      lightboxImg.onload = null;
+      lightboxImg.onerror = null;
       lightboxImg.src = "";
       lightboxImg.alt = "";
     }
 
     function onDocClick(e: MouseEvent) {
       const target = e.target as HTMLElement;
-      if (target.matches(".gallery__img, .gallery__thumb-img")) {
-        openLightbox((target as HTMLImageElement).currentSrc || (target as HTMLImageElement).src, (target as HTMLImageElement).alt);
-      }
+      const item = target.closest(".gallery__item, .gallery__thumb-item");
+      if (!item) return;
+      const img = item.querySelector("img");
+      if (!img) return;
+      openLightbox(resolveGalleryFullSrc(img), img.alt);
     }
 
     function onKeydown(e: KeyboardEvent) {

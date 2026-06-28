@@ -25,6 +25,7 @@
   overflow: hidden;
   border-radius: 16px;
   box-shadow: var(--shadow);
+  cursor: pointer;
 }
 
 .gallery__item:nth-child(1) {
@@ -141,6 +142,11 @@
   max-height: 90vh;
   border-radius: 12px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  transition: opacity 0.2s ease;
+}
+
+.lightbox--loading .lightbox__image {
+  opacity: 0.4;
 }
 
 .lightbox__close {

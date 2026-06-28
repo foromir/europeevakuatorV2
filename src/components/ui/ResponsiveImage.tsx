@@ -7,6 +7,8 @@ type ResponsiveImageProps = {
   height?: number;
   loading?: "lazy" | "eager";
   className?: string;
+  /** Full-resolution URL for lightbox (defaults to original `src`). */
+  fullSrc?: string;
 };
 
 function stripExtension(src: string): string {
@@ -18,6 +20,15 @@ function webpSrcSet(base: string, widths: readonly number[]): string {
 }
 
 /** Responsive WebP image. Expects `-{width}.webp` variants from `scripts/optimize-images.mjs`. */
+/** Resolve full-quality gallery URL from a thumbnail `<img>`. */
+export function resolveGalleryFullSrc(img: HTMLImageElement): string {
+  if (img.dataset.fullSrc) return img.dataset.fullSrc;
+  const displayed = img.currentSrc || img.src;
+  const withoutVariant = displayed.replace(/-\d+\.webp(?:\?.*)?$/, "");
+  if (/\.jpe?g(?:\?.*)?$/i.test(withoutVariant)) return withoutVariant;
+  return displayed.replace(/-\d+\.webp(?:\?.*)?$/, "-1120.webp");
+}
+
 export function ResponsiveImage({
   src,
   alt,
@@ -27,6 +38,7 @@ export function ResponsiveImage({
   height,
   loading = "lazy",
   className,
+  fullSrc,
 }: ResponsiveImageProps) {
   const base = stripExtension(src);
   const fallback = `${base}-${widths[0]}.webp`;
@@ -42,6 +54,7 @@ export function ResponsiveImage({
       loading={loading}
       className={className}
       decoding={loading === "eager" ? "sync" : "async"}
+      data-full-src={fullSrc ?? src}
     />
   );
 }
