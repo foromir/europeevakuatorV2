@@ -1,3 +1,4 @@
+import { Icon } from "../icons";
 import { useI18n } from "../../i18n/I18nContext";
 
 type SocialLinksProps = {
@@ -22,7 +23,7 @@ export function SocialLinks({
           title={common.titleCall}
           aria-label={common.ariaCall}
         >
-          <i className="fas fa-phone" />
+          <Icon name="phone" />
         </a>
       ) : null}
       <a
@@ -31,7 +32,7 @@ export function SocialLinks({
         title={common.titleEmail}
         aria-label={common.ariaEmail}
       >
-        <i className="fas fa-envelope" />
+        <Icon name="envelope" />
       </a>
       <a
         href={common.telegramUrl}
@@ -41,7 +42,7 @@ export function SocialLinks({
         title={common.titleTelegram}
         aria-label={common.ariaTelegram}
       >
-        <i className="fab fa-telegram" />
+        <Icon name="telegram" />
       </a>
       <a
         href={common.whatsappUrl}
@@ -51,7 +52,7 @@ export function SocialLinks({
         title={common.titleWhatsapp}
         aria-label={common.ariaWhatsapp}
       >
-        <i className="fab fa-whatsapp" />
+        <Icon name="whatsapp" />
       </a>
     </div>
   );

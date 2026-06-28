@@ -1,5 +1,11 @@
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
+import { Icon } from "./icons";
+import {
+  HERO_IMAGE_SIZES,
+  GALLERY_IMAGE_WIDTHS,
+  ResponsiveImage,
+} from "./ui/ResponsiveImage";
 
 export type EvacuationSliderSlide = {
   src: string;
@@ -56,7 +62,7 @@ export function EvacuationBlockSlider({
           aria-label={ariaPrev}
           onClick={scrollPrev}
         >
-          <i className="fas fa-chevron-left" aria-hidden="true" />
+          <Icon name="chevron-left" />
         </button>
         <button
           type="button"
@@ -64,18 +70,20 @@ export function EvacuationBlockSlider({
           aria-label={ariaNext}
           onClick={scrollNext}
         >
-          <i className="fas fa-chevron-right" aria-hidden="true" />
+          <Icon name="chevron-right" />
         </button>
         <div className="evacuation-block__embla" ref={emblaRef}>
           <div className="evacuation-block__embla-container">
             {slides.map((slide, i) => (
               <div key={`${slide.src}-${i}`} className="evacuation-block__embla-slide">
-                <img
+                <ResponsiveImage
                   src={slide.src}
                   alt={slide.alt}
                   className="evacuation-block__img"
                   width={slide.width ?? 560}
                   height={slide.height ?? 400}
+                  widths={GALLERY_IMAGE_WIDTHS}
+                  sizes={HERO_IMAGE_SIZES}
                   loading={i === 0 ? "eager" : "lazy"}
                 />
               </div>
@@ -83,14 +91,14 @@ export function EvacuationBlockSlider({
           </div>
         </div>
       </div>
-      <div className="evacuation-block__bars" role="tablist" aria-label={tablistAria}>
+      <div className="evacuation-block__bars" role="group" aria-label={tablistAria}>
         {slideAriaLabels.map((label, i) => (
           <button
             key={label}
             type="button"
             className={`evacuation-block__bar${i === selectedIndex ? " evacuation-block__bar--active" : ""}`}
             aria-label={label}
-            aria-selected={i === selectedIndex}
+            aria-current={i === selectedIndex ? "true" : undefined}
             onClick={() => scrollTo(i)}
           />
         ))}

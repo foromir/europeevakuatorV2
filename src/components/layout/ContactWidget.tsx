@@ -1,3 +1,4 @@
+import { Icon } from "../icons";
 import { useI18n } from "../../i18n/I18nContext";
 import { SocialLinks } from "./SocialLinks";
 
@@ -8,7 +9,7 @@ export function ContactWidget() {
     <aside className="contact-widget" aria-label={common.contactWidgetAria}>
       <div className="contact-widget__inner">
         <a href={`tel:${common.phoneTel}`} className="contact-widget__call">
-          <i className="fas fa-phone" aria-hidden="true" />
+          <Icon name="phone" />
           <span className="contact-widget__call-number">{common.phoneDisplay}</span>
         </a>
         <SocialLinks

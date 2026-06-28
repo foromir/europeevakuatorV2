@@ -57,7 +57,7 @@
   transform: translateY(4px);
 }
 
-.evacuation-block__scroll-hint i {
+.evacuation-block__scroll-hint .icon {
   font-size: 20px;
   opacity: 0.8;
   animation: scrollBounce 2s ease-in-out infinite;
@@ -216,7 +216,7 @@
   animation: pulse 2s infinite;
 }
 
-.evacuation-block__info-contact-phone i {
+.evacuation-block__info-contact-phone .icon {
   font-size: var(--font-size-md);
 }
 
@@ -239,7 +239,7 @@
   gap: 8px;
 }
 
-.evacuation-block__trust-item i {
+.evacuation-block__trust-item .icon {
   color: var(--secondary-color);
   font-size: 15px;
   opacity: 0.9;
@@ -332,6 +332,11 @@
   align-items: center;
 }
 
+.evacuation-block__embla-slide picture {
+  display: block;
+  width: 100%;
+}
+
 .evacuation-block__img {
   width: 100%;
   height: auto;
@@ -386,7 +391,7 @@
   outline-offset: 2px;
 }
 
-.evacuation-block__arrow i {
+.evacuation-block__arrow .icon {
   font-size: 20px;
 }
 
@@ -427,7 +432,7 @@
 }
 
 .evacuation-block__bar--active,
-.evacuation-block__bar[aria-selected="true"] {
+.evacuation-block__bar[aria-current="true"] {
   background: linear-gradient(90deg, #f59e0b, #ea580c);
   box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
 }

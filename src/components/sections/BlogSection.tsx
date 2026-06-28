@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { Icon } from "../icons";
 import { useI18n } from "../../i18n/I18nContext";
 import { ROUTE_PATH } from "../../i18n/routeConfig";
 import { BlogPostGrid } from "./BlogPostGrid";
@@ -17,7 +18,8 @@ export function BlogSection() {
         <BlogPostGrid posts={b.posts} readMore={b.readMore} />
         <div className="blog__footer">
           <Link to={localizedPath(ROUTE_PATH.BLOG)} className="blog__all-link">
-            {b.viewAll} <i className="fas fa-arrow-right" />
+            <span>{b.viewAll}</span>
+            <Icon name="arrow-right" />
           </Link>
         </div>
       </div>

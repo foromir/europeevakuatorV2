@@ -194,7 +194,7 @@ html {
 }
 
 body {
-  font-family: "Manrope", TildaSans, Arial, sans-serif;
+  font-family: TildaSans, Arial, sans-serif;
   line-height: var(--line-height-md);
   font-size: var(--text-body-size);
   font-weight: var(--text-body-weight);
@@ -313,6 +313,14 @@ main>section::after {
 .skip-link:focus {
   left: 16px;
   top: 16px;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  flex-shrink: 0;
 }
 
 /* Скрытый визуально, но доступный скринридерам */

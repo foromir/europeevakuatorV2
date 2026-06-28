@@ -1,4 +1,5 @@
 import { EvacuationBlockSlider } from "../EvacuationBlockSlider";
+import { Icon } from "../icons";
 import { useI18n } from "../../i18n/I18nContext";
 import type { LandingEvacuationCopy } from "../../i18n/types";
 
@@ -38,18 +39,21 @@ export function EvacuationBlockSection({ content }: EvacuationBlockSectionProps)
             <p className="evacuation-block__subtitle">{e.subtitle}</p>
             <p className="evacuation-block__text">{e.text}</p>
             <a href={`tel:${common.phoneTel}`} className="evacuation-block__info-contact-phone">
-              <i className="fas fa-phone" />
+              <Icon name="phone" />
               <span>{common.phoneDisplay}</span>
             </a>
             <div className="evacuation-block__trust">
               <span className="evacuation-block__trust-item">
-                <i className="fas fa-shield-alt" /> {e.trustNoHidden}
+                <Icon name="shield" />
+                <span>{e.trustNoHidden}</span>
               </span>
               <span className="evacuation-block__trust-item">
-                <i className="fas fa-euro-sign" /> {e.trustFrom}
+                <Icon name="euro" />
+                <span>{e.trustFrom}</span>
               </span>
               <span className="evacuation-block__trust-item">
-                <i className="fas fa-clock" /> {e.trustEta}
+                <Icon name="clock" />
+                <span>{e.trustEta}</span>
               </span>
             </div>
           </div>
@@ -64,9 +68,9 @@ export function EvacuationBlockSection({ content }: EvacuationBlockSectionProps)
           </div>
         </div>
         <div className="evacuation-block__bottom">
-          <a href="#rates" className="evacuation-block__scroll-hint" aria-label={e.scrollRatesAria}>
+          <a href="#rates" className="evacuation-block__scroll-hint">
             <span className="evacuation-block__scroll-hint-text">{e.scrollRatesText}</span>
-            <i className="fas fa-chevron-down" aria-hidden="true" />
+            <Icon name="chevron-down" />
           </a>
         </div>
       </div>

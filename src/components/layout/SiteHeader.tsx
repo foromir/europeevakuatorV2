@@ -4,6 +4,7 @@ import { useI18n } from "../../i18n/I18nContext";
 import type { Locale } from "../../i18n/types";
 import { buildHeaderLocationNav } from "../../i18n/locations/headerNav";
 import { HeaderMobileLocationsMenu } from "./HeaderMobileLocationsMenu";
+import { Icon } from "../icons";
 import { persistLocalePreference, ROUTE_PATH, swapLocaleInPathname } from "../../i18n/routeConfig";
 
 type Common = ReturnType<typeof useI18n>["common"];
@@ -98,7 +99,7 @@ export function SiteHeader() {
 
       <div className="header__contact">
         <a href={`tel:${common.phoneTel}`} className="header__contact-item-number">
-          <i className="fas fa-phone header__contact-icon" />
+          <Icon name="phone" className="header__contact-icon" />
           <span className="header__contact-link">{common.phoneDisplay}</span>
         </a>
       </div>

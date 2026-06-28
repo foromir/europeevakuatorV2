@@ -19,6 +19,9 @@ function ogImageForPage(locale: Locale, ogImagePath?: string): string {
   return absUrl(ogImagePath ?? common.ogImagePath);
 }
 
+const LCP_IMAGE = "/assets/images/gallery/gallery-18";
+const LCP_PRELOAD = `<link rel="preload" as="image" type="image/webp" href="${LCP_IMAGE}-1120.webp" imagesrcset="${LCP_IMAGE}-560.webp 560w, ${LCP_IMAGE}-1120.webp 1120w" imagesizes="(max-width: 768px) 90vw, 560px" fetchpriority="high" />`;
+
 /** SEO-теги для `<head>` при статической генерации. */
 export function buildHeadForUrl(pathname: string): string {
   const page = resolvePage(pathname);
@@ -33,6 +36,7 @@ export function buildHeadForUrl(pathname: string): string {
   const jsonLd = buildJsonLdGraph(pathname);
 
   const tags: string[] = [
+    LCP_PRELOAD,
     `<title>${escapeHtml(seo.title)}</title>`,
     seo.description ? `<meta name="description" content="${escapeHtml(seo.description)}" />` : "",
     !isIndexedLocale(locale) ? `<meta name="robots" content="noindex, follow" />` : "",

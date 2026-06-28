@@ -87,7 +87,7 @@ body:has(.contact-widget) {
   transform: translateY(-1px);
 }
 
-.contact-widget__social-link i {
+.contact-widget__social-link .icon {
   font-size: 17px;
 }
 
@@ -111,7 +111,7 @@ body:has(.contact-widget) {
     height: 38px;
   }
 
-  .contact-widget__social-link i {
+  .contact-widget__social-link .icon {
     font-size: 15px;
   }
 }

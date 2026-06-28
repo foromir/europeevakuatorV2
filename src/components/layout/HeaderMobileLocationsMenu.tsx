@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { Icon } from "../icons";
 import type { HeaderNavCountry } from "../../i18n/locations/headerNav";
 
 type HeaderMobileLocationsMenuProps = {
@@ -98,11 +99,11 @@ export function HeaderMobileLocationsMenu({
         }}
         aria-expanded={open}
         aria-controls="header-mobile-locations-panel"
-        aria-label={open ? closeLabel : openLabel}
         onClick={() => onOpenChange(!open)}
       >
-        <i className={`fas ${open ? "fa-times" : "fa-map-marker-alt"}`} aria-hidden="true" />
+        <Icon name={open ? "times" : "map-marker"} />
         <span className="header__mobile-locations-toggle-text">{title}</span>
+        <span className="visually-hidden">{open ? closeLabel : openLabel}</span>
       </button>
 
       <div
@@ -115,7 +116,7 @@ export function HeaderMobileLocationsMenu({
         id="header-mobile-locations-panel"
         className={`header__mobile-locations-panel${open ? " header__mobile-locations-panel--open" : ""}`}
         aria-label={panelAriaLabel}
-        aria-hidden={!open}
+        hidden={!open}
       >
         <div className="header__mobile-locations-panel-header">
           <span className="header__mobile-locations-panel-title">{title}</span>
@@ -125,7 +126,7 @@ export function HeaderMobileLocationsMenu({
             aria-label={closeLabel}
             onClick={close}
           >
-            <i className="fas fa-times" aria-hidden="true" />
+            <Icon name="times" />
           </button>
         </div>
 
@@ -145,7 +146,7 @@ export function HeaderMobileLocationsMenu({
                   onClick={() => toggleCountry(country.code)}
                 >
                   <span>{country.label}</span>
-                  <i className="fas fa-chevron-down" aria-hidden="true" />
+                  <Icon name="chevron-down" />
                 </button>
                 <ul className="header__mobile-locations-cities" hidden={!expanded}>
                   {country.cities.map((city) => (

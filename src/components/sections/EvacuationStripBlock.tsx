@@ -4,7 +4,7 @@ const STRIP_ICONS = [
   { src: "/assets/icons/strip-icon-24.svg" },
   { src: "/assets/icons/strip-icon-service.svg" },
   { src: "/assets/icons/strip-icon-accident.svg" },
-  { src: "/assets/icons/strip-icon-transport-europe.webp", tinted: true },
+  { src: "/assets/icons/strip-icon-transport-europe-112.webp", tinted: true },
 ] as const;
 
 /** Полоса услуг под героем (в legacy — отдельный div, не section) */
@@ -26,7 +26,7 @@ export function EvacuationStripBlock() {
                   width={56}
                   height={56}
                 />
-                <h3 className="evacuation-block__strip-title">{item.title}</h3>
+                <h2 className="evacuation-block__strip-title">{item.title}</h2>
                 <p className="evacuation-block__strip-desc">{item.desc}</p>
               </div>
             );

@@ -1,4 +1,5 @@
 import { useI18n } from "../../i18n/I18nContext";
+import { ResponsiveImage, SERVICE_IMAGE_SIZES } from "../ui/ResponsiveImage";
 
 const CARD_IMAGES = [
   "/assets/images/gallery/gallery-18.jpeg",
@@ -25,7 +26,14 @@ export function ServicesSection() {
               className={`service-card service-card--image-${i % 2 === 0 ? "left" : "right"}`}
             >
               <div className="service-card__media">
-                <img src={CARD_IMAGES[i]} alt={card.imgAlt} loading="lazy" />
+                <ResponsiveImage
+                  src={CARD_IMAGES[i]}
+                  alt={card.imgAlt}
+                  sizes={SERVICE_IMAGE_SIZES}
+                  width={486}
+                  height={304}
+                  loading="lazy"
+                />
               </div>
               <div className="service-card__body">
                 <h3 className="service-card__title">{card.title}</h3>

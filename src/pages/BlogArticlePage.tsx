@@ -1,5 +1,6 @@
 import { useLocation } from "react-router";
 import { Layout } from "../components/layout";
+import { BLOG_IMAGE_WIDTHS, BLOG_IMAGE_SIZES, ResponsiveImage } from "../components/ui/ResponsiveImage";
 import { resolvePage } from "../i18n/seo/resolvePage";
 import { NotFoundPage } from "./placeholders";
 
@@ -30,13 +31,14 @@ export default function BlogArticlePage() {
             </header>
 
             <figure className="blog-article__image">
-              <img
+              <ResponsiveImage
                 src={article.imagePath}
                 alt={article.imageAlt}
+                widths={BLOG_IMAGE_WIDTHS}
+                sizes="(max-width: 768px) 90vw, 720px"
                 width={800}
                 height={500}
                 loading="eager"
-                fetchPriority="high"
               />
             </figure>
 

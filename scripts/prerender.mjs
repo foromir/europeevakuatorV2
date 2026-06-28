@@ -22,12 +22,30 @@ const { render, getPrerenderPaths, generateSitemap, generateRobotsTxt } = await 
 
 const paths = getPrerenderPaths();
 
+/** React SSR emits camelCase DOM attrs; browsers lowercase them before hydration. */
+function fixHydrationAttributes(html) {
+  return html
+    .replace(/\ssrcSet=/g, " srcset=")
+    .replace(/\sfetchPriority=/g, " fetchpriority=")
+    .replace(/\sdateTime=/g, " datetime=")
+    .replace(/\shttpEquiv=/g, " httpequiv=")
+    .replace(/\snoModule=/g, " nomodule=")
+    .replace(/\scrossOrigin=/g, " crossorigin=")
+    .replace(/\sallowFullScreen/g, " allowfullscreen")
+    .replace(/\sreferrerPolicy=/g, " referrerpolicy=")
+    .replace(/&#x27;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&amp;/g, "&");
+}
+
 for (const url of paths) {
   const { html, head, htmlLang } = render(url);
-  const pageHtml = template
-    .replace("<!--app-head-->", head)
-    .replace("<!--app-html-->", html)
-    .replace('<html lang="de">', `<html lang="${htmlLang}">`);
+  const pageHtml = fixHydrationAttributes(
+    template
+      .replace("<!--app-head-->", head)
+      .replace("<!--app-html-->", html)
+      .replace('<html lang="de">', `<html lang="${htmlLang}">`),
+  );
 
   const relative = url.replace(/^\//, "");
   const outFile = relative.endsWith(".html")

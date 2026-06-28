@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useI18n } from "../../i18n/I18nContext";
+import { GALLERY_IMAGE_SIZES, GALLERY_IMAGE_WIDTHS, ResponsiveImage } from "../ui/ResponsiveImage";
 
 const GRID_IMAGES = [
   "/assets/images/gallery/gallery-19.jpeg",
@@ -45,7 +46,7 @@ export function GallerySection() {
     function onDocClick(e: MouseEvent) {
       const target = e.target as HTMLElement;
       if (target.matches(".gallery__img, .gallery__thumb-img")) {
-        openLightbox((target as HTMLImageElement).src, (target as HTMLImageElement).alt);
+        openLightbox((target as HTMLImageElement).currentSrc || (target as HTMLImageElement).src, (target as HTMLImageElement).alt);
       }
     }
 
@@ -80,7 +81,16 @@ export function GallerySection() {
             <div className="gallery__grid">
               {GRID_IMAGES.map((src, i) => (
                 <div key={src} className="gallery__item">
-                  <img src={src} alt={g.gridAlts[i]} className="gallery__img" />
+                  <ResponsiveImage
+                    src={src}
+                    alt={g.gridAlts[i]}
+                    className="gallery__img"
+                    widths={GALLERY_IMAGE_WIDTHS}
+                    sizes={GALLERY_IMAGE_SIZES}
+                    width={400}
+                    height={300}
+                    loading="lazy"
+                  />
                 </div>
               ))}
             </div>
@@ -97,7 +107,16 @@ export function GallerySection() {
           <div className="gallery__thumbs">
             {g.thumbs.map(({ src, alt }) => (
               <div key={src} className="gallery__thumb-item">
-                <img src={`/assets/images/gallery/${src}`} alt={alt} className="gallery__thumb-img" />
+                <ResponsiveImage
+                  src={`/assets/images/gallery/${src}`}
+                  alt={alt}
+                  className="gallery__thumb-img"
+                  widths={GALLERY_IMAGE_WIDTHS}
+                  sizes="120px"
+                  width={120}
+                  height={90}
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>

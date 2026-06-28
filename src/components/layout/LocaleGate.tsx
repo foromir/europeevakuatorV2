@@ -1,5 +1,4 @@
 import { useCallback, useMemo } from "react";
-import { Helmet } from "react-helmet-async";
 import { Navigate, Outlet, useLocation, useNavigate, useParams } from "react-router";
 import { buildI18nValue, I18nProvider } from "../../i18n/I18nContext";
 import { DEFAULT_LOCALE, isLocale, persistLocalePreference, swapLocaleInPathname, withLocale } from "../../i18n/routeConfig";
@@ -35,7 +34,6 @@ export function LocaleGate() {
 
   return (
     <I18nProvider value={value}>
-      <Helmet htmlAttributes={{ lang: locale }} />
       <Outlet />
     </I18nProvider>
   );

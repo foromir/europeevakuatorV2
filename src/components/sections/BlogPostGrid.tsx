@@ -1,5 +1,11 @@
 import { Link } from "react-router";
+import { Icon } from "../icons";
 import { useI18n } from "../../i18n/I18nContext";
+import {
+  BLOG_IMAGE_SIZES,
+  BLOG_IMAGE_WIDTHS,
+  ResponsiveImage,
+} from "../ui/ResponsiveImage";
 
 type BlogPost = {
   href: string;
@@ -16,6 +22,10 @@ type BlogPostGridProps = {
   readMore: string;
 };
 
+function blogImageSrc(path: string): string {
+  return path.replace(/-\d+\.webp$/i, ".jpeg").replace(/\.webp$/i, ".jpeg");
+}
+
 export function BlogPostGrid({ posts, readMore }: BlogPostGridProps) {
   const { localizedPath } = useI18n();
 
@@ -25,18 +35,21 @@ export function BlogPostGrid({ posts, readMore }: BlogPostGridProps) {
         const isLink = post.href !== "#";
         const postPath = isLink ? localizedPath(post.href) : "#";
         const imagePath = "imagePath" in post ? post.imagePath : undefined;
+        const imageSrc = imagePath ? blogImageSrc(imagePath) : undefined;
 
         return (
           <article
             key={post.href + post.dateIso}
             className={`blog-card${isLink ? "" : " blog-card--soon"}`}
           >
-            {imagePath ? (
+            {imageSrc ? (
               isLink ? (
                 <Link to={postPath} className="blog-card__image">
-                  <img
-                    src={imagePath}
+                  <ResponsiveImage
+                    src={imageSrc}
                     alt={post.imageAlt}
+                    widths={BLOG_IMAGE_WIDTHS}
+                    sizes={BLOG_IMAGE_SIZES}
                     width={360}
                     height={225}
                     loading="lazy"
@@ -44,9 +57,11 @@ export function BlogPostGrid({ posts, readMore }: BlogPostGridProps) {
                 </Link>
               ) : (
                 <div className="blog-card__image" aria-hidden="true">
-                  <img
-                    src={imagePath}
+                  <ResponsiveImage
+                    src={imageSrc}
                     alt={post.imageAlt}
+                    widths={BLOG_IMAGE_WIDTHS}
+                    sizes={BLOG_IMAGE_SIZES}
                     width={360}
                     height={225}
                     loading="lazy"
@@ -66,7 +81,8 @@ export function BlogPostGrid({ posts, readMore }: BlogPostGridProps) {
               <p className="blog-card__excerpt">{post.excerpt}</p>
               {isLink ? (
                 <Link to={postPath} className="blog-card__link">
-                  {readMore} <i className="fas fa-arrow-right" />
+                  <span>{readMore}</span>
+                  <Icon name="arrow-right" />
                 </Link>
               ) : null}
             </div>

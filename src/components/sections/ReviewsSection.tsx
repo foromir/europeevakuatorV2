@@ -1,3 +1,4 @@
+import { Icon } from "../icons";
 import { useI18n } from "../../i18n/I18nContext";
 import { GOOGLE_MAPS_EMBED_SRC, GOOGLE_MAPS_PLACE_URL } from "../../i18n/routeConfig";
 
@@ -35,7 +36,7 @@ export function ReviewsSection() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i className="fab fa-google" aria-hidden="true" />
+              <Icon name="google" />
               {r.viewOnGoogle}
             </a>
           </div>
