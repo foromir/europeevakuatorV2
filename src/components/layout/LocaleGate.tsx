@@ -1,5 +1,6 @@
 import { useCallback, useMemo } from "react";
 import { Navigate, Outlet, useLocation, useNavigate, useParams } from "react-router";
+import { ensureLocalePack } from "../../i18n/loadLocale";
 import { buildI18nValue, I18nProvider } from "../../i18n/I18nContext";
 import { DEFAULT_LOCALE, isLocale, persistLocalePreference, swapLocaleInPathname, withLocale } from "../../i18n/routeConfig";
 import type { Locale } from "../../i18n/types";
@@ -18,9 +19,11 @@ export function LocaleGate() {
 
   const setLocale = useCallback(
     (next: Locale) => {
-      const nextPath = swapLocaleInPathname(pathname, next);
-      navigate(`${nextPath}${search}${hash}`, { replace: true });
-      persistLocalePreference(next);
+      void ensureLocalePack(next).then(() => {
+        const nextPath = swapLocaleInPathname(pathname, next);
+        navigate(`${nextPath}${search}${hash}`, { replace: true });
+        persistLocalePreference(next);
+      });
     },
     [navigate, pathname, search, hash],
   );

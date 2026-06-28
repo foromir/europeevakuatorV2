@@ -1,4 +1,4 @@
-import { messages } from "../locales";
+import { requireLocalePack } from "../loadLocale";
 import { getBlogPostPage, isBlogPostPath } from "../blogPosts";
 import { ROUTE_PATH, DEFAULT_LOCALE, isLocale } from "../routeConfig";
 import type { BlogArticlePage, Locale, PageSeoBundle, RouteLocaleEntry } from "../types";
@@ -40,7 +40,7 @@ export function parseLocalizedPath(pathname: string): { locale: Locale; contentP
 
 export function resolvePage(pathname: string): ResolvedPage | null {
   const { locale, contentPath } = parseLocalizedPath(pathname);
-  const pack = messages[locale];
+  const pack = requireLocalePack(locale);
 
   if (contentPath === ROUTE_PATH.HOME) {
     return { kind: "home", locale, contentPath: ROUTE_PATH.HOME, seo: pack.pages.home };

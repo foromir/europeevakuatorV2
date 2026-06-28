@@ -1,4 +1,4 @@
-import { messages } from "../locales";
+import { requireLocalePack } from "../loadLocale";
 import { getLocationCityByRouteKey, getLocationCountryByRouteSlug } from "../locations/registry";
 import { getBlogPostPage, isBlogPostPath } from "../blogPosts";
 import { ROUTE_PATH, withLocale } from "../routeConfig";
@@ -12,12 +12,12 @@ export type BreadcrumbItem = {
 function locationBreadcrumbs(
   locale: Locale,
   parts: string[],
-  routes: (typeof messages)["ru"]["routes"],
+  routes: ReturnType<typeof requireLocalePack>["routes"],
 ): BreadcrumbItem[] | null {
   const country = getLocationCountryByRouteSlug(parts[0]);
   if (!country) return null;
 
-  const home: BreadcrumbItem = { label: messages[locale].common.crumbHome, path: ROUTE_PATH.HOME };
+  const home: BreadcrumbItem = { label: requireLocalePack(locale).common.crumbHome, path: ROUTE_PATH.HOME };
   const items: BreadcrumbItem[] = [
     home,
     { label: country.countryLabel[locale], path: country.countryPath },
@@ -47,7 +47,7 @@ function locationBreadcrumbs(
 }
 
 export function getBreadcrumbs(locale: Locale, contentPath: string): BreadcrumbItem[] {
-  const { common, pages, routes } = messages[locale];
+  const { common, pages, routes } = requireLocalePack(locale);
   const home: BreadcrumbItem = { label: common.crumbHome, path: ROUTE_PATH.HOME };
 
   if (contentPath === ROUTE_PATH.HOME) return [home];

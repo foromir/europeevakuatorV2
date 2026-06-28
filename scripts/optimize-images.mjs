@@ -7,7 +7,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 const assets = path.join(root, "assets", "images");
 
-const GALLERY_WIDTHS = [560, 1120];
+const GALLERY_WIDTHS = [360, 560, 1120];
 const BLOG_WIDTHS = [360, 720];
 
 async function optimizeJpegDir(dir, widths) {

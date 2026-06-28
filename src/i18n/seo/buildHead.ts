@@ -1,10 +1,10 @@
-import { messages } from "../locales";
+import { requireLocalePack } from "../loadLocale";
 import { absUrl, withLocale } from "../routeConfig";
 import type { Locale } from "../types";
 import { DEFAULT_LOCALE, INDEXED_LOCALES, LOCALE_HREFLANG, LOCALE_OG, SEO_LOCALES, isIndexedLocale } from "./config";
 import { buildHreflangLinks } from "./hreflang";
 import { buildJsonLdGraph } from "./jsonLd";
-import { resolvePage } from "./resolvePage";
+import { parseLocalizedPath, resolvePage } from "./resolvePage";
 
 function escapeHtml(value: string): string {
   return value
@@ -15,12 +15,12 @@ function escapeHtml(value: string): string {
 }
 
 function ogImageForPage(locale: Locale, ogImagePath?: string): string {
-  const common = messages[locale].common;
+  const common = requireLocalePack(locale).common;
   return absUrl(ogImagePath ?? common.ogImagePath);
 }
 
 const LCP_IMAGE = "/assets/images/gallery/gallery-18";
-const LCP_PRELOAD = `<link rel="preload" as="image" type="image/webp" href="${LCP_IMAGE}-1120.webp" imagesrcset="${LCP_IMAGE}-560.webp 560w, ${LCP_IMAGE}-1120.webp 1120w" imagesizes="(max-width: 768px) 90vw, 560px" fetchpriority="high" />`;
+const LCP_PRELOAD = `<link rel="preload" as="image" type="image/webp" href="${LCP_IMAGE}-560.webp" imagesrcset="${LCP_IMAGE}-360.webp 360w, ${LCP_IMAGE}-560.webp 560w, ${LCP_IMAGE}-1120.webp 1120w" imagesizes="(max-width: 768px) 50vw, 560px" fetchpriority="high" />`;
 
 /** SEO-теги для `<head>` при статической генерации. */
 export function buildHeadForUrl(pathname: string): string {
@@ -28,7 +28,7 @@ export function buildHeadForUrl(pathname: string): string {
   if (!page) return "";
 
   const { locale, seo } = page;
-  const common = messages[locale].common;
+  const common = requireLocalePack(locale).common;
   const canonicalHref = absUrl(withLocale(locale, seo.canonicalPath));
   const ogUrlHref = absUrl(withLocale(locale, seo.ogUrlPath));
   const ogImageHref = ogImageForPage(locale, seo.ogImagePath);

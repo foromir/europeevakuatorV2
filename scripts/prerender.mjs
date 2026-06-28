@@ -39,7 +39,7 @@ function fixHydrationAttributes(html) {
 }
 
 for (const url of paths) {
-  const { html, head, htmlLang } = render(url);
+  const { html, head, htmlLang } = await render(url);
   const pageHtml = fixHydrationAttributes(
     template
       .replace("<!--app-head-->", head)

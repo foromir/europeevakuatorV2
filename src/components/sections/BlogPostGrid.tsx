@@ -80,8 +80,8 @@ export function BlogPostGrid({ posts, readMore }: BlogPostGridProps) {
               </h3>
               <p className="blog-card__excerpt">{post.excerpt}</p>
               {isLink ? (
-                <Link to={postPath} className="blog-card__link">
-                  <span>{readMore}</span>
+                <Link to={postPath} className="blog-card__link" aria-label={`${readMore}: ${post.title}`}>
+                  <span aria-hidden="true">{readMore}</span>
                   <Icon name="arrow-right" />
                 </Link>
               ) : null}

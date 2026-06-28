@@ -1,4 +1,4 @@
-import { messages } from "../locales";
+import { requireLocalePack } from "../loadLocale";
 import { localizedCityName } from "../locales/transliterate/germanPlaceName";
 import { getLocationCityByRouteKey, getLocationCountryByRouteSlug } from "../locations/registry";
 import { ROUTE_PATH, SITE_ORIGIN, absUrl, withLocale } from "../routeConfig";
@@ -23,7 +23,7 @@ function areaNameFromRoute(routeKey: string, locale: Locale): string | undefined
 }
 
 function buildOrganization(locale: Locale) {
-  const common = messages[locale].common;
+  const common = requireLocalePack(locale).common;
   return {
     "@type": "Organization",
     "@id": `${SITE_ORIGIN}/#organization`,
@@ -41,7 +41,7 @@ function buildWebSite(locale: Locale) {
     "@type": "WebSite",
     "@id": `${SITE_ORIGIN}/#website`,
     url: SITE_ORIGIN,
-    name: messages[locale].common.brandName,
+    name: requireLocalePack(locale).common.brandName,
     inLanguage: locale,
     publisher: { "@id": `${SITE_ORIGIN}/#organization` },
   };
@@ -64,7 +64,7 @@ function buildBreadcrumbList(locale: Locale, contentPath: string, pageUrl: strin
 }
 
 function buildFaqPage(locale: Locale, pageUrl: string) {
-  const items = messages[locale].common.landing.faq.items;
+  const items = requireLocalePack(locale).common.landing.faq.items;
   return {
     "@type": "FAQPage",
     "@id": schemaId(pageUrl) + "-faq",
@@ -80,7 +80,7 @@ function buildFaqPage(locale: Locale, pageUrl: string) {
 }
 
 function buildTowingService(locale: Locale, page: Extract<ResolvedPage, { kind: "route" }>, pageUrl: string) {
-  const common = messages[locale].common;
+  const common = requireLocalePack(locale).common;
   const area = areaNameFromRoute(page.routeKey, locale);
   const ogImage = absUrl(page.seo.ogImagePath ?? common.ogImagePath);
 
@@ -106,7 +106,7 @@ function buildTowingService(locale: Locale, page: Extract<ResolvedPage, { kind: 
 }
 
 function buildArticle(locale: Locale, page: Extract<ResolvedPage, { kind: "blog" }>, pageUrl: string) {
-  const common = messages[locale].common;
+  const common = requireLocalePack(locale).common;
   const article = page.seo;
   const ogImage = absUrl(article.ogImagePath ?? common.ogImagePath);
 

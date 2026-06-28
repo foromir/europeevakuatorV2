@@ -17,8 +17,8 @@ export function BlogSection() {
         </header>
         <BlogPostGrid posts={b.posts} readMore={b.readMore} />
         <div className="blog__footer">
-          <Link to={localizedPath(ROUTE_PATH.BLOG)} className="blog__all-link">
-            <span>{b.viewAll}</span>
+          <Link to={localizedPath(ROUTE_PATH.BLOG)} className="blog__all-link" aria-label={b.viewAll}>
+            <span aria-hidden="true">{b.viewAll}</span>
             <Icon name="arrow-right" />
           </Link>
         </div>

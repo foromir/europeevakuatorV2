@@ -21,7 +21,7 @@ function webpSrcSet(base: string, widths: readonly number[]): string {
 export function ResponsiveImage({
   src,
   alt,
-  widths = [560, 1120],
+  widths = [360, 560, 1120],
   sizes = "(max-width: 768px) 90vw, 560px",
   width,
   height,
@@ -46,9 +46,9 @@ export function ResponsiveImage({
   );
 }
 
-export const HERO_IMAGE_SIZES = "(max-width: 768px) 90vw, 560px";
-export const GALLERY_IMAGE_SIZES = "(max-width: 768px) 45vw, 400px";
-export const SERVICE_IMAGE_SIZES = "(max-width: 768px) 90vw, 486px";
+export const HERO_IMAGE_SIZES = "(max-width: 768px) 50vw, 560px";
+export const GALLERY_IMAGE_SIZES = "(max-width: 768px) 33vw, 400px";
+export const SERVICE_IMAGE_SIZES = "(max-width: 768px) 100vw, 486px";
 export const BLOG_IMAGE_SIZES = "(max-width: 768px) 90vw, 360px";
 export const BLOG_IMAGE_WIDTHS = [360, 720] as const;
-export const GALLERY_IMAGE_WIDTHS = [560, 1120] as const;
+export const GALLERY_IMAGE_WIDTHS = [360, 560, 1120] as const;
