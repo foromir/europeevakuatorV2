@@ -20,7 +20,8 @@ function ogImageForPage(locale: Locale, ogImagePath?: string): string {
 }
 
 const LCP_IMAGE = "/assets/images/gallery/gallery-18";
-const LCP_PRELOAD = `<link rel="preload" as="image" type="image/webp" href="${LCP_IMAGE}-560.webp" imagesrcset="${LCP_IMAGE}-360.webp 360w, ${LCP_IMAGE}-560.webp 560w, ${LCP_IMAGE}-1120.webp 1120w" imagesizes="(max-width: 768px) 50vw, 560px" fetchpriority="high" />`;
+const LCP_SIZES = "(max-width: 768px) min(360px, calc(100vw - 48px)), min(520px, calc((min(1140px, 100vw) - 64px) / 2 - 40px))";
+const LCP_PRELOAD = `<link rel="preload" as="image" type="image/webp" href="${LCP_IMAGE}-360.webp" imagesrcset="${LCP_IMAGE}-280.webp 280w, ${LCP_IMAGE}-360.webp 360w, ${LCP_IMAGE}-560.webp 560w, ${LCP_IMAGE}-1120.webp 1120w" imagesizes="${LCP_SIZES}" fetchpriority="high" />`;
 
 /** SEO-теги для `<head>` при статической генерации. */
 export function buildHeadForUrl(pathname: string): string {

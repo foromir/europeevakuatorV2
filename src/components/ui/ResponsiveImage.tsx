@@ -20,7 +20,6 @@ function webpSrcSet(base: string, widths: readonly number[]): string {
 }
 
 /** Responsive WebP image. Expects `-{width}.webp` variants from `scripts/optimize-images.mjs`. */
-/** Resolve full-quality gallery URL from a thumbnail `<img>`. */
 export function resolveGalleryFullSrc(img: HTMLImageElement): string {
   if (img.dataset.fullSrc) return img.dataset.fullSrc;
   const displayed = img.currentSrc || img.src;
@@ -59,9 +58,11 @@ export function ResponsiveImage({
   );
 }
 
-export const HERO_IMAGE_SIZES = "(max-width: 768px) 50vw, 560px";
+export const HERO_IMAGE_SIZES =
+  "(max-width: 768px) min(360px, calc(100vw - 48px)), min(520px, calc((min(1140px, 100vw) - 64px) / 2 - 40px))";
 export const GALLERY_IMAGE_SIZES = "(max-width: 768px) 33vw, 400px";
 export const SERVICE_IMAGE_SIZES = "(max-width: 768px) 100vw, 486px";
 export const BLOG_IMAGE_SIZES = "(max-width: 768px) 90vw, 360px";
 export const BLOG_IMAGE_WIDTHS = [360, 720] as const;
-export const GALLERY_IMAGE_WIDTHS = [360, 560, 1120] as const;
+export const HERO_IMAGE_WIDTHS = [280, 360, 560, 1120] as const;
+export const GALLERY_IMAGE_WIDTHS = [280, 360, 560, 1120] as const;

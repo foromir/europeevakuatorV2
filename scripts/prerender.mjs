@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { optimizeHtmlCriticalPath } from "./optimize-html-critical-path.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
@@ -40,11 +41,13 @@ function fixHydrationAttributes(html) {
 
 for (const url of paths) {
   const { html, head, htmlLang } = await render(url);
-  const pageHtml = fixHydrationAttributes(
-    template
-      .replace("<!--app-head-->", head)
-      .replace("<!--app-html-->", html)
-      .replace('<html lang="de">', `<html lang="${htmlLang}">`),
+  const pageHtml = optimizeHtmlCriticalPath(
+    fixHydrationAttributes(
+      template
+        .replace("<!--app-head-->", head)
+        .replace("<!--app-html-->", html)
+        .replace('<html lang="de">', `<html lang="${htmlLang}">`),
+    ),
   );
 
   const relative = url.replace(/^\//, "");

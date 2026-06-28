@@ -1,7 +1,8 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import {
   GALLERY_IMAGE_WIDTHS,
   HERO_IMAGE_SIZES,
+  HERO_IMAGE_WIDTHS,
   ResponsiveImage,
 } from "./ui/ResponsiveImage";
 
@@ -36,7 +37,7 @@ function StaticHeroSlide({ slide }: { slide: EvacuationSliderSlide }) {
               className="evacuation-block__img"
               width={slide.width ?? 560}
               height={slide.height ?? 400}
-              widths={GALLERY_IMAGE_WIDTHS}
+              widths={HERO_IMAGE_WIDTHS}
               sizes={HERO_IMAGE_SIZES}
               loading="eager"
             />
@@ -47,24 +48,37 @@ function StaticHeroSlide({ slide }: { slide: EvacuationSliderSlide }) {
   );
 }
 
-/** Hero slider: static LCP image first, Embla loads after idle. */
+/** Hero slider: static LCP image first, Embla loads only on user interaction. */
 export function EvacuationBlockSlider(props: EvacuationBlockSliderProps) {
   const [showCarousel, setShowCarousel] = useState(false);
+  const sliderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const idle = window.requestIdleCallback ?? ((cb: IdleRequestCallback) => window.setTimeout(cb, 1));
-    const cancel = window.cancelIdleCallback ?? window.clearTimeout;
-    const id = idle(() => setShowCarousel(true), { timeout: 2000 });
-    return () => cancel(id);
+    const root = sliderRef.current;
+    if (!root) return;
+
+    const activate = () => setShowCarousel(true);
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "ArrowLeft" || event.key === "ArrowRight") activate();
+    };
+
+    root.addEventListener("pointerdown", activate, { once: true });
+    root.addEventListener("focusin", activate, { once: true });
+    window.addEventListener("keydown", onKey, { once: true });
+
+    return () => {
+      root.removeEventListener("pointerdown", activate);
+      window.removeEventListener("keydown", onKey);
+    };
   }, []);
 
-  if (!showCarousel) {
-    return <StaticHeroSlide slide={props.slides[0]} />;
-  }
-
-  return (
+  const content = showCarousel ? (
     <Suspense fallback={<StaticHeroSlide slide={props.slides[0]} />}>
       <EvacuationBlockSliderEmbla {...props} />
     </Suspense>
+  ) : (
+    <StaticHeroSlide slide={props.slides[0]} />
   );
+
+  return <div ref={sliderRef}>{content}</div>;
 }

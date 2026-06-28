@@ -7,7 +7,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 const assets = path.join(root, "assets", "images");
 
-const GALLERY_WIDTHS = [360, 560, 1120];
+const GALLERY_WIDTHS = [280, 360, 560, 1120];
 const BLOG_WIDTHS = [360, 720];
 
 async function optimizeJpegDir(dir, widths) {
@@ -20,10 +20,11 @@ async function optimizeJpegDir(dir, widths) {
 
     for (const width of widths) {
       const output = path.join(dir, `${base}-${width}.webp`);
+      const quality = width <= 280 ? 72 : width <= 360 ? 74 : width <= 560 ? 76 : 80;
       await sharp(input)
         .rotate()
         .resize({ width, withoutEnlargement: true })
-        .webp({ quality: 82, effort: 4 })
+        .webp({ quality, effort: 4 })
         .toFile(output);
       console.log(`  ${path.relative(root, output)}`);
     }

@@ -2,8 +2,8 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 import { Icon } from "./icons";
 import {
-  GALLERY_IMAGE_WIDTHS,
   HERO_IMAGE_SIZES,
+  HERO_IMAGE_WIDTHS,
   ResponsiveImage,
 } from "./ui/ResponsiveImage";
 import type { EvacuationSliderSlide } from "./EvacuationBlockSlider";
@@ -76,7 +76,7 @@ export function EvacuationBlockSliderEmbla({
                   className="evacuation-block__img"
                   width={slide.width ?? 560}
                   height={slide.height ?? 400}
-                  widths={GALLERY_IMAGE_WIDTHS}
+                  widths={HERO_IMAGE_WIDTHS}
                   sizes={HERO_IMAGE_SIZES}
                   loading={i === 0 ? "eager" : "lazy"}
                 />
