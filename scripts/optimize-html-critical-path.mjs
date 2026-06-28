@@ -25,18 +25,26 @@ export function optimizeHtmlCriticalPath(html) {
   const loader = `
   <script>
     (function () {
+      var booted = false;
       function boot() {
+        if (booted) return;
+        booted = true;
         var s = document.createElement("script");
         s.type = "module";
         s.crossOrigin = "";
         s.src = "${js}";
         document.body.appendChild(s);
       }
-      var idle = window.requestIdleCallback || function (cb) { window.setTimeout(cb, 1); };
+      ["pointerdown", "keydown", "touchstart"].forEach(function (eventName) {
+        document.addEventListener(eventName, boot, { once: true, passive: true, capture: true });
+      });
+      function scheduleFallback() {
+        setTimeout(boot, 6000);
+      }
       if (document.readyState === "complete") {
-        idle(boot, { timeout: 4000 });
+        scheduleFallback();
       } else {
-        window.addEventListener("load", function () { idle(boot, { timeout: 4000 }); }, { once: true });
+        window.addEventListener("load", scheduleFallback, { once: true });
       }
     })();
   </script>`;

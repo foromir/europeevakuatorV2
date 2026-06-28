@@ -35,8 +35,6 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes("embla-carousel")) return "embla";
-          if (id.includes("react-router") || id.includes("react-router-dom")) return "router";
-          if (id.includes("node_modules/react-dom") || id.includes("node_modules/react/")) return "react-vendor";
         },
       },
     },

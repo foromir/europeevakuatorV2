@@ -7,4 +7,5 @@ export {
   HERO_IMAGE_SIZES,
   HERO_IMAGE_WIDTHS,
   SERVICE_IMAGE_SIZES,
+  SERVICE_IMAGE_WIDTHS,
 } from "./ResponsiveImage";

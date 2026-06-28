@@ -1,5 +1,5 @@
 import { useI18n } from "../../i18n/I18nContext";
-import { ResponsiveImage, SERVICE_IMAGE_SIZES } from "../ui/ResponsiveImage";
+import { ResponsiveImage, SERVICE_IMAGE_SIZES, SERVICE_IMAGE_WIDTHS } from "../ui/ResponsiveImage";
 
 const CARD_IMAGES = [
   "/assets/images/gallery/gallery-18.jpeg",
@@ -30,6 +30,7 @@ export function ServicesSection() {
                   src={CARD_IMAGES[i]}
                   alt={card.imgAlt}
                   sizes={SERVICE_IMAGE_SIZES}
+                  widths={SERVICE_IMAGE_WIDTHS}
                   width={486}
                   height={304}
                   loading="lazy"

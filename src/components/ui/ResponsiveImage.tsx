@@ -61,8 +61,10 @@ export function ResponsiveImage({
 export const HERO_IMAGE_SIZES =
   "(max-width: 768px) min(360px, calc(100vw - 48px)), min(520px, calc((min(1140px, 100vw) - 64px) / 2 - 40px))";
 export const GALLERY_IMAGE_SIZES = "(max-width: 768px) 33vw, 400px";
-export const SERVICE_IMAGE_SIZES = "(max-width: 768px) 100vw, 486px";
+export const SERVICE_IMAGE_SIZES =
+  "(max-width: 768px) calc(100vw - 40px), min(360px, calc((min(1140px, 100vw) - 112px) / 2))";
 export const BLOG_IMAGE_SIZES = "(max-width: 768px) 90vw, 360px";
 export const BLOG_IMAGE_WIDTHS = [360, 720] as const;
 export const HERO_IMAGE_WIDTHS = [280, 360, 560, 1120] as const;
 export const GALLERY_IMAGE_WIDTHS = [280, 360, 560, 1120] as const;
+export const SERVICE_IMAGE_WIDTHS = [280, 360, 560] as const;
