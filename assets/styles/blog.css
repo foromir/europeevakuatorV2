@@ -142,9 +142,14 @@
   color: var(--secondary-color);
   text-decoration: none;
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 6px;
   transition: gap 0.2s ease, color 0.2s ease;
+  line-height: var(--line-height-sm);
+}
+
+.blog-card__link span {
+  text-align: left;
 }
 
 .blog-card__link:hover {
@@ -152,8 +157,10 @@
   gap: 10px;
 }
 
-.blog-card__link i {
+.blog-card__link .icon {
   font-size: 12px;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .blog--preview .blog__footer {
