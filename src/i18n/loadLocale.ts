@@ -13,6 +13,8 @@ const loaders: Record<Locale, () => Promise<LocaleModule>> = {
   uk: () => import("./locales/uk"),
 };
 
+export { getLocalePack } from "./localeStore";
+
 /** Loads and caches one locale pack (client + SSR). */
 export async function ensureLocalePack(locale: Locale): Promise<MessagesPack> {
   const cached = getLocalePack(locale);

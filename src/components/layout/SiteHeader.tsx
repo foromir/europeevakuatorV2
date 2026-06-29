@@ -1,11 +1,10 @@
 import { useMemo, useState } from "react";
-import { useLocation, useNavigate } from "react-router";
 import { useI18n } from "../../i18n/I18nContext";
 import type { Locale } from "../../i18n/types";
 import { buildHeaderLocationNav } from "../../i18n/locations/headerNav";
 import { HeaderMobileLocationsMenu } from "./HeaderMobileLocationsMenu";
 import { Icon } from "../icons";
-import { persistLocalePreference, ROUTE_PATH, swapLocaleInPathname } from "../../i18n/routeConfig";
+import { ROUTE_PATH } from "../../i18n/routeConfig";
 
 type Common = ReturnType<typeof useI18n>["common"];
 
@@ -22,16 +21,7 @@ const LANGUAGE_SWITCHER: readonly {
 ];
 
 export function SiteHeader() {
-  const { common, locale, localizedPath } = useI18n();
-  const navigate = useNavigate();
-  const { pathname, search, hash } = useLocation();
-
-  const goLocale = (next: Locale) => {
-    if (next === locale) return;
-    navigate(`${swapLocaleInPathname(pathname, next)}${search}${hash}`, { replace: true });
-    persistLocalePreference(next);
-  };
-
+  const { common, locale, localizedPath, setLocale } = useI18n();
   const locationNav = useMemo(() => buildHeaderLocationNav(locale), [locale]);
   const [locationsOpen, setLocationsOpen] = useState(false);
 
@@ -117,7 +107,9 @@ export function SiteHeader() {
                   title={label}
                   aria-current={locale === code ? "true" : undefined}
                   aria-label={label}
-                  onClick={() => goLocale(code)}
+                  onClick={() => {
+                    if (code !== locale) setLocale(code);
+                  }}
                 >
                   <img src={flagSrc} alt={flagAlt(common)} className="header__language-icon" />
                 </button>

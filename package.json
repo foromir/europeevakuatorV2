@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && vite build --ssr src/entry-server.tsx --outDir dist/server && node scripts/prerender.mjs",
+    "pack": "node scripts/deploy/pack-dist.mjs",
     "optimize-images": "node scripts/optimize-images.mjs",
     "preview": "vite preview"
   },

@@ -98,6 +98,11 @@
   border: 0;
 }
 
+.reviews__widget--elfsight {
+  min-height: 420px;
+  padding: 12px;
+}
+
 .reviews__placeholder {
   max-width: 640px;
   margin: 0 auto;

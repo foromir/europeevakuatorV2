@@ -104,3 +104,8 @@ export const GOOGLE_MAPS_EMBED_SRC =
 /** Ссылка на карточку компании в Google (все отзывы) */
 export const GOOGLE_MAPS_PLACE_URL =
   (import.meta.env.VITE_GOOGLE_MAPS_PLACE_URL as string | undefined)?.trim() || "";
+
+/** Elfsight Google Reviews — ID из embed-кода (elfsight-app-…) */
+export const ELFSIGHT_REVIEWS_APP_ID =
+  (import.meta.env.VITE_ELFSIGHT_REVIEWS_APP_ID as string | undefined)?.trim() ||
+  "d33dc87d-68ba-4234-9336-7d5f5067fa90";

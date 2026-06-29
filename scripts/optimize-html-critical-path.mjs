@@ -39,7 +39,7 @@ export function optimizeHtmlCriticalPath(html) {
         document.addEventListener(eventName, boot, { once: true, passive: true, capture: true });
       });
       function scheduleFallback() {
-        setTimeout(boot, 6000);
+        setTimeout(boot, 300);
       }
       if (document.readyState === "complete") {
         scheduleFallback();

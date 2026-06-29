@@ -1,18 +1,16 @@
 import type { Locale } from "./types";
 import type { MessagesPack } from "./loadLocale";
 
-let activeLocale: Locale | null = null;
-let activePack: MessagesPack | null = null;
+const packs = new Map<Locale, MessagesPack>();
 
 export function getLocalePack(locale: Locale): MessagesPack | null {
-  return activeLocale === locale ? activePack : null;
+  return packs.get(locale) ?? null;
 }
 
 export function setLocalePack(locale: Locale, pack: MessagesPack): void {
-  activeLocale = locale;
-  activePack = pack;
+  packs.set(locale, pack);
 }
 
 export function getActiveLocalePack(): MessagesPack | null {
-  return activePack;
+  return packs.size === 1 ? (packs.values().next().value ?? null) : null;
 }

@@ -1,10 +1,23 @@
+import { lazy } from "react";
 import { Navigate, Route, Routes } from "react-router";
-import HomePage from "../pages/HomePage";
-import BlogPage from "../pages/BlogPage";
-import BlogArticlePage from "../pages/BlogArticlePage";
-import { AreaStubPage, CityStubPage, CountryStubPage, NotFoundPage } from "../pages/placeholders";
 import { readStoredLocalePreference, ROUTE_PATH, routeSlug, BLOG_POST_PATHS } from "../i18n/routeConfig";
 import { LocaleGate } from "../components/layout/LocaleGate";
+
+const HomePage = lazy(() => import("../pages/HomePage"));
+const BlogPage = lazy(() => import("../pages/BlogPage"));
+const BlogArticlePage = lazy(() => import("../pages/BlogArticlePage"));
+const AreaStubPage = lazy(() =>
+  import("../pages/placeholders/AreaStubPage").then((m) => ({ default: m.AreaStubPage })),
+);
+const CityStubPage = lazy(() =>
+  import("../pages/placeholders/CityStubPage").then((m) => ({ default: m.CityStubPage })),
+);
+const CountryStubPage = lazy(() =>
+  import("../pages/placeholders/CountryStubPage").then((m) => ({ default: m.CountryStubPage })),
+);
+const NotFoundPage = lazy(() =>
+  import("../pages/placeholders/NotFoundPage").then((m) => ({ default: m.NotFoundPage })),
+);
 
 function RootRedirect() {
   return <Navigate to={`/${readStoredLocalePreference()}`} replace />;
